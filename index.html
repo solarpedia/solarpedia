@@ -5,124 +5,107 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
-
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 body{
-    font-family:Arial,sans-serif;
-    background:#f4f6f9;
-    line-height:1.6;
+font-family:Arial,sans-serif;
+background:#f4f6f9;
+line-height:1.6;
 }
 
 nav{
-    background:#0d47a1;
-    color:white;
-    padding:20px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    flex-wrap:wrap;
+background:#0d47a1;
+padding:20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
 }
 
 nav a{
-    color:white;
-    text-decoration:none;
-    margin-left:15px;
-    font-weight:bold;
+color:white;
+text-decoration:none;
+margin-left:15px;
+font-weight:bold;
 }
 
 .logo{
-    display:flex;
-    align-items:center;
-}
-
-.logo span{
-    font-size:30px;
+display:flex;
+align-items:center;
+color:white;
 }
 
 .logo h2{
-    margin-left:10px;
+margin-left:10px;
 }
 
 header{
-    background:linear-gradient(to right,#0d47a1,#ff9800);
-    color:white;
-    text-align:center;
-    padding:100px 20px;
+background:linear-gradient(to right,#0d47a1,#ff9800);
+color:white;
+text-align:center;
+padding:100px 20px;
 }
 
 header h1{
-    font-size:50px;
+font-size:50px;
 }
 
 header p{
-    margin-top:20px;
-    font-size:22px;
+font-size:22px;
+margin-top:15px;
 }
 
 .button{
-    display:inline-block;
-    margin-top:30px;
-    padding:15px 30px;
-    background:white;
-    color:#0d47a1;
-    border-radius:30px;
-    text-decoration:none;
-    font-weight:bold;
+display:inline-block;
+padding:15px 30px;
+background:white;
+color:#0d47a1;
+text-decoration:none;
+border-radius:30px;
+margin-top:30px;
+font-weight:bold;
 }
 
 .container{
-    width:90%;
-    max-width:1200px;
-    margin:auto;
-    padding:40px 0;
+width:90%;
+max-width:1200px;
+margin:auto;
+padding:40px 0;
 }
 
 .card{
-    background:white;
-    padding:25px;
-    border-radius:15px;
-    margin-bottom:20px;
-    box-shadow:0 0 10px rgba(0,0,0,0.1);
-    transition:0.3s;
+background:white;
+padding:25px;
+border-radius:15px;
+margin-bottom:20px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+transition:0.3s;
 }
 
 .card:hover{
-    transform:translateY(-5px);
+transform:translateY(-5px);
 }
 
 footer{
-    background:#0d47a1;
-    color:white;
-    text-align:center;
-    padding:30px;
+background:#0d47a1;
+color:white;
+text-align:center;
+padding:30px;
 }
 
 @media(max-width:768px){
+header h1{
+font-size:35px;
+}
 
 nav{
-    flex-direction:column;
-    text-align:center;
+flex-direction:column;
 }
-
-nav div{
-    margin-top:15px;
 }
-
-header h1{
-    font-size:36px;
-}
-
-header p{
-    font-size:18px;
-}
-
-}
-
 </style>
 </head>
 
@@ -131,8 +114,7 @@ header p{
 <nav>
 
 <div class="logo">
-<span>☀️</span>
-<h2>SolarPedia</h2>
+<h2>☀️ SolarPedia</h2>
 </div>
 
 <div>
@@ -149,11 +131,15 @@ header p{
 <h1>SolarPedia.in</h1>
 
 <p>
+পশ্চিমবঙ্গের সোলার ও স্মার্ট এনার্জি গাইড
+</p>
+
+<p>
 India's Guide to Solar Energy & Smart Living
 </p>
 
 <a class="button" href="#">
-Explore Articles
+আরও জানুন | Explore
 </a>
 
 </header>
@@ -161,44 +147,70 @@ Explore Articles
 <div class="container">
 
 <div class="card">
-<h2>☀ Solar System Prices</h2>
+<h2>☀️ সোলার সিস্টেমের দাম</h2>
 <p>
-Get the latest prices for 1kW, 3kW, 5kW, and 10kW solar systems across India.
+পশ্চিমবঙ্গে ১kW, ৩kW, ৫kW ও ১০kW সোলার সিস্টেমের সর্বশেষ মূল্য জানুন।
+</p>
+
+<p>
+Get the latest prices of solar systems in India.
 </p>
 </div>
 
 <div class="card">
-<h2>🏠 Government Subsidies</h2>
+<h2>🏠 সরকারি সাবসিডি</h2>
 <p>
-Learn about PM Surya Ghar Yojana, state subsidies, and net metering benefits.
+PM সূর্য ঘর যোজনা এবং অন্যান্য সরকারি সুবিধা সম্পর্কে জানুন।
+</p>
+
+<p>
+Learn about PM Surya Ghar Yojana and solar subsidies.
 </p>
 </div>
 
 <div class="card">
-<h2>⚡ Electrical Tips</h2>
+<h2>⚡ ইলেকট্রিক্যাল টিপস</h2>
 <p>
-Discover home wiring tips, inverter guides, and electrical safety practices.
+বাড়ির ওয়্যারিং, ইনভার্টার এবং বিদ্যুৎ সাশ্রয়ের টিপস পড়ুন।
+</p>
+
+<p>
+Read home wiring and electricity-saving tips.
 </p>
 </div>
 
 <div class="card">
-<h2>📰 Latest Articles</h2>
+<h2>📰 সর্বশেষ আর্টিকেল</h2>
 <p>
-Stay updated with the latest trends, technologies, and solar industry news.
+সোলার প্রযুক্তি এবং নতুন আপডেট সম্পর্কে জানুন।
+</p>
+
+<p>
+Stay updated with the latest solar industry news.
 </p>
 </div>
 
 <div class="card">
-<h2>🌍 Why Choose Solar?</h2>
+<h2>🌍 কেন সোলার ব্যবহার করবেন?</h2>
+
 <p>
-Save up to 90% on electricity bills, increase property value, and support a cleaner environment.
+সোলার ব্যবহার করে বিদ্যুৎ বিল ৯০% পর্যন্ত কমানো সম্ভব।
+</p>
+
+<p>
+Solar energy helps reduce electricity bills and supports a greener future.
 </p>
 </div>
 
 <div class="card">
-<h2>📈 Our Mission</h2>
+<h2>📈 আমাদের লক্ষ্য</h2>
+
 <p>
-Our mission is to educate and empower people across India with reliable information about solar energy and sustainable living.
+SolarPedia-এর লক্ষ্য পশ্চিমবঙ্গের মানুষের কাছে সঠিক সোলার তথ্য পৌঁছে দেওয়া।
+</p>
+
+<p>
+Our mission is to provide reliable solar and energy information to everyone.
 </p>
 </div>
 
@@ -208,11 +220,17 @@ Our mission is to educate and empower people across India with reliable informat
 
 <h3>SolarPedia.in</h3>
 
-<p>India's Guide to Solar Energy & Smart Living</p>
+<p>
+পশ্চিমবঙ্গের সবচেয়ে বিশ্বস্ত সোলার তথ্যভান্ডার
+</p>
 
-<p>Email: info@solarpedia.in</p>
+<p>
+West Bengal's Trusted Solar Knowledge Platform
+</p>
 
-<p>© 2026 SolarPedia.in. All Rights Reserved.</p>
+<p>
+© 2026 SolarPedia.in | All Rights Reserved
+</p>
 
 </footer>
 
