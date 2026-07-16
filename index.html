@@ -3,86 +3,136 @@
 <head>
 <title>SolarPedia.in</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <style>
-body{
+*{
     margin:0;
-    font-family:Arial,sans-serif;
-    background:#f5f7fa;
+    padding:0;
+    box-sizing:border-box;
 }
+
+body{
+    font-family:Arial,sans-serif;
+    background:#f4f6f9;
+}
+
+nav{
+    background:#0d47a1;
+    color:white;
+    padding:20px;
+    display:flex;
+    justify-content:space-between;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:15px;
+}
+
 header{
-    background:linear-gradient(135deg,#0d47a1,#ff9800);
+    background:linear-gradient(to right,#0d47a1,#ff9800);
     color:white;
     text-align:center;
-    padding:60px 20px;
+    padding:100px 20px;
 }
-h1{
-    font-size:42px;
+
+header h1{
+    font-size:60px;
 }
-.btn{
+
+header p{
+    margin-top:20px;
+    font-size:22px;
+}
+
+.button{
     display:inline-block;
-    padding:12px 25px;
+    margin-top:30px;
+    padding:15px 30px;
     background:white;
     color:#0d47a1;
-    text-decoration:none;
     border-radius:30px;
-    margin:10px;
+    text-decoration:none;
     font-weight:bold;
 }
-.section{
-    padding:30px 20px;
+
+.container{
+    width:90%;
+    margin:auto;
+    padding:40px 0;
 }
+
 .card{
     background:white;
-    padding:20px;
-    margin:15px 0;
+    padding:25px;
     border-radius:15px;
-    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    margin-bottom:20px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+    transition:0.3s;
 }
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
 footer{
     background:#0d47a1;
     color:white;
     text-align:center;
-    padding:20px;
+    padding:30px;
 }
 </style>
 </head>
 
 <body>
 
+<nav>
+    <h2>SolarPedia</h2>
+
+    <div>
+        <a href="#">Home</a>
+        <a href="#">Articles</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </div>
+</nav>
+
 <header>
     <h1>SolarPedia.in</h1>
     <p>India's Guide to Solar Energy & Smart Living</p>
 
-    <a class="btn" href="#">Learn Solar</a>
-    <a class="btn" href="#">Calculate Savings</a>
+    <a class="button" href="#">Explore Articles</a>
 </header>
 
-<div class="section">
+<div class="container">
 
 <div class="card">
 <h2>☀ Solar System Prices</h2>
-<p>Check the latest prices for 1kW, 3kW, 5kW, and 10kW solar systems in India.</p>
+<p>Get the latest prices of 1kW, 3kW, 5kW and 10kW solar systems.</p>
 </div>
 
 <div class="card">
 <h2>🏠 Government Subsidies</h2>
-<p>Learn about PM Surya Ghar Yojana and available state subsidies.</p>
+<p>Learn about PM Surya Ghar Yojana and solar benefits.</p>
 </div>
 
 <div class="card">
 <h2>⚡ Electrical Tips</h2>
-<p>Home wiring, safety tips, inverter guides, and power-saving advice.</p>
+<p>Home wiring, inverter guides and electricity saving tips.</p>
 </div>
 
 <div class="card">
 <h2>📰 Latest Articles</h2>
-<p>Stay updated with the newest solar technology and market trends.</p>
+<p>Read the latest news and updates about solar technology.</p>
 </div>
 
 </div>
 
 <footer>
-© 2026 SolarPedia.in | Powered by Clean Energy
+<h3>SolarPedia.in</h3>
+<p>India's Guide to Solar Energy</p>
+<p>© 2026 All Rights Reserved</p>
 </footer>
 
 </body>
