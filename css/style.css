@@ -418,3 +418,45 @@ nav a:hover::after{
     cursor:pointer;
     font-weight:600;
 }
+/* ==========================
+   Footer
+========================== */
+
+footer{
+    background:#212529;
+    color:#fff;
+    padding:60px 0 20px;
+}
+
+.footer{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:40px;
+}
+
+.footer h3{
+    margin-bottom:20px;
+}
+
+.footer ul{
+    padding:0;
+}
+
+.footer li{
+    margin-bottom:10px;
+}
+
+.footer a{
+    color:#ddd;
+}
+
+.footer a:hover{
+    color:#fff;
+}
+
+.copyright{
+    text-align:center;
+    border-top:1px solid rgba(255,255,255,.1);
+    margin-top:40px;
+    padding-top:20px;
+}
