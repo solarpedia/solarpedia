@@ -255,3 +255,42 @@ nav a:hover::after{
 .mb-50{
     margin-bottom:50px;
 }
+/* ==========================
+   Featured Article
+========================== */
+
+.featured{
+    padding:80px 0;
+    background:#f8fafc;
+}
+
+.featured-card{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    align-items:center;
+}
+
+.featured-image img{
+    border-radius:15px;
+    box-shadow:var(--shadow);
+}
+
+.featured-content h2{
+    font-size:38px;
+    margin:20px 0;
+}
+
+.featured-content p{
+    color:#666;
+    margin-bottom:30px;
+}
+
+.tag{
+    display:inline-block;
+    background:#198754;
+    color:#fff;
+    padding:8px 18px;
+    border-radius:30px;
+    font-size:14px;
+}
