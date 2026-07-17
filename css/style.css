@@ -459,16 +459,23 @@ footer{
     border-top:1px solid rgba(255,255,255,.1);
     margin-top:40px;
     padding-top:20px;
-}/* Search Popup */
+}
+/* ==========================================
+   Search Popup
+========================================== */
 
 .search-popup{
     position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.7);
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.75);
     display:none;
     justify-content:center;
     align-items:center;
     z-index:9999;
+    backdrop-filter:blur(5px);
 }
 
 .search-popup.active{
@@ -476,71 +483,86 @@ footer{
 }
 
 .search-box{
-    background:#fff;
-    width:90%;
-    max-width:500px;
+    width:95%;
+    max-width:650px;
+    background:#ffffff;
     padding:40px;
-    border-radius:15px;
+    border-radius:20px;
     position:relative;
+    box-shadow:0 20px 50px rgba(0,0,0,.25);
     animation:popup .35s ease;
 }
 
 .search-box h2{
-    margin-bottom:20px;
+    font-size:38px;
+    margin-bottom:25px;
+    color:#222;
 }
 
 .search-box input{
     width:100%;
     padding:18px 20px;
     font-size:18px;
-    margin-bottom:20px;
-    border:2px solid #ddd;
-    border-radius:10px;
+    border:2px solid #dddddd;
+    border-radius:12px;
     outline:none;
     transition:.3s;
+    margin-bottom:25px;
 }
 
 .search-box input:focus{
     border-color:#0B5ED7;
-    box-shadow:0 0 10px rgba(11,94,215,.2);
+    box-shadow:0 0 15px rgba(11,94,215,.20);
 }
 
 .search-button{
     width:100%;
-    padding:16px;
+    padding:18px;
+    border:none;
+    border-radius:12px;
+    background:linear-gradient(90deg,#0B5ED7,#198754);
+    color:#ffffff;
     font-size:18px;
     font-weight:600;
-    border:none;
-    border-radius:10px;
-    background:#0B5ED7;
-    color:#fff;
     cursor:pointer;
     transition:.3s;
 }
 
 .search-button:hover{
-    background:#0847a8;
+    transform:translateY(-3px);
+    box-shadow:0 12px 25px rgba(0,0,0,.20);
 }
 
 .close-search{
     position:absolute;
-    right:15px;
-    top:10px;
+    top:18px;
+    right:18px;
+    width:42px;
+    height:42px;
     border:none;
-    background:none;
-    font-size:32px;
+    background:#f3f3f3;
+    border-radius:50%;
+    font-size:26px;
+    font-weight:bold;
     cursor:pointer;
+    transition:.3s;
+}
+
+.close-search:hover{
+    background:#0B5ED7;
+    color:#ffffff;
+    transform:rotate(90deg);
 }
 
 @keyframes popup{
 
-    from{
-        transform:scale(.8);
+    0%{
+        transform:translateY(-50px) scale(.85);
         opacity:0;
     }
 
-    to{
-        transform:scale(1);
+    100%{
+        transform:translateY(0) scale(1);
         opacity:1;
     }
 
