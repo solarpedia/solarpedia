@@ -22,3 +22,11 @@ if (openSearch && closeSearch && searchPopup) {
         }
     };
 }
+// Mobile Menu
+
+const menuToggle = document.getElementById("menuToggle");
+const navbar = document.getElementById("navbar");
+
+menuToggle.onclick = () => {
+    navbar.classList.toggle("active");
+};
