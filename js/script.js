@@ -1,1 +1,1 @@
-console.log("SolarPedia Loaded Successfully");
+console.log("SolarPedia v2 Loaded Successfully!");
