@@ -376,3 +376,45 @@ nav a:hover::after{
     color:#fff;
     transform:translateY(-8px);
 }
+/* ==========================
+   Newsletter
+========================== */
+
+.newsletter{
+    background:#0B5ED7;
+    color:#fff;
+    padding:80px 20px;
+    text-align:center;
+}
+
+.newsletter h2{
+    font-size:40px;
+}
+
+.newsletter p{
+    margin:20px 0;
+}
+
+.newsletter form{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.newsletter input{
+    padding:15px;
+    width:350px;
+    border:none;
+    border-radius:8px;
+}
+
+.newsletter button{
+    padding:15px 30px;
+    border:none;
+    border-radius:8px;
+    background:#FD7E14;
+    color:#fff;
+    cursor:pointer;
+    font-weight:600;
+}
