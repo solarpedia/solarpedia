@@ -153,3 +153,368 @@
     line-height:1.8;
     font-size:17px;
 }
+/* ==========================================
+   Tables
+========================================== */
+
+.article-table{
+    width:100%;
+    border-collapse:collapse;
+    margin:30px 0;
+    background:#fff;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.article-table th{
+    background:#0B5ED7;
+    color:#fff;
+    padding:16px;
+    text-align:left;
+}
+
+.article-table td{
+    padding:15px;
+    border-bottom:1px solid #e5e5e5;
+}
+
+.article-table tr:last-child td{
+    border-bottom:none;
+}
+
+/* ==========================================
+   Images
+========================================== */
+
+.article-image{
+    margin:40px 0;
+}
+
+.article-image img{
+    width:100%;
+    border-radius:15px;
+    display:block;
+}
+
+.article-image figcaption{
+    text-align:center;
+    color:#777;
+    font-size:14px;
+    margin-top:10px;
+}
+
+/* ==========================================
+   Info Box
+========================================== */
+
+.info-box{
+    background:#E8F4FF;
+    border-left:5px solid #0B5ED7;
+    padding:20px;
+    margin:30px 0;
+    border-radius:10px;
+}
+
+/* ==========================================
+   Warning Box
+========================================== */
+
+.warning-box{
+    background:#FFF4E5;
+    border-left:5px solid #ff9800;
+    padding:20px;
+    margin:30px 0;
+    border-radius:10px;
+}
+
+/* ==========================================
+   FAQ
+========================================== */
+
+.faq-section{
+    margin-top:60px;
+}
+
+.faq-item{
+    background:#fff;
+    border-radius:12px;
+    padding:25px;
+    margin-bottom:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.faq-item h3{
+    margin-bottom:12px;
+    color:#222;
+}
+
+.faq-item p{
+    margin:0;
+}
+
+/* ==========================================
+   Tags
+========================================== */
+
+.article-tags{
+    margin-top:40px;
+}
+
+.article-tags a{
+    display:inline-block;
+    margin:8px 8px 0 0;
+    padding:8px 16px;
+    background:#f2f2f2;
+    border-radius:30px;
+    text-decoration:none;
+    color:#333;
+    transition:.3s;
+}
+
+.article-tags a:hover{
+    background:#0B5ED7;
+    color:#fff;
+}
+
+/* ==========================================
+   Share Buttons
+========================================== */
+
+.share-article{
+    margin-top:50px;
+}
+
+.share-buttons{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.share-buttons a{
+    text-decoration:none;
+    background:#0B5ED7;
+    color:#fff;
+    padding:12px 22px;
+    border-radius:8px;
+    transition:.3s;
+}
+
+.share-buttons a:hover{
+    background:#084298;
+}
+/* ==========================================
+   Sidebar
+========================================== */
+
+.article-sidebar{
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+}
+
+.sidebar-box{
+    background:#ffffff;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.sidebar-box h3{
+    margin-bottom:18px;
+    color:#222;
+    font-size:22px;
+}
+
+.sidebar-box ul{
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+.sidebar-box li{
+    margin-bottom:12px;
+}
+
+.sidebar-box li:last-child{
+    margin-bottom:0;
+}
+
+.sidebar-box a{
+    text-decoration:none;
+    color:#333;
+    transition:.3s;
+}
+
+.sidebar-box a:hover{
+    color:#0B5ED7;
+    padding-left:6px;
+}
+
+.sidebar-box p{
+    color:#555;
+    line-height:1.8;
+}
+
+/* ==========================================
+   Smooth Hover Effects
+========================================== */
+
+.article-image img,
+.article-table,
+.faq-item,
+.sidebar-box{
+    transition:.3s ease;
+}
+
+.article-image img:hover{
+    transform:scale(1.02);
+}
+
+.article-table:hover,
+.faq-item:hover,
+.sidebar-box:hover{
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+}
+
+/* ==========================================
+   Selection Color
+========================================== */
+
+::selection{
+    background:#0B5ED7;
+    color:#fff;
+}
+
+/* ==========================================
+   Responsive
+========================================== */
+
+@media(max-width:1100px){
+
+.article-layout{
+
+grid-template-columns:1fr;
+
+}
+
+.toc{
+
+position:relative;
+
+top:0;
+
+order:1;
+
+}
+
+.article{
+
+order:2;
+
+}
+
+.article-sidebar{
+
+order:3;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.article-hero{
+
+padding:35px 0;
+
+}
+
+.article-hero h1{
+
+font-size:30px;
+
+}
+
+.article-meta{
+
+font-size:14px;
+
+gap:15px;
+
+}
+
+.article h2{
+
+font-size:26px;
+
+}
+
+.article p,
+.article li{
+
+font-size:16px;
+
+}
+
+.article-table{
+
+display:block;
+
+overflow-x:auto;
+
+}
+
+.share-buttons{
+
+flex-direction:column;
+
+}
+
+.share-buttons a{
+
+text-align:center;
+
+}
+
+.sidebar-box{
+
+padding:20px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.article-hero h1{
+
+font-size:24px;
+
+}
+
+.article h2{
+
+font-size:22px;
+
+}
+
+.toc{
+
+padding:18px;
+
+}
+
+.article-tags a{
+
+font-size:14px;
+
+padding:6px 12px;
+
+}
+
+}
+
+/* ==========================================
+   End of Article CSS
+========================================== */
