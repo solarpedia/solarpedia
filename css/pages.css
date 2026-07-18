@@ -1,1 +1,178 @@
+/* ==========================================
+   PAGES.CSS
+   Shared styles for About, Contact,
+   Privacy, Disclaimer, Terms
+==========================================*/
 
+/* Page Hero */
+
+.page-hero{
+    background:linear-gradient(135deg,#0B5ED7,#198754);
+    color:#fff;
+    text-align:center;
+    padding:70px 20px;
+}
+
+.page-hero h1{
+    font-size:42px;
+    margin-bottom:20px;
+}
+
+.page-hero p{
+    max-width:700px;
+    margin:0 auto;
+    font-size:18px;
+    line-height:1.8;
+}
+
+/* Main Content */
+
+.about-section,
+.contact-section,
+.policy-section{
+
+    padding:70px 0;
+    background:#ffffff;
+
+}
+
+.about-section h2,
+.contact-section h2,
+.policy-section h2{
+
+    margin-top:35px;
+    margin-bottom:18px;
+    color:#222;
+    font-size:32px;
+
+}
+
+.about-section p,
+.contact-section p,
+.policy-section p{
+
+    color:#555;
+    line-height:1.9;
+    margin-bottom:20px;
+    font-size:17px;
+
+}
+
+.about-section ul,
+.contact-section ul{
+
+    padding-left:25px;
+    margin:25px 0;
+
+}
+
+.about-section li,
+.contact-section li{
+
+    margin-bottom:12px;
+    line-height:1.8;
+
+}
+
+/* Card */
+
+.page-card{
+
+    background:#fff;
+    border-radius:15px;
+    padding:30px;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+    margin-top:30px;
+
+}
+
+/* Contact Form */
+
+.contact-form{
+
+    max-width:700px;
+    margin:auto;
+
+}
+
+.contact-form input,
+.contact-form textarea{
+
+    width:100%;
+    padding:15px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    margin-bottom:20px;
+    font-size:16px;
+    transition:.3s;
+
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+
+    border-color:#0B5ED7;
+    outline:none;
+    box-shadow:0 0 8px rgba(11,94,215,.2);
+
+}
+
+.contact-form textarea{
+
+    resize:vertical;
+    min-height:180px;
+
+}
+
+.contact-form button{
+
+    background:#0B5ED7;
+    color:#fff;
+    border:none;
+    padding:15px 30px;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+    transition:.3s;
+
+}
+
+.contact-form button:hover{
+
+    background:#084298;
+
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.page-hero{
+
+padding:50px 20px;
+
+}
+
+.page-hero h1{
+
+font-size:32px;
+
+}
+
+.about-section,
+.contact-section,
+.policy-section{
+
+padding:50px 0;
+
+}
+
+.about-section h2,
+.contact-section h2,
+.policy-section h2{
+
+font-size:26px;
+
+}
+
+}
