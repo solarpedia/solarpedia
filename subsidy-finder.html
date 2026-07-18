@@ -5,14 +5,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Solar Calculator | SolarPedia</title>
+<title>Government Solar Subsidy Finder | SolarPedia</title>
+<meta name="description" content="Check your estimated government solar subsidy, installation cost, and savings under PM Surya Ghar Yojana.">
 
-<meta name="description" content="Estimate your rooftop solar system size, cost, savings, and required roof area.">
-
-<link rel="canonical" href="https://solarpedia.in/calculator.html">    
+<link rel="canonical" href="https://solarpedia.in/subsidy-finder.html">   
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/pages.css">
 <link rel="stylesheet" href="css/calculator.css">
+    <link rel="stylesheet" href="css/subsidy.css">
 <link rel="stylesheet" href="css/responsive.css">
 </head>
 
@@ -59,8 +59,8 @@
 
 <section class="page-hero">
     <div class="container">
-        <h1>Solar Rooftop Calculator</h1>
-        <p>Estimate the ideal solar system size, installation cost, yearly savings, and rooftop area.</p>
+        <h1>Government Solar Subsidy Finder</h1>
+        <p>Estimate your government solar subsidy, installation cost, annual savings, and payback period under the PM Surya Ghar Yojana.</p>
     </div>
 </section>
 
@@ -72,47 +72,113 @@
 
 <div class="calculator-card">
 
-<h2>Solar Calculator</h2>
+<h2>Government Solar Subsidy Finder</h2>
 
 <div class="form-group">
-<label>Monthly Electricity Bill (₹)</label>
-<input type="number" id="bill" placeholder="Example: 1500">
+<label>Select State</label>
+
+<select id="state">
+
+<option value="">-- Select State --</option>
+
+<option value="West Bengal">West Bengal</option>
+
+<option value="Assam">Assam</option>
+
+<option value="Bihar">Bihar</option>
+
+<option value="Odisha">Odisha</option>
+
+<option value="Jharkhand">Jharkhand</option>
+
+<option value="Other">Other</option>
+
+</select>
+
 </div>
 
 <div class="form-group">
-<label>State</label>
-<select id="state">
-<option>West Bengal</option>
-<option>Assam</option>
-<option>Bihar</option>
-<option>Odisha</option>
-<option>Jharkhand</option>
-<option>Other</option>
+
+<label>Consumer Type</label>
+
+<select id="consumerType">
+
+<option value="Residential">Residential</option>
+
+<option value="Commercial">Commercial</option>
+
+</select>
+
+</div>
+
+<div class="form-group">
+
+<label>Solar System Size</label>
+
+<select id="systemSize">
+
+<option value="1">1 kW</option>
+<option value="2">2 kW</option>
+<option value="3">3 kW</option>
+<option value="4">4 kW</option>
+<option value="5">5 kW</option>
+<option value="6">6 kW</option>
+<option value="7">7 kW</option>
+<option value="8">8 kW</option>
+<option value="9">9 kW</option>
+<option value="10">10 kW</option>
+
 </select>
 </div>
 
-<button id="calculateBtn">Calculate</button>
+<button id="calculateBtn">Check Subsidy</button>
 
 <hr>
 
 <div id="result">
 
-<h3>Estimated Result</h3>
+<h3>Estimated Subsidy Details</h3>
 
-<p><strong>Recommended System:</strong>
-<span id="systemSize">-</span></p>
+<p>
+<strong>Central Subsidy:</strong>
+₹ <span id="centralSubsidy">-</span>
+</p>
 
-<p><strong>Estimated Cost:</strong>
-₹ <span id="cost">-</span></p>
+<p>
+<strong>State Subsidy:</strong>
+₹ <span id="stateSubsidy">-</span>
+</p>
 
-<p><strong>Estimated Annual Savings:</strong>
-₹ <span id="saving">-</span></p>
+<p>
+<strong>Total Subsidy:</strong>
+₹ <span id="totalSubsidy">-</span>
+</p>
 
-<p><strong>Required Roof Area:</strong>
-<span id="area">-</span> sq.ft</p>
+<hr>
+
+<p>
+<strong>Estimated Installation Cost:</strong>
+₹ <span id="installationCost">-</span>
+</p>
+
+<p>
+<strong>Cost After Subsidy:</strong>
+₹ <span id="finalCost">-</span>
+</p>
+
+<hr>
+
+<p>
+<strong>Estimated Annual Savings:</strong>
+₹ <span id="annualSavings">-</span>
+</p>
+
+<p>
+<strong>Estimated Payback Period:</strong>
+<span id="payback">-</span> Years
+</p>
 
 </div>
-
 </div>
 
 </div>
@@ -183,6 +249,7 @@
 <script src="js/script.js"></script>
 <script src="js/search-data.js"></script>
 <script src="js/search.js"></script>
+    <script src="js/subsidy.js"></script>
    
 </body>
 </html>
