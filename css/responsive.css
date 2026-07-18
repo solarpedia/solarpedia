@@ -62,3 +62,26 @@ gap:18px;
 }
 
 }
+@media(max-width:768px){
+
+.dropdown-menu{
+
+position:static;
+
+display:block;
+
+box-shadow:none;
+
+background:none;
+
+padding-left:15px;
+
+}
+
+.dropdown-menu li a{
+
+padding:10px 0;
+
+}
+
+}
