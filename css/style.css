@@ -657,3 +657,72 @@ nav a{
     color:#888;
 
 }
+/* ===========================
+   Header Right
+=========================== */
+
+.header-right{
+display:flex;
+align-items:center;
+gap:18px;
+}
+
+.quote-btn{
+
+background:#ff8c1a;
+color:#fff;
+padding:12px 24px;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+transition:.3s;
+
+}
+
+.quote-btn:hover{
+
+background:#e67700;
+transform:translateY(-2px);
+
+}
+
+.search-btn{
+
+cursor:pointer;
+font-size:22px;
+transition:.3s;
+
+}
+
+.search-btn:hover{
+
+transform:scale(1.15);
+
+}
+
+nav ul li a{
+
+position:relative;
+padding-bottom:6px;
+
+}
+
+nav ul li a::after{
+
+content:"";
+position:absolute;
+left:0;
+bottom:0;
+width:0;
+height:2px;
+background:#198754;
+transition:.3s;
+
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after{
+
+width:100%;
+
+}
