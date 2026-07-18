@@ -1,0 +1,41 @@
+[
+  {
+    "id": 1,
+    "title": "Complete Guide to Solar Panels in India",
+    "slug": "solar-panels-india",
+    "category": "Solar Guides",
+    "language": "en",
+    "image": "images/articles/solar-guide.jpg",
+    "date": "2026-07-20",
+    "author": "SolarPedia Team",
+    "readingTime": "8 min read",
+    "description": "Learn everything about solar panels, their types, installation process, and costs in India.",
+    "featured": true
+  },
+  {
+    "id": 2,
+    "title": "PM Surya Ghar Yojana Explained",
+    "slug": "pm-surya-ghar-yojana",
+    "category": "Government Schemes",
+    "language": "en",
+    "image": "images/articles/surya-ghar.jpg",
+    "date": "2026-07-20",
+    "author": "SolarPedia Team",
+    "readingTime": "6 min read",
+    "description": "Eligibility, subsidy amount, and application process for PM Surya Ghar Yojana.",
+    "featured": false
+  },
+  {
+    "id": 3,
+    "title": "How Net Metering Works",
+    "slug": "net-metering",
+    "category": "Solar Guides",
+    "language": "en",
+    "image": "images/articles/net-metering.jpg",
+    "date": "2026-07-20",
+    "author": "SolarPedia Team",
+    "readingTime": "5 min read",
+    "description": "Understand net metering and how it reduces your electricity bill.",
+    "featured": false
+  }
+]
