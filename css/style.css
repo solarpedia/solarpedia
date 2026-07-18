@@ -879,3 +879,52 @@ color:#666;
 line-height:1.7;
 
 }
+/* ==========================================
+   Statistics Counter
+========================================== */
+
+.stats{
+
+background:linear-gradient(135deg,#0B5ED7,#198754);
+
+padding:80px 20px;
+
+color:#fff;
+
+}
+
+.stats-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+
+gap:30px;
+
+text-align:center;
+
+}
+
+.stat-box{
+
+padding:30px 20px;
+
+}
+
+.stat-box h2{
+
+font-size:52px;
+
+margin-bottom:10px;
+
+font-weight:700;
+
+}
+
+.stat-box p{
+
+font-size:18px;
+
+opacity:.95;
+
+}
