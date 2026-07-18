@@ -1,126 +1,116 @@
 console.log("Script Loaded");
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
 
-    // Search Popup
-   const openSearch = document.getElementById("openSearch");
-const closeSearch = document.getElementById("closeSearch");
-const searchPopup = document.getElementById("searchPopup");
+    /* ==========================
+       Search Popup
+    ========================== */
 
-if (openSearch && closeSearch && searchPopup) {
+    const openSearch = document.getElementById("openSearch");
+    const closeSearch = document.getElementById("closeSearch");
+    const searchPopup = document.getElementById("searchPopup");
 
-    openSearch.addEventListener("click", () => {
-        searchPopup.classList.add("active");
-    });
+    if (openSearch && closeSearch && searchPopup) {
 
-    closeSearch.addEventListener("click", () => {
-        searchPopup.classList.remove("active");
-    });
+        openSearch.addEventListener("click", () => {
+            searchPopup.classList.add("active");
+        });
 
-    searchPopup.addEventListener("click", (e) => {
-        if (e.target === searchPopup) {
+        closeSearch.addEventListener("click", () => {
             searchPopup.classList.remove("active");
-        }
-    });
+        });
 
-}
-    // Mobile Menu
+        searchPopup.addEventListener("click", (e) => {
+            if (e.target === searchPopup) {
+                searchPopup.classList.remove("active");
+            }
+        });
+    }
+
+    /* ==========================
+       Mobile Menu
+    ========================== */
+
     const menuToggle = document.getElementById("menuToggle");
     const navbar = document.getElementById("navbar");
 
     if (menuToggle && navbar) {
-        menuToggle.addEventListener("click", function () {
+        menuToggle.addEventListener("click", () => {
             navbar.classList.toggle("active");
         });
     }
 
-});
+    /* ==========================
+       Back To Top
+    ========================== */
 
-/* ==========================
-   Back To Top
-========================== */
+    const backToTop = document.getElementById("backToTop");
 
-const backToTop = document.getElementById("backToTop");
+    if (backToTop) {
 
-window.addEventListener("scroll", function () {
+        window.addEventListener("scroll", () => {
 
-    if (!backToTop) return;
+            if (window.scrollY > 100) {
+                backToTop.style.display = "block";
+            } else {
+                backToTop.style.display = "none";
+            }
 
-    if (window.scrollY > 400) {
+        });
 
-        backToTop.style.display = "block";
+        backToTop.addEventListener("click", () => {
 
-    } else {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
 
-        backToTop.style.display = "none";
+        });
 
     }
 
-});
+    /* ==========================
+       Counter Animation
+    ========================== */
 
-backToTop?.addEventListener("click", function () {
+    const counters = document.querySelectorAll(".counter");
 
-    window.scrollTo({
+    if (counters.length > 0) {
 
-        top:0,
+        const observer = new IntersectionObserver((entries) => {
 
-        behavior:"smooth"
+            entries.forEach(entry => {
 
-    });
+                if (!entry.isIntersecting) return;
 
-});
-/* ==========================
-   Counter Animation
-========================== */
+                const counter = entry.target;
+                const target = Number(counter.dataset.target);
 
-const counters = document.querySelectorAll(".counter");
+                let current = 0;
+                const increment = Math.ceil(target / 100);
 
-const counterObserver = new IntersectionObserver((entries) => {
+                const update = () => {
 
-entries.forEach(entry => {
+                    current += increment;
 
-if (!entry.isIntersecting) return;
+                    if (current >= target) {
+                        counter.innerText = target.toLocaleString() + "+";
+                    } else {
+                        counter.innerText = current.toLocaleString();
+                        requestAnimationFrame(update);
+                    }
 
-const counter = entry.target;
+                };
 
-const target = +counter.dataset.target;
+                update();
+                observer.unobserve(counter);
 
-let current = 0;
+            });
 
-const increment = Math.ceil(target / 100);
+        }, { threshold: 0.5 });
 
-const updateCounter = () => {
+        counters.forEach(counter => observer.observe(counter));
 
-current += increment;
-
-if (current >= target) {
-
-counter.innerText = target.toLocaleString() + "+";
-
-} else {
-
-counter.innerText = current.toLocaleString();
-
-requestAnimationFrame(updateCounter);
-
-}
-
-};
-
-updateCounter();
-
-counterObserver.unobserve(counter);
-
-});
-
-}, {
-
-threshold:0.5
-
-});
-
-counters.forEach(counter => {
-
-counterObserver.observe(counter);
+    }
 
 });
