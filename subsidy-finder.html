@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Solar Calculator | SolarPedia</title>
+
+<meta name="description" content="Estimate your rooftop solar system size, cost, savings, and required roof area.">
+
+<link rel="canonical" href="https://solarpedia.in/calculator.html">    
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/pages.css">
+<link rel="stylesheet" href="css/calculator.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+<!-- Top Bar -->
+<div class="topbar">
+    <div class="container">
+        <div class="top-left">🌞 India's Solar Information Portal</div>
+        <div class="top-right">
+            <a href="#">বাংলা</a> |
+            <a href="#">English</a>
+        </div>
+    </div>
+</div>
+
+<!-- Header -->
+<header id="mainHeader">
+    <div class="container header">
+
+        <a href="index.html" class="logo">
+            <img src="images/logo.png" alt="SolarPedia Logo">
+        </a>
+
+        <nav id="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Solar Guide</a></li>
+                <li><a href="#">Government Schemes</a></li>
+                <li><a href="#">Solar News</a></li>
+                <li><a href="calculator.html" class="active">Calculator</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="search-btn" id="openSearch">🔍</div>
+        <div class="menu-toggle" id="menuToggle">☰</div>
+
+    </div>
+</header>
+
+<!-- Hero -->
+
+<section class="page-hero">
+    <div class="container">
+        <h1>Solar Rooftop Calculator</h1>
+        <p>Estimate the ideal solar system size, installation cost, yearly savings, and rooftop area.</p>
+    </div>
+</section>
+
+<!-- Calculator -->
+
+<section class="calculator-section">
+
+<div class="container">
+
+<div class="calculator-card">
+
+<h2>Solar Calculator</h2>
+
+<div class="form-group">
+<label>Monthly Electricity Bill (₹)</label>
+<input type="number" id="bill" placeholder="Example: 1500">
+</div>
+
+<div class="form-group">
+<label>State</label>
+<select id="state">
+<option>West Bengal</option>
+<option>Assam</option>
+<option>Bihar</option>
+<option>Odisha</option>
+<option>Jharkhand</option>
+<option>Other</option>
+</select>
+</div>
+
+<button id="calculateBtn">Calculate</button>
+
+<hr>
+
+<div id="result">
+
+<h3>Estimated Result</h3>
+
+<p><strong>Recommended System:</strong>
+<span id="systemSize">-</span></p>
+
+<p><strong>Estimated Cost:</strong>
+₹ <span id="cost">-</span></p>
+
+<p><strong>Estimated Annual Savings:</strong>
+₹ <span id="saving">-</span></p>
+
+<p><strong>Required Roof Area:</strong>
+<span id="area">-</span> sq.ft</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Footer -->
+
+<footer>
+<div class="container footer">
+
+<div class="footer-col">
+<h3>SolarPedia</h3>
+<p>Your trusted solar knowledge platform.</p>
+</div>
+
+<div class="footer-col">
+<h3>Quick Links</h3>
+<ul>
+<li><a href="about.html">About</a></li>
+<li><a href="contact.html">Contact</a></li>
+<li><a href="#">Privacy Policy</a></li>
+</ul>
+</div>
+
+<div class="footer-col">
+<h3>Follow Us</h3>
+<ul>
+<li><a href="#">Facebook</a></li>
+<li><a href="#">Instagram</a></li>
+<li><a href="#">YouTube</a></li>
+</ul>
+</div>
+
+</div>
+
+<div class="copyright">
+© 2026 SolarPedia.in | All Rights Reserved.
+</div>
+
+</footer>
+
+<!-- Search Popup -->
+
+<div class="search-popup" id="searchPopup">
+
+    <div class="search-box">
+
+        <button class="close-search" id="closeSearch">&times;</button>
+
+        <h2>Search SolarPedia</h2>
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search articles..."
+            autocomplete="off">
+
+        <div id="searchResults"></div>
+
+    </div>
+
+</div>
+     <button id="backToTop" title="Back to Top">
+    ↑
+</button>
+
+<script src="js/script.js"></script>
+<script src="js/search-data.js"></script>
+<script src="js/search.js"></script>
+   
+</body>
+</html>
