@@ -928,3 +928,44 @@ font-size:18px;
 opacity:.95;
 
 }
+/* ==========================
+   Dropdown Menu
+========================== */
+
+.dropdown{
+    position:relative;
+}
+
+.dropdown-menu{
+    position:absolute;
+    top:100%;
+    left:0;
+    min-width:240px;
+    background:#fff;
+    border-radius:10px;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+    display:none;
+    padding:10px 0;
+    z-index:999;
+}
+
+.dropdown-menu li{
+    list-style:none;
+}
+
+.dropdown-menu li a{
+    display:block;
+    padding:12px 20px;
+    color:#333;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.dropdown-menu li a:hover{
+    background:#f4f8f4;
+    color:#2e8b57;
+}
+
+.dropdown:hover .dropdown-menu{
+    display:block;
+}
