@@ -5,11 +5,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Solar Calculator | SolarPedia</title>
+<title>Solar Savings Calculator | SolarPedia</title>
 
-<meta name="description" content="Estimate your rooftop solar system size, cost, savings, and required roof area.">
+<meta name="description" content="Calculate monthly, yearly, and lifetime savings from installing a rooftop solar system in India.">
 
-<link rel="canonical" href="https://solarpedia.in/calculator.html">    
+<link rel="canonical" href="https://solarpedia.in/savings-calculator.html">  
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/pages.css">
 <link rel="stylesheet" href="css/calculator.css">
@@ -43,7 +43,7 @@
                 <li><a href="#">Solar Guide</a></li>
                 <li><a href="#">Government Schemes</a></li>
                 <li><a href="#">Solar News</a></li>
-                <li><a href="calculator.html" class="active">Calculator</a></li>
+                <li><a href="tools.html" class="active">Tools</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -59,8 +59,11 @@
 
 <section class="page-hero">
     <div class="container">
-        <h1>Solar Rooftop Calculator</h1>
-        <p>Estimate the ideal solar system size, installation cost, yearly savings, and rooftop area.</p>
+       <h1>Solar Savings Calculator</h1>
+
+<p>
+Estimate your monthly, annual, and lifetime savings from a rooftop solar system.
+</p>
     </div>
 </section>
 
@@ -72,44 +75,44 @@
 
 <div class="calculator-card">
 
-<h2>Solar Calculator</h2>
+<h2>Calculate Solar Savings</h2>
 
 <div class="form-group">
 <label>Monthly Electricity Bill (₹)</label>
-<input type="number" id="bill" placeholder="Example: 1500">
+<input type="number" id="monthlyBill" placeholder="Example: 3000">
 </div>
 
 <div class="form-group">
-<label>State</label>
-<select id="state">
-<option>West Bengal</option>
-<option>Assam</option>
-<option>Bihar</option>
-<option>Odisha</option>
-<option>Jharkhand</option>
-<option>Other</option>
+<label>Expected Bill Reduction (%)</label>
+<input type="number" id="reduction" value="90" placeholder="90">
+</div>
+
+<div class="form-group">
+<label>System Lifetime (Years)</label>
+<select id="lifetime">
+    <option value="20">20 Years</option>
+    <option value="25" selected>25 Years</option>
+    <option value="30">30 Years</option>
 </select>
 </div>
 
-<button id="calculateBtn">Calculate</button>
+<button id="calculateSavings">
+Calculate Savings
+</button>
 
 <hr>
 
 <div id="result">
 
-<h3>Estimated Result</h3>
+<h3>Savings Summary</h3>
 
-<p><strong>Recommended System:</strong>
-<span id="systemSize">-</span></p>
+<p><strong>Monthly Savings:</strong> ₹ <span id="monthlySavings">-</span></p>
 
-<p><strong>Estimated Cost:</strong>
-₹ <span id="cost">-</span></p>
+<p><strong>Annual Savings:</strong> ₹ <span id="annualSavings">-</span></p>
 
-<p><strong>Estimated Annual Savings:</strong>
-₹ <span id="saving">-</span></p>
+<p><strong>Lifetime Savings:</strong> ₹ <span id="lifetimeSavings">-</span></p>
 
-<p><strong>Required Roof Area:</strong>
-<span id="area">-</span> sq.ft</p>
+<p><strong>Estimated CO₂ Reduction:</strong> <span id="co2Savings">-</span> kg</p>
 
 </div>
 
@@ -183,6 +186,7 @@
 <script src="js/script.js"></script>
 <script src="js/search-data.js"></script>
 <script src="js/search.js"></script>
+<script src="js/savings.js"></script>
    
 </body>
 </html>
