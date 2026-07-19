@@ -5,11 +5,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Solar Calculator | SolarPedia</title>
+<title>Solar Battery Calculator | SolarPedia</title>
 
-<meta name="description" content="Estimate your rooftop solar system size, cost, savings, and required roof area.">
+<meta name="description" content="Estimate the battery capacity required for your rooftop solar backup system.">
 
-<link rel="canonical" href="https://solarpedia.in/calculator.html">    
+<link rel="canonical" href="https://solarpedia.in/battery-calculator.html">  
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/pages.css">
 <link rel="stylesheet" href="css/calculator.css">
@@ -43,7 +43,7 @@
                 <li><a href="#">Solar Guide</a></li>
                 <li><a href="#">Government Schemes</a></li>
                 <li><a href="#">Solar News</a></li>
-                <li><a href="calculator.html" class="active">Calculator</a></li>
+                <li><a href="tools.html" class="active">Tools</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -59,8 +59,11 @@
 
 <section class="page-hero">
     <div class="container">
-        <h1>Solar Rooftop Calculator</h1>
-        <p>Estimate the ideal solar system size, installation cost, yearly savings, and rooftop area.</p>
+        <h1>Solar Battery Calculator</h1>
+
+<p>
+Estimate the battery capacity required for your home backup system.
+</p>
     </div>
 </section>
 
@@ -72,44 +75,40 @@
 
 <div class="calculator-card">
 
-<h2>Solar Calculator</h2>
+<h2>Calculate Battery Requirement</h2>
 
 <div class="form-group">
-<label>Monthly Electricity Bill (₹)</label>
-<input type="number" id="bill" placeholder="Example: 1500">
+<label>Total Load (Watts)</label>
+<input type="number" id="load" placeholder="Example: 1000">
 </div>
 
 <div class="form-group">
-<label>State</label>
-<select id="state">
-<option>West Bengal</option>
-<option>Assam</option>
-<option>Bihar</option>
-<option>Odisha</option>
-<option>Jharkhand</option>
-<option>Other</option>
+<label>Backup Time (Hours)</label>
+<input type="number" id="backup" placeholder="Example: 4">
+</div>
+
+<div class="form-group">
+<label>Battery Voltage</label>
+<select id="voltage">
+<option value="12">12V</option>
+<option value="24">24V</option>
+<option value="48">48V</option>
 </select>
 </div>
 
-<button id="calculateBtn">Calculate</button>
+<button id="calculateBattery">
+Calculate Battery
+</button>
 
 <hr>
 
 <div id="result">
 
-<h3>Estimated Result</h3>
+<h3>Battery Requirement</h3>
 
-<p><strong>Recommended System:</strong>
-<span id="systemSize">-</span></p>
+<p><strong>Required Capacity:</strong> <span id="batteryAh">-</span> Ah</p>
 
-<p><strong>Estimated Cost:</strong>
-₹ <span id="cost">-</span></p>
-
-<p><strong>Estimated Annual Savings:</strong>
-₹ <span id="saving">-</span></p>
-
-<p><strong>Required Roof Area:</strong>
-<span id="area">-</span> sq.ft</p>
+<p><strong>Suggested Batteries:</strong> <span id="batteryCount">-</span></p>
 
 </div>
 
@@ -183,6 +182,7 @@
 <script src="js/script.js"></script>
 <script src="js/search-data.js"></script>
 <script src="js/search.js"></script>
+<script src="js/battery.js"></script>
    
 </body>
 </html>
