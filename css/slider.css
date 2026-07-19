@@ -51,19 +51,14 @@ background:rgba(0,0,0,.45);
 }
 
 .content{
-
 position:absolute;
-
 top:50%;
-
 left:50%;
-
 transform:translate(-50%,-50%);
-
 color:#fff;
-
+width:90%;
 max-width:650px;
-
+z-index:2;
 }
 
 .content span{
@@ -174,5 +169,34 @@ cursor:pointer;
 opacity:1;
 
 background:#FD7E14;
+
+}
+@media (max-width:768px){
+
+.hero-slider{
+height:500px;
+}
+
+.content{
+width:90%;
+left:50%;
+top:50%;
+transform:translate(-50%,-50%);
+text-align:center;
+}
+
+.content h1{
+font-size:34px;
+line-height:1.25;
+}
+
+.content p{
+font-size:16px;
+}
+
+.prev,
+.next{
+display:none;
+}
 
 }
