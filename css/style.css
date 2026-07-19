@@ -1186,3 +1186,27 @@ margin-bottom:20px;
 line-height:1.7;
 color:#666;
 }
+/* ================= Breadcrumb ================= */
+
+.breadcrumb{
+background:#f5f5f5;
+padding:12px 0;
+font-size:14px;
+}
+
+.breadcrumb .container{
+display:flex;
+align-items:center;
+gap:10px;
+flex-wrap:wrap;
+}
+
+.breadcrumb a{
+color:#2e7d32;
+text-decoration:none;
+font-weight:500;
+}
+
+.breadcrumb span{
+color:#777;
+}
