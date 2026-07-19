@@ -1007,3 +1007,43 @@ opacity:.95;
     padding-left:28px;
 
 }
+/* ================= Featured Guides ================= */
+
+.featured-guides{
+padding:70px 0;
+background:#f8fbf6;
+}
+
+.guide-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.guide-card{
+background:#fff;
+border-radius:15px;
+padding:30px;
+text-align:center;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.guide-card:hover{
+transform:translateY(-8px);
+}
+
+.guide-card img{
+width:70px;
+height:70px;
+margin-bottom:20px;
+}
+
+.guide-card h3{
+margin-bottom:15px;
+}
+
+.guide-card p{
+margin-bottom:20px;
+line-height:1.6;
+}
