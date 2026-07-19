@@ -1230,3 +1230,94 @@ color:#666;
 border-top:1px solid #eee;
 
 }
+/* ================= MOBILE HEADER FIX ================= */
+
+@media (max-width:768px){
+
+body{
+overflow-x:hidden;
+}
+
+.container{
+width:100%;
+padding:0 15px;
+}
+
+.header{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:12px 0;
+
+}
+
+.logo img{
+
+height:42px;
+
+}
+
+.quote-btn{
+
+display:none;
+
+}
+
+.search-btn{
+
+display:none;
+
+}
+
+.menu-toggle{
+
+display:block;
+
+font-size:32px;
+
+margin-left:auto;
+
+}
+
+nav{
+
+width:260px;
+
+}
+
+.article-grid,
+.news-grid,
+.tools-grid,
+.category-grid,
+.stats-grid,
+.footer{
+
+grid-template-columns:1fr;
+
+}
+
+.featured-card{
+
+grid-template-columns:1fr;
+
+}
+
+.hero-buttons{
+
+flex-direction:column;
+
+}
+
+.hero-buttons a{
+
+width:100%;
+
+text-align:center;
+
+}
+
+}
