@@ -4,14 +4,24 @@ document.getElementById("calculateROI").addEventListener("click", function () {
     const subsidy = parseFloat(document.getElementById("subsidy").value) || 0;
     const annualSavings = parseFloat(document.getElementById("annualSavings").value);
 
-    if (isNaN(cost) || isNaN(annualSavings) || cost <= 0 || annualSavings <= 0) {
-        alert("Please enter valid values.");
+    if (isNaN(cost) || cost <= 0) {
+        alert("Please enter a valid installation cost.");
+        return;
+    }
+
+    if (isNaN(annualSavings) || annualSavings <= 0) {
+        alert("Please enter valid annual savings.");
+        return;
+    }
+
+    if (subsidy > cost) {
+        alert("Subsidy cannot be greater than installation cost.");
         return;
     }
 
     const investment = cost - subsidy;
     const payback = investment / annualSavings;
-    const profit25 = (annualSavings * 25) - investment;
+    const profit25 = annualSavings * 25 - investment;
     const roi = (profit25 / investment) * 100;
 
     document.getElementById("investmentResult").textContent =
@@ -25,5 +35,4 @@ document.getElementById("calculateROI").addEventListener("click", function () {
 
     document.getElementById("roiResult").textContent =
         roi.toFixed(1);
-
 });
