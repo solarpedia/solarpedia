@@ -1,0 +1,244 @@
+/* ===================================
+   Government Schemes Page
+=================================== */
+
+.page-content{
+    padding:60px 0;
+}
+
+.section-title{
+    text-align:center;
+    font-size:32px;
+    margin-bottom:40px;
+    color:#0d4f2b;
+}
+
+/* Intro Box */
+
+.intro-box{
+    background:#ffffff;
+    border-radius:12px;
+    padding:35px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    line-height:1.8;
+}
+
+.intro-box h2{
+    color:#0d4f2b;
+    margin-bottom:15px;
+}
+
+/* Scheme Grid */
+
+.scheme-section{
+    padding:70px 0;
+    background:#f7faf7;
+}
+
+.scheme-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+/* Scheme Card */
+
+.scheme-card{
+
+    background:#fff;
+
+    border-radius:15px;
+
+    padding:30px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.scheme-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.12);
+
+}
+
+.scheme-card h3{
+
+    color:#0d4f2b;
+
+    margin-bottom:15px;
+
+    font-size:24px;
+
+}
+
+.scheme-card p{
+
+    color:#555;
+
+    line-height:1.7;
+
+    margin-bottom:20px;
+
+}
+
+.scheme-card ul{
+
+    margin-bottom:25px;
+
+    padding-left:20px;
+
+}
+
+.scheme-card li{
+
+    margin-bottom:10px;
+
+    color:#444;
+
+}
+
+/* Button */
+
+.btn{
+
+    display:inline-block;
+
+    background:#2e7d32;
+
+    color:#fff;
+
+    padding:12px 24px;
+
+    border-radius:8px;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.3s;
+
+    margin-top:auto;
+
+}
+
+.btn:hover{
+
+    background:#1b5e20;
+
+}
+
+/* Content Card */
+
+.content-card{
+
+    background:#fff;
+
+    padding:35px;
+
+    border-radius:15px;
+
+    box-shadow:0 6px 18px rgba(0,0,0,.08);
+
+}
+
+.content-card h2{
+
+    color:#0d4f2b;
+
+    margin-bottom:20px;
+
+}
+
+.content-card h3{
+
+    margin-top:25px;
+
+    color:#14532d;
+
+}
+
+.content-card p{
+
+    line-height:1.8;
+
+    color:#555;
+
+    margin-bottom:15px;
+
+}
+
+.content-card ul,
+
+.content-card ol{
+
+    margin-left:22px;
+
+    line-height:1.8;
+
+}
+
+.content-card li{
+
+    margin-bottom:10px;
+
+}
+
+/* CTA */
+
+.text-center{
+
+    text-align:center;
+
+}
+
+.text-center .btn{
+
+    margin-top:25px;
+
+}
+
+/* FAQ */
+
+.content-card h3{
+
+    border-left:4px solid #2e7d32;
+
+    padding-left:10px;
+
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.section-title{
+
+font-size:28px;
+
+}
+
+.intro-box,
+
+.content-card,
+
+.scheme-card{
+
+padding:25px;
+
+}
+
+.scheme-card h3{
+
+font-size:21px;
+
+}
+
+}
