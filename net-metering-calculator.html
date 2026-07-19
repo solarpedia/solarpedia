@@ -1,1 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Net Metering Calculator | SolarPedia</title>
+
+<meta name="description" content="Calculate solar energy exported to the grid, imported electricity, and estimated savings with net metering in India.">
+<link rel="canonical" href="https://solarpedia.in/net-metering-calculator.html">   
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/pages.css">
+<link rel="stylesheet" href="css/calculator.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+<!-- Top Bar -->
+<div class="topbar">
+    <div class="container">
+        <div class="top-left">🌞 India's Solar Information Portal</div>
+        <div class="top-right">
+            <a href="#">বাংলা</a> |
+            <a href="#">English</a>
+        </div>
+    </div>
+</div>
+
+<!-- Header -->
+<header id="mainHeader">
+    <div class="container header">
+
+        <a href="index.html" class="logo">
+            <img src="images/logo.png" alt="SolarPedia Logo">
+        </a>
+
+        <nav id="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Solar Guide</a></li>
+                <li><a href="#">Government Schemes</a></li>
+                <li><a href="#">Solar News</a></li>
+                <li><a href="calculator.html" class="active">Calculator</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="search-btn" id="openSearch">🔍</div>
+        <div class="menu-toggle" id="menuToggle">☰</div>
+
+    </div>
+</header>
+
+<!-- Hero -->
+
+<section class="page-hero">
+    <div class="container">
+       <h1>Net Metering Calculator</h1>
+
+<p>
+Estimate your monthly solar exports, grid imports, and electricity bill savings with net metering.
+</p>
+    </div>
+</section>
+
+<!-- Calculator -->
+
+<section class="calculator-section">
+
+<div class="container">
+
+<div class="calculator-card">
+
+<h2>Calculate Net Metering Benefits</h2>
+
+<div class="form-group">
+<label>Monthly Solar Generation (kWh)</label>
+<input type="number" id="generation" placeholder="Example: 450">
+</div>
+
+<div class="form-group">
+<label>Monthly Electricity Consumption (kWh)</label>
+<input type="number" id="consumption" placeholder="Example: 350">
+</div>
+
+<div class="form-group">
+<label>Electricity Rate (₹ per kWh)</label>
+<input type="number" id="rate" placeholder="Example: 7" value="7">
+</div>
+
+<button id="calculateNetMetering">
+Calculate
+</button>
+
+<hr>
+
+<div id="result">
+
+<h3>Results</h3>
+
+<p><strong>Export to Grid:</strong> <span id="exportUnits">-</span> kWh</p>
+
+<p><strong>Import from Grid:</strong> <span id="importUnits">-</span> kWh</p>
+
+<p><strong>Estimated Monthly Savings:</strong> ₹ <span id="monthlySavings">-</span></p>
+
+<p><strong>Estimated Annual Savings:</strong> ₹ <span id="annualSavings">-</span></p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Footer -->
+
+<footer>
+<div class="container footer">
+
+<div class="footer-col">
+<h3>SolarPedia</h3>
+<p>Your trusted solar knowledge platform.</p>
+</div>
+
+<div class="footer-col">
+<h3>Quick Links</h3>
+<ul>
+<li><a href="about.html">About</a></li>
+<li><a href="contact.html">Contact</a></li>
+<li><a href="#">Privacy Policy</a></li>
+</ul>
+</div>
+
+<div class="footer-col">
+<h3>Follow Us</h3>
+<ul>
+<li><a href="#">Facebook</a></li>
+<li><a href="#">Instagram</a></li>
+<li><a href="#">YouTube</a></li>
+</ul>
+</div>
+
+</div>
+
+<div class="copyright">
+© 2026 SolarPedia.in | All Rights Reserved.
+</div>
+
+</footer>
+
+<!-- Search Popup -->
+
+<div class="search-popup" id="searchPopup">
+
+    <div class="search-box">
+
+        <button class="close-search" id="closeSearch">&times;</button>
+
+        <h2>Search SolarPedia</h2>
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search articles..."
+            autocomplete="off">
+
+        <div id="searchResults"></div>
+
+    </div>
+
+</div>
+     <button id="backToTop" title="Back to Top">
+    ↑
+</button>
+
+<script src="js/script.js"></script>
+<script src="js/search-data.js"></script>
+<script src="js/search.js"></script>
+   
+</body>
+</html>
