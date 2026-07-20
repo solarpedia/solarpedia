@@ -7,6 +7,21 @@ height:600px;
 overflow:hidden;
 
 }
+.hero-trust{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-top:20px;
+    font-size:.95rem;
+    font-weight:500;
+}
+
+.hero-trust span{
+    background:rgba(255,255,255,.15);
+    padding:8px 14px;
+    border-radius:30px;
+    backdrop-filter:blur(6px);
+}
 
 .slide{
 
