@@ -125,9 +125,13 @@
         </a>
 
         <!-- Hamburger -->
-        <div class="menu-toggle" id="menuToggle">
-            ☰
-        </div>
+        <div class="menu-toggle"
+     id="menuToggle"
+     aria-label="Open navigation menu"
+     role="button"
+     tabindex="0">
+    ☰
+</div>
 
         <!-- Navigation -->
        <nav id="navbar">
@@ -171,8 +175,8 @@
 
 <div class="header-right">
 
-<div class="search-btn" id="openSearch">
-🔍
+<div class="search-btn" id="openSearch" aria-label="Open search" role="button" tabindex="0">
+    🔍
 </div>
 
 <a href="contact.html" class="quote-btn">
@@ -1077,7 +1081,9 @@ SolarPedia regularly reviews and updates its content to reflect the latest infor
     </div>
 
 </div>
- <button id="backToTop" title="Back to Top">
+<button id="backToTop"
+        title="Back to Top"
+        aria-label="Back to top">
     ↑
 </button>
 <script src="js/script.js"></script>
