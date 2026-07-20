@@ -142,40 +142,59 @@ gtag('config', 'G-3WBD0MPE07');
 
 <!-- ================= Header ================= -->
 
-<header class="header">
+<header>
 
-    <div class="container">
+<div class="container header">
 
-        <a href="index.html" class="logo">
+    <!-- Logo -->
+    <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="SolarPedia Logo">
+    </a>
 
-            <img src="images/logo.png" alt="SolarPedia Logo">
+    <!-- Mobile Menu -->
+    <div class="menu-toggle" id="menuToggle">
+        ☰
+    </div>
 
+    <!-- Navigation -->
+    <nav id="navbar">
+
+        <ul>
+
+            <li><a href="index.html">Home</a></li>
+
+            <li><a href="articles.html">Articles</a></li>
+
+            <li><a href="government-schemes.html">Schemes</a></li>
+
+            <li><a href="calculators.html">Calculators</a></li>
+
+            <li><a href="about.html">About</a></li>
+
+            <li><a href="contact.html">Contact</a></li>
+
+        </ul>
+
+    </nav>
+
+    <!-- Right Side -->
+    <div class="header-right">
+
+        <a href="contact.html" class="quote-btn">
+            Free Quote
         </a>
 
-        <nav class="navbar">
-
-            <ul>
-
-                <li><a href="index.html">Home</a></li>
-
-                <li><a href="articles.html">Articles</a></li>
-
-                <li><a href="government-schemes.html">Schemes</a></li>
-
-                <li><a href="calculators.html">Calculators</a></li>
-
-                <li><a href="about.html">About</a></li>
-
-                <li><a href="contact.html">Contact</a></li>
-
-            </ul>
-
-        </nav>
+        <div class="search-btn" id="openSearch">
+            🔍
+        </div>
 
     </div>
 
+</div>
+
 </header>
 
+           
 <!-- ================= Breadcrumb ================= -->
 
 <section class="breadcrumb">
@@ -527,6 +546,28 @@ gtag('config', 'G-3WBD0MPE07');
         </p>
 
     </div>
+  <!-- Search Popup -->
+<div class="search-popup" id="searchPopup">
+
+    <div class="search-popup-content">
+
+        <button class="close-search" id="closeSearch">
+            &times;
+        </button>
+
+        <h2>Search SolarPedia</h2>
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search articles, guides, calculators..."
+        >
+
+        <div id="searchResults"></div>
+
+    </div>
+
+</div>
 
 </footer>
 
