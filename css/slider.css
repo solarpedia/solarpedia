@@ -17,12 +17,15 @@ overflow:hidden;
 }
 
 .hero-trust span{
-    background:rgba(255,255,255,.15);
+    display:inline-flex;
+    align-items:center;
+    background:rgba(255,255,255,.18);
+    border:1px solid rgba(255,255,255,.25);
     padding:8px 14px;
     border-radius:30px;
     backdrop-filter:blur(6px);
+    color:#fff;
 }
-
 .slide{
 
 position:absolute;
@@ -187,6 +190,11 @@ background:#FD7E14;
 
 }
 @media (max-width:768px){
+    .hero-trust{
+    justify-content:center;
+    gap:10px;
+    font-size:.85rem;
+}
 
 .hero-slider{
 height:500px;
@@ -214,4 +222,19 @@ font-size:16px;
 display:none;
 }
 
+}
+.hero-extra-link{
+    margin-top:18px;
+    color:#fff;
+    font-size:0.95rem;
+}
+
+.hero-extra-link a{
+    color:#FFD54F;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.hero-extra-link a:hover{
+    text-decoration:underline;
 }
