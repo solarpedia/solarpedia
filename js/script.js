@@ -129,3 +129,37 @@ window.addEventListener("scroll", () => {
     }
 
 });
+// =============================
+// Solar Calculator
+// =============================
+
+const calculateBtn = document.getElementById("calculateBtn");
+
+if (calculateBtn) {
+
+    calculateBtn.addEventListener("click", function () {
+
+        const bill = parseFloat(document.getElementById("bill").value);
+
+        if (isNaN(bill) || bill <= 0) {
+            alert("Please enter a valid monthly electricity bill.");
+            return;
+        }
+
+        // Approximate calculations
+        const systemSize = (bill / 1500).toFixed(1);
+
+        const cost = Math.round(systemSize * 65000);
+
+        const saving = Math.round(bill * 12 * 0.8);
+
+        const area = Math.round(systemSize * 100);
+
+        document.getElementById("systemSize").innerText = systemSize + " kW";
+        document.getElementById("cost").innerText = cost.toLocaleString("en-IN");
+        document.getElementById("saving").innerText = saving.toLocaleString("en-IN");
+        document.getElementById("area").innerText = area;
+
+    });
+
+}
