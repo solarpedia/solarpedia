@@ -31,4 +31,5 @@ document.getElementById("calculateBtn").addEventListener("click", function () {
     document.getElementById("cost").textContent = cost.toLocaleString("en-IN");
     document.getElementById("saving").textContent = Math.round(saving).toLocaleString("en-IN");
     document.getElementById("area").textContent = area;
+    document.getElementById("result").style.display = "block";
 });
