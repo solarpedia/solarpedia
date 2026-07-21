@@ -730,3 +730,50 @@ text-align:left;
 }
 
 }
+/* ==========================================
+   Share Buttons
+========================================== */
+
+.share-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+    margin-top:25px;
+}
+
+.share-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-width:150px;
+    padding:14px 20px;
+    border-radius:10px;
+    text-decoration:none;
+    color:#fff;
+    font-weight:600;
+    transition:.3s;
+    border:none;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.facebook{
+    background:#1877F2;
+}
+
+.whatsapp{
+    background:#25D366;
+}
+
+.twitter{
+    background:#000;
+}
+
+.copy{
+    background:#198754;
+}
+
+.share-btn:hover{
+    transform:translateY(-3px);
+    opacity:.9;
+}
