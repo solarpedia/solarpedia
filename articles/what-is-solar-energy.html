@@ -74,11 +74,110 @@
 </head>
     <body>
 
-<!-- Top Bar -->
-<!-- Copy exactly from your index.html -->
+<!-- ================= Top Bar ================= -->
 
-<!-- Header -->
-<!-- Copy exactly from your index.html -->
+<div class="topbar">
+
+<div class="container">
+
+<div class="top-left">
+🌞 India's Solar Information Portal
+</div>
+
+<div class="top-right">
+<a href="#">বাংলা</a>
+|
+<a href="#">English</a>
+</div>
+
+</div>
+
+</div>
+
+<!-- ================= Header ================= -->
+
+<header id="mainHeader">
+
+<div class="container header">
+
+<a href="index.html" class="logo">
+<img src="images/logo.png" alt="SolarPedia Logo">
+</a>
+
+<!-- Hamburger -->
+
+<div class="menu-toggle"
+id="menuToggle"
+aria-label="Open navigation menu"
+role="button"
+tabindex="0">
+☰
+</div>
+
+<!-- Navigation -->
+
+<nav id="navbar">
+
+<ul>
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="solar-guides.html">Solar Guides</a></li>
+
+<li class="dropdown">
+
+<a href="#">🧰 Tools ▾</a>
+
+<ul class="dropdown-menu">
+
+<li><a href="calculator.html">🧮 Solar Calculator</a></li>
+
+<li><a href="subsidy-finder.html">🏠 Subsidy Finder</a></li>
+
+<li><a href="emi-calculator.html">💳 EMI Calculator</a></li>
+
+<li><a href="savings-calculator.html">💰 Savings Calculator</a></li>
+
+<li><a href="roof-calculator.html">🏡 Roof Area Calculator</a></li>
+
+<li><a href="battery-calculator.html">🔋 Battery Calculator</a></li>
+
+<li><a href="net-metering-calculator.html">⚡ Net Metering Calculator</a></li>
+
+</ul>
+
+</li>
+
+<li><a href="#">Solar News</a></li>
+
+<li><a href="articles.html">Articles</a></li>
+
+<li><a href="about.html">About</a></li>
+
+<li><a href="contact.html">Contact</a></li>
+
+</ul>
+
+</nav>
+
+<div class="header-right">
+
+<div class="search-btn"
+id="openSearch"
+role="button"
+tabindex="0">
+🔍
+</div>
+
+<a href="contact.html" class="quote-btn">
+Get Quote
+</a>
+
+</div>
+
+</div>
+
+</header>
 
 <!-- Breadcrumb -->
 <section class="breadcrumb">
@@ -648,3 +747,132 @@
     </div>
 
 </section>
+        <!-- ================= Footer ================= -->
+
+<footer>
+
+    <div class="container footer">
+
+        <!-- Company -->
+        <div>
+            <h3>SolarPedia.in</h3>
+            <p>
+                India's trusted source for solar guides, calculators,
+                government schemes and rooftop solar information.
+            </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+            <h3>Quick Links</h3>
+
+            <ul>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="articles.html">Articles</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="terms.html">Terms & Conditions</a></li>
+            </ul>
+
+        </div>
+
+        <!-- Popular Guides -->
+
+        <div>
+
+            <h3>Popular Guides</h3>
+
+            <ul>
+
+                <li><a href="pm-surya-ghar.html">PM Surya Ghar</a></li>
+                <li><a href="solar-panels.html">Solar Panels</a></li>
+                <li><a href="net-metering.html">Net Metering</a></li>
+                <li><a href="solar-inverter.html">Solar Inverters</a></li>
+                <li><a href="solar-battery.html">Solar Batteries</a></li>
+
+            </ul>
+
+        </div>
+
+        <!-- Contact -->
+
+        <div>
+
+            <h3>Connect</h3>
+
+            <p>📧 contact@solarpedia.in</p>
+
+            <p>📍 India</p>
+
+            <div class="social-links">
+
+                <a href="#">Facebook</a><br>
+
+                <a href="#">Instagram</a><br>
+
+                <a href="#">YouTube</a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="copyright">
+
+        © 2026 SolarPedia.in | All Rights Reserved
+
+    </div>
+
+</footer>
+
+<!-- ================= Search Popup ================= -->
+
+<div class="search-popup" id="searchPopup">
+
+    <div class="search-box">
+
+        <button class="close-search" id="closeSearch">
+
+            &times;
+
+        </button>
+
+        <h2>Search SolarPedia</h2>
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search articles..."
+            autocomplete="off">
+
+        <div id="searchResults"></div>
+
+    </div>
+
+</div>
+
+<!-- ================= Back To Top ================= -->
+
+<button
+    id="backToTop"
+    title="Back to Top"
+    aria-label="Back to top">
+
+    ↑
+
+</button>
+
+<!-- ================= JavaScript ================= -->
+
+<script src="js/script.js"></script>
+
+<script src="js/search-data.js"></script>
+
+<script src="js/search.js"></script>
+
+<script src="js/article.js"></script>
+
+</body>
+
+</html>
