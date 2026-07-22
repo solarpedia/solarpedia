@@ -1,3 +1,8 @@
+console.log("Net Metering JS Loaded");
+
+const btn = document.getElementById("calculateNetMetering");
+console.log(btn);
+
 document.getElementById("calculateNetMetering").addEventListener("click", function () {
 
     const generation = parseFloat(document.getElementById("generation").value);
