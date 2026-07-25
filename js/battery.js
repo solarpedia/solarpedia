@@ -1,31 +1,65 @@
-document.getElementById("calculateBattery").addEventListener("click", function () {
+console.log("Battery JS Loaded");
 
-    const load = parseFloat(document.getElementById("load").value);
-    const backup = parseFloat(document.getElementById("backup").value);
-    const voltage = parseFloat(document.getElementById("voltage").value);
+const batteryBtn = document.getElementById("calculateBattery");
 
-    if (isNaN(load) || load <= 0) {
-        alert("Please enter a valid load.");
-        return;
-    }
+if (batteryBtn) {
 
-    if (isNaN(backup) || backup <= 0) {
-        alert("Please enter a valid backup time.");
-        return;
-    }
+    batteryBtn.addEventListener("click", function () {
 
-    const efficiency = 0.85;
-    const depthOfDischarge = 0.8;
+        console.log("Battery Button Clicked");
 
-    const requiredAh = (load * backup) / (voltage * efficiency * depthOfDischarge);
+        const load = parseFloat(
+            document.getElementById("load").value
+        );
 
-    const batterySize = 150; // 150 Ah battery
-    const batteryCount = Math.ceil(requiredAh / batterySize);
+        const backup = parseFloat(
+            document.getElementById("backup").value
+        );
 
-    document.getElementById("batteryAh").textContent =
-        requiredAh.toFixed(0);
+        const voltage = parseFloat(
+            document.getElementById("voltage").value
+        );
 
-    document.getElementById("batteryCount").textContent =
-        batteryCount + " × 150 Ah Batteries";
+        if (isNaN(load) || load <= 0) {
+            alert("Please enter a valid load.");
+            return;
+        }
 
-});
+        if (isNaN(backup) || backup <= 0) {
+            alert("Please enter a valid backup time.");
+            return;
+        }
+
+        if (isNaN(voltage) || voltage <= 0) {
+            alert("Please select a valid battery voltage.");
+            return;
+        }
+
+        const efficiency = 0.85;
+        const depthOfDischarge = 0.8;
+
+        const requiredAh =
+            (load * backup) /
+            (voltage * efficiency * depthOfDischarge);
+
+        const batterySize = 150;
+
+        const batteryCount =
+            Math.ceil(requiredAh / batterySize);
+
+        document.getElementById("batteryAh").textContent =
+            Math.ceil(requiredAh).toLocaleString("en-IN");
+
+        document.getElementById("batteryCount").textContent =
+            batteryCount + " × 150 Ah Batteries";
+
+        // Show result
+        const resultBox = document.getElementById("result");
+
+        if (resultBox) {
+            resultBox.style.display = "block";
+        }
+
+    });
+
+}
