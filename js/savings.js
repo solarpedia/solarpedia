@@ -1,37 +1,73 @@
-document.getElementById("calculateSavings").addEventListener("click", function () {
+console.log("Savings JS Loaded");
 
-    const bill = parseFloat(document.getElementById("monthlyBill").value);
-    const reduction = parseFloat(document.getElementById("reduction").value);
-    const years = parseInt(document.getElementById("lifetime").value);
+const savingsBtn = document.getElementById("calculateSavings");
 
-    if (isNaN(bill) || bill <= 0) {
-        alert("Please enter a valid monthly electricity bill.");
-        return;
-    }
+if (savingsBtn) {
 
-    if (isNaN(reduction) || reduction < 0 || reduction > 100) {
-        alert("Please enter a reduction percentage between 0 and 100.");
-        return;
-    }
+    savingsBtn.addEventListener("click", function () {
 
-    const monthlySavings = bill * (reduction / 100);
-    const annualSavings = monthlySavings * 12;
-    const lifetimeSavings = annualSavings * years;
+        console.log("Savings Button Clicked");
 
-    // Approximate CO₂ reduction: 0.82 kg per ₹100 of monthly savings is a simple estimate.
-    // This is illustrative, not an official conversion.
-    const co2Reduction = (annualSavings / 100) * 0.82 * years;
+        const bill = parseFloat(
+            document.getElementById("monthlyBill").value
+        );
 
-    document.getElementById("monthlySavings").textContent =
-        monthlySavings.toLocaleString("en-IN", { maximumFractionDigits: 0 });
+        const reduction = parseFloat(
+            document.getElementById("reduction").value
+        );
 
-    document.getElementById("annualSavings").textContent =
-        annualSavings.toLocaleString("en-IN", { maximumFractionDigits: 0 });
+        const years = parseInt(
+            document.getElementById("lifetime").value
+        );
 
-    document.getElementById("lifetimeSavings").textContent =
-        lifetimeSavings.toLocaleString("en-IN", { maximumFractionDigits: 0 });
+        if (isNaN(bill) || bill <= 0) {
+            alert("Please enter a valid monthly electricity bill.");
+            return;
+        }
 
-    document.getElementById("co2Savings").textContent =
-        co2Reduction.toFixed(0);
+        if (isNaN(reduction) || reduction < 0 || reduction > 100) {
+            alert("Please enter a reduction percentage between 0 and 100.");
+            return;
+        }
 
-});
+        if (isNaN(years) || years <= 0) {
+            alert("Please select a valid system lifetime.");
+            return;
+        }
+
+        const monthlySavings = bill * (reduction / 100);
+        const annualSavings = monthlySavings * 12;
+        const lifetimeSavings = annualSavings * years;
+
+        // Temporary estimate - we will improve this later
+        const co2Reduction =
+            (annualSavings / 100) * 0.82 * years;
+
+        document.getElementById("monthlySavings").textContent =
+            monthlySavings.toLocaleString("en-IN", {
+                maximumFractionDigits: 0
+            });
+
+        document.getElementById("annualSavings").textContent =
+            annualSavings.toLocaleString("en-IN", {
+                maximumFractionDigits: 0
+            });
+
+        document.getElementById("lifetimeSavings").textContent =
+            lifetimeSavings.toLocaleString("en-IN", {
+                maximumFractionDigits: 0
+            });
+
+        document.getElementById("co2Savings").textContent =
+            co2Reduction.toFixed(0);
+
+        // Show result
+        const resultBox = document.getElementById("result");
+
+        if (resultBox) {
+            resultBox.style.display = "block";
+        }
+
+    });
+
+}
