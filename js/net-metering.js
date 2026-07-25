@@ -1,48 +1,77 @@
 console.log("Net Metering JS Loaded");
 
-const btn = document.getElementById("calculateNetMetering");
-console.log(btn);
+const netMeteringBtn = document.getElementById("calculateNetMetering");
 
-document.getElementById("calculateNetMetering").addEventListener("click", function () {
+if (netMeteringBtn) {
 
-    const generation = parseFloat(document.getElementById("generation").value);
-    const consumption = parseFloat(document.getElementById("consumption").value);
-    const rate = parseFloat(document.getElementById("rate").value);
+    netMeteringBtn.addEventListener("click", function () {
 
-    if (isNaN(generation) || generation < 0) {
-        alert("Please enter a valid monthly solar generation.");
-        return;
-    }
+        console.log("Net Metering Button Clicked");
 
-    if (isNaN(consumption) || consumption < 0) {
-        alert("Please enter a valid monthly electricity consumption.");
-        return;
-    }
+        const generation = parseFloat(
+            document.getElementById("generation").value
+        );
 
-    if (isNaN(rate) || rate <= 0) {
-        alert("Please enter a valid electricity rate.");
-        return;
-    }
+        const consumption = parseFloat(
+            document.getElementById("consumption").value
+        );
 
-    let exportUnits = 0;
-    let importUnits = 0;
+        const rate = parseFloat(
+            document.getElementById("rate").value
+        );
 
-    if (generation > consumption) {
-        exportUnits = generation - consumption;
-    } else {
-        importUnits = consumption - generation;
-    }
+        if (isNaN(generation) || generation < 0) {
+            alert("Please enter a valid monthly solar generation.");
+            return;
+        }
 
-    const monthlySavings = Math.min(generation, consumption) * rate;
-    const annualSavings = monthlySavings * 12;
+        if (isNaN(consumption) || consumption < 0) {
+            alert("Please enter a valid monthly electricity consumption.");
+            return;
+        }
 
-    document.getElementById("exportUnits").textContent = exportUnits.toFixed(1);
-    document.getElementById("importUnits").textContent = importUnits.toFixed(1);
+        if (isNaN(rate) || rate <= 0) {
+            alert("Please enter a valid electricity rate.");
+            return;
+        }
 
-    document.getElementById("monthlySavings").textContent =
-        monthlySavings.toLocaleString("en-IN", { maximumFractionDigits: 0 });
+        let exportUnits = 0;
+        let importUnits = 0;
 
-    document.getElementById("annualSavings").textContent =
-        annualSavings.toLocaleString("en-IN", { maximumFractionDigits: 0 });
+        if (generation > consumption) {
+            exportUnits = generation - consumption;
+        } else {
+            importUnits = consumption - generation;
+        }
 
-});
+        const selfConsumedUnits = Math.min(generation, consumption);
+
+        const monthlySavings = selfConsumedUnits * rate;
+        const annualSavings = monthlySavings * 12;
+
+        document.getElementById("exportUnits").textContent =
+            exportUnits.toFixed(1);
+
+        document.getElementById("importUnits").textContent =
+            importUnits.toFixed(1);
+
+        document.getElementById("monthlySavings").textContent =
+            monthlySavings.toLocaleString("en-IN", {
+                maximumFractionDigits: 0
+            });
+
+        document.getElementById("annualSavings").textContent =
+            annualSavings.toLocaleString("en-IN", {
+                maximumFractionDigits: 0
+            });
+
+        // Show result box
+        const resultBox = document.getElementById("result");
+
+        if (resultBox) {
+            resultBox.style.display = "block";
+        }
+
+    });
+
+}
