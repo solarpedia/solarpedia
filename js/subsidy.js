@@ -1,6 +1,7 @@
 console.log("Subsidy JS Loaded");
 
 document.getElementById("calculateBtn").addEventListener("click", function () {
+    console.log("Subsidy Button Clicked");
 
     const consumer = document.getElementById("consumerType").value;
     const size = Number(document.getElementById("systemSize").value);
