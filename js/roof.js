@@ -1,23 +1,48 @@
-document.getElementById("calculateRoof").addEventListener("click", function () {
+console.log("Roof Calculator JS Loaded");
 
-    const size = parseFloat(document.getElementById("systemSize").value);
+const roofBtn = document.getElementById("calculateRoof");
 
-    if (isNaN(size) || size <= 0) {
-        alert("Please enter a valid solar system size.");
-        return;
-    }
+if (roofBtn) {
 
-    // Approximate values for 550W panels
-    const areaPerKW = 100; // sq. ft.
-    const panelWatt = 550;
+    roofBtn.addEventListener("click", function () {
 
-    const roofArea = size * areaPerKW;
-    const panels = Math.ceil((size * 1000) / panelWatt);
+        console.log("Roof Calculator Button Clicked");
 
-    document.getElementById("roofArea").textContent =
-        roofArea.toLocaleString("en-IN");
+        const systemSize = parseFloat(
+            document.getElementById("systemSize").value
+        );
 
-    document.getElementById("panelCount").textContent =
-        panels;
+        if (isNaN(systemSize) || systemSize <= 0) {
+            alert("Please enter a valid solar system size.");
+            return;
+        }
 
-});
+        // Approximate roof requirement
+        // 1 kW ≈ 100 sq. ft.
+        const areaPerKW = 100;
+
+        // Assuming approximately 550 W solar panels
+        const panelWattage = 550;
+
+        const roofArea = systemSize * areaPerKW;
+
+        const panelCount = Math.ceil(
+            (systemSize * 1000) / panelWattage
+        );
+
+        document.getElementById("roofArea").textContent =
+            Math.round(roofArea).toLocaleString("en-IN");
+
+        document.getElementById("panelCount").textContent =
+            panelCount;
+
+        // Show result
+        const resultBox = document.getElementById("result");
+
+        if (resultBox) {
+            resultBox.style.display = "block";
+        }
+
+    });
+
+}
