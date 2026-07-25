@@ -1,60 +1,65 @@
 console.log("Subsidy JS Loaded");
 
-document.getElementById("calculateBtn").addEventListener("click", function () {
-    console.log("Subsidy Button Clicked");
+const subsidyBtn = document.getElementById("calculateBtn");
 
-    const consumer = document.getElementById("consumerType").value;
-    const size = Number(document.getElementById("systemSize").value);
+if (subsidyBtn) {
 
-    const costPerKW = 60000;
-    const installationCost = size * costPerKW;
+    subsidyBtn.addEventListener("click", function () {
 
-    let centralSubsidy = 0;
+        console.log("Subsidy Button Clicked");
 
-    if (consumer === "Residential") {
+        const consumer = document.getElementById("consumerType").value;
+        const size = Number(document.getElementById("systemSize").value);
 
-        if (size <= 2) {
+        const costPerKW = 60000;
+        const installationCost = size * costPerKW;
 
-            centralSubsidy = size * 30000;
+        let centralSubsidy = 0;
 
-        } else {
+        if (consumer === "Residential") {
 
-            centralSubsidy = 60000 + ((size - 2) * 18000);
+            if (size <= 2) {
+                centralSubsidy = size * 30000;
+            } else {
+                centralSubsidy = 60000 + ((size - 2) * 18000);
 
-            if (centralSubsidy > 78000) {
-                centralSubsidy = 78000;
+                if (centralSubsidy > 78000) {
+                    centralSubsidy = 78000;
+                }
             }
-
         }
 
-    }
+        const stateSubsidy = 0;
 
-    const stateSubsidy = 0;
+        const totalSubsidy = centralSubsidy + stateSubsidy;
+        const finalCost = installationCost - totalSubsidy;
 
-    const totalSubsidy = centralSubsidy + stateSubsidy;
+        const annualSavings = size * 12000;
+        const payback = (finalCost / annualSavings).toFixed(1);
 
-    const finalCost = installationCost - totalSubsidy;
+        document.getElementById("centralSubsidy").innerText =
+            centralSubsidy.toLocaleString("en-IN");
 
-    const annualSavings = size * 12000;
+        document.getElementById("stateSubsidy").innerText =
+            stateSubsidy.toLocaleString("en-IN");
 
-    const payback = (finalCost / annualSavings).toFixed(1);
+        document.getElementById("totalSubsidy").innerText =
+            totalSubsidy.toLocaleString("en-IN");
 
-    document.getElementById("centralSubsidy").innerText = centralSubsidy.toLocaleString();
+        document.getElementById("installationCost").innerText =
+            installationCost.toLocaleString("en-IN");
 
-    document.getElementById("stateSubsidy").innerText = stateSubsidy.toLocaleString();
+        document.getElementById("finalCost").innerText =
+            finalCost.toLocaleString("en-IN");
 
-    document.getElementById("totalSubsidy").innerText = totalSubsidy.toLocaleString();
+        document.getElementById("annualSavings").innerText =
+            annualSavings.toLocaleString("en-IN");
 
-    document.getElementById("installationCost").innerText = installationCost.toLocaleString();
+        document.getElementById("payback").innerText = payback;
 
-    document.getElementById("finalCost").innerText = finalCost.toLocaleString();
+        // Show result
+        document.getElementById("result").style.display = "block";
 
-    document.getElementById("annualSavings").innerText = annualSavings.toLocaleString();
+    });
 
-    document.getElementById("payback").innerText = payback;
-
-});
-/* Show result */
-document.getElementById("result").style.display = "block";
-
-});
+}
