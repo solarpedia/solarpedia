@@ -1,38 +1,48 @@
-document.getElementById("calculateROI").addEventListener("click", function () {
+console.log("Roof Calculator JS Loaded");
 
-    const cost = parseFloat(document.getElementById("installationCost").value);
-    const subsidy = parseFloat(document.getElementById("subsidy").value) || 0;
-    const annualSavings = parseFloat(document.getElementById("annualSavings").value);
+const roofBtn = document.getElementById("calculateRoof");
 
-    if (isNaN(cost) || cost <= 0) {
-        alert("Please enter a valid installation cost.");
-        return;
-    }
+if (roofBtn) {
 
-    if (isNaN(annualSavings) || annualSavings <= 0) {
-        alert("Please enter valid annual savings.");
-        return;
-    }
+    roofBtn.addEventListener("click", function () {
 
-    if (subsidy > cost) {
-        alert("Subsidy cannot be greater than installation cost.");
-        return;
-    }
+        console.log("Roof Calculator Button Clicked");
 
-    const investment = cost - subsidy;
-    const payback = investment / annualSavings;
-    const profit25 = annualSavings * 25 - investment;
-    const roi = (profit25 / investment) * 100;
+        const systemSize = parseFloat(
+            document.getElementById("systemSize").value
+        );
 
-    document.getElementById("investmentResult").textContent =
-        investment.toLocaleString("en-IN");
+        if (isNaN(systemSize) || systemSize <= 0) {
+            alert("Please enter a valid solar system size.");
+            return;
+        }
 
-    document.getElementById("paybackResult").textContent =
-        payback.toFixed(1);
+        // Approximate roof requirement
+        // 1 kW ≈ 100 sq. ft.
+        const areaPerKW = 100;
 
-    document.getElementById("profitResult").textContent =
-        profit25.toLocaleString("en-IN");
+        // Assuming approximately 550 W solar panels
+        const panelWattage = 550;
 
-    document.getElementById("roiResult").textContent =
-        roi.toFixed(1);
-});
+        const roofArea = systemSize * areaPerKW;
+
+        const panelCount = Math.ceil(
+            (systemSize * 1000) / panelWattage
+        );
+
+        document.getElementById("roofArea").textContent =
+            Math.round(roofArea).toLocaleString("en-IN");
+
+        document.getElementById("panelCount").textContent =
+            panelCount;
+
+        // Show result
+        const resultBox = document.getElementById("result");
+
+        if (resultBox) {
+            resultBox.style.display = "block";
+        }
+
+    });
+
+}
