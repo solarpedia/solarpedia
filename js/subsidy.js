@@ -1,3 +1,5 @@
+console.log("Subsidy JS Loaded");
+
 document.getElementById("calculateBtn").addEventListener("click", function () {
 
     const consumer = document.getElementById("consumerType").value;
