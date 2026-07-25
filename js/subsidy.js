@@ -54,3 +54,7 @@ document.getElementById("calculateBtn").addEventListener("click", function () {
     document.getElementById("payback").innerText = payback;
 
 });
+/* Show result */
+document.getElementById("result").style.display = "block";
+
+});
