@@ -33,3 +33,125 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 });
+// ==========================================
+// Reading Progress Bar
+// ==========================================
+
+document.addEventListener("scroll", () => {
+
+    const progress = document.getElementById("reading-progress");
+
+    if (!progress) return;
+
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+
+    const percent = (scrollTop / docHeight) * 100;
+
+    progress.style.width = percent + "%";
+
+});
+
+// ==========================================
+// Back To Top Button
+// ==========================================
+
+const backTop = document.getElementById("backToTop");
+
+if(backTop){
+
+window.addEventListener("scroll",()=>{
+
+if(window.scrollY>400){
+
+backTop.classList.add("show");
+
+}else{
+
+backTop.classList.remove("show");
+
+}
+
+});
+
+backTop.addEventListener("click",()=>{
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+});
+
+}
+
+// ==========================================
+// Smooth TOC Scroll
+// ==========================================
+
+document.querySelectorAll('.toc a').forEach(link=>{
+
+link.addEventListener('click',function(e){
+
+const target=document.querySelector(this.getAttribute("href"));
+
+if(target){
+
+e.preventDefault();
+
+target.scrollIntoView({
+
+behavior:"smooth",
+
+block:"start"
+
+});
+
+}
+
+});
+
+});
+
+// ==========================================
+// Reading Time
+// ==========================================
+
+const article=document.querySelector(".article");
+
+const reading=document.getElementById("reading-time");
+
+if(article && reading){
+
+const words=article.innerText.trim().split(/\s+/).length;
+
+const minutes=Math.max(1,Math.ceil(words/220));
+
+reading.innerHTML=minutes+" min read";
+
+}
+
+// ==========================================
+// Lazy Images
+// ==========================================
+
+document.querySelectorAll("img").forEach(img=>{
+
+img.loading="lazy";
+
+});
+
+// ==========================================
+// Current Year
+// ==========================================
+
+const year=document.getElementById("currentYear");
+
+if(year){
+
+year.textContent=new Date().getFullYear();
+
+}
