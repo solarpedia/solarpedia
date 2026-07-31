@@ -1,156 +1,166 @@
-/* ===========================
-   SolarPedia Load Calculator
-=========================== */
-
 .calculator-page{
-    padding:60px 20px;
-    background:#f5f7fa;
+padding:50px 20px;
+background:#f3f6fb;
 }
 
 .calculator-container{
-    max-width:1200px;
-    margin:auto;
+max-width:1200px;
+margin:auto;
 }
 
 .calculator-title{
-    text-align:center;
-    margin-bottom:35px;
+text-align:center;
+margin-bottom:30px;
 }
 
 .calculator-title h1{
-    color:#0b7d3b;
-    font-size:36px;
+font-size:38px;
+color:#0b7d3b;
+margin-bottom:10px;
 }
 
 .calculator-title p{
-    color:#666;
-    font-size:17px;
+color:#666;
+font-size:18px;
+}
+
+.search-box{
+margin-bottom:20px;
+}
+
+.search-box input{
+width:100%;
+padding:15px;
+font-size:16px;
+border:2px solid #16a34a;
+border-radius:8px;
 }
 
 .load-card{
-
-    background:#fff;
-
-    border-radius:12px;
-
-    padding:25px;
-
-    margin-bottom:25px;
-
-    box-shadow:0 8px 25px rgba(0,0,0,.08);
-
+background:#fff;
+padding:25px;
+border-radius:12px;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+overflow-x:auto;
 }
 
 .load-table{
-
-    width:100%;
-
-    border-collapse:collapse;
-
+width:100%;
+border-collapse:collapse;
+min-width:750px;
 }
 
 .load-table th{
-
-    background:#0b7d3b;
-
-    color:#fff;
-
-    padding:12px;
-
+background:#16a34a;
+color:#fff;
+padding:14px;
 }
 
 .load-table td{
-
-    padding:10px;
-
-    border-bottom:1px solid #eee;
-
+padding:12px;
+border-bottom:1px solid #eee;
+text-align:center;
 }
 
-.load-table input{
-
-    width:70px;
-
-    padding:8px;
-
-    text-align:center;
-
+.load-table td:first-child{
+text-align:left;
 }
 
-.total-box{
-
-    background:#0b7d3b;
-
-    color:#fff;
-
-    border-radius:10px;
-
-    padding:25px;
-
-    margin-top:30px;
-
+.load-table button{
+width:35px;
+height:35px;
+border:none;
+background:#16a34a;
+color:#fff;
+border-radius:50%;
+cursor:pointer;
+font-size:18px;
+font-weight:bold;
 }
 
-.total-box h2{
-
-    margin-bottom:20px;
-
+.load-table button:hover{
+background:#0b7d3b;
 }
 
-.result-item{
+.qty{
+width:50px;
+text-align:center;
+border:none;
+font-size:16px;
+background:transparent;
+}
 
-    display:flex;
+.calculator-actions{
+display:flex;
+gap:15px;
+margin-top:25px;
+flex-wrap:wrap;
+}
 
-    justify-content:space-between;
-
-    margin:10px 0;
-
-    font-size:18px;
-
+.calculate-btn,
+.reset-btn,
+.print-btn{
+flex:1;
+padding:14px;
+border:none;
+border-radius:8px;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
 }
 
 .calculate-btn{
-
-    margin-top:25px;
-
-    width:100%;
-
-    background:#16a34a;
-
-    color:#fff;
-
-    border:none;
-
-    padding:15px;
-
-    font-size:18px;
-
-    border-radius:8px;
-
-    cursor:pointer;
-
+background:#16a34a;
+color:#fff;
 }
 
-.calculate-btn:hover{
+.reset-btn{
+background:#dc2626;
+color:#fff;
+}
 
-    background:#0b7d3b;
+.print-btn{
+background:#2563eb;
+color:#fff;
+}
 
+.total-box{
+margin-top:30px;
+background:#fff;
+padding:25px;
+border-radius:12px;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.total-box h2{
+margin-bottom:20px;
+color:#16a34a;
+}
+
+.result-item{
+display:flex;
+justify-content:space-between;
+padding:14px 0;
+border-bottom:1px solid #eee;
+font-size:18px;
+}
+
+.result-item strong{
+color:#0b7d3b;
 }
 
 @media(max-width:768px){
 
-.load-table{
-
-display:block;
-
-overflow-x:auto;
-
+.calculator-title h1{
+font-size:28px;
 }
 
-.calculator-title h1{
+.result-item{
+font-size:15px;
+}
 
-font-size:28px;
-
+.calculator-actions{
+flex-direction:column;
 }
 
 }
