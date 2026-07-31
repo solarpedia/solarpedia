@@ -31,7 +31,7 @@ sanctioned="1 kW";
 
 phase="Single Phase";
 
-solar="1 kW";
+solar="1 kWp";
 
 }
 
@@ -41,7 +41,7 @@ sanctioned="2 kW";
 
 phase="Single Phase";
 
-solar="2 kW";
+solar="2 kWp";
 
 }
 
@@ -51,7 +51,7 @@ sanctioned="3 kW";
 
 phase="Single Phase";
 
-solar="3 kW";
+solar="3 kWp";
 
 }
 
@@ -61,7 +61,7 @@ sanctioned="5 kW";
 
 phase="Single Phase";
 
-solar="5 kW";
+solar="5 kWp";
 
 }
 
@@ -71,7 +71,7 @@ sanctioned="7.5 kW";
 
 phase="Three Phase";
 
-solar="6 kW";
+solar="6 kWp";
 
 }
 
@@ -81,7 +81,7 @@ sanctioned="10 kW";
 
 phase="Three Phase";
 
-solar="8 kW";
+solar="8 kWp";
 
 }
 
@@ -91,20 +91,19 @@ sanctioned="15 kW";
 
 phase="Three Phase";
 
-solar="10 kW";
+solar="10 kWp";
 
 }
 
 else{
 
-sanctioned="Above 15 kW";
+sanctioned="Contact WBSEDCL";
 
 phase="Three Phase";
 
-solar="Custom Design";
+solar="Custom Solar Design";
 
 }
-
 const daily=(kw*5).toFixed(1);
 
 const monthly=(daily*30).toFixed(0);
