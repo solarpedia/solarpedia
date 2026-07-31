@@ -105,9 +105,27 @@ solar="Custom Design";
 
 }
 
-const monthly=(kw*5*30).toFixed(0);
+const daily=(kw*5).toFixed(1);
+
+const monthly=(daily*30).toFixed(0);
 
 units=monthly+" Units";
+
+document.getElementById("dailyUnits").innerHTML=daily+" Units";
+
+let bill=(monthly*6).toFixed(0);
+
+document.getElementById("bill").innerHTML="₹"+bill;
+
+if(monthly<=300){
+
+document.getElementById("subsidy").innerHTML="✅ Recommended for PM Surya Ghar";
+
+}else{
+
+document.getElementById("subsidy").innerHTML="⚡ Suitable for Large Rooftop Solar";
+
+}
 
 let bill=(monthly*6).toFixed(0);
 
