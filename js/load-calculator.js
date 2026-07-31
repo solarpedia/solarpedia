@@ -145,5 +145,7 @@ document.getElementById("recommendedLoad").innerHTML="-";
 document.getElementById("phase").innerHTML="-";
 document.getElementById("solar").innerHTML="-";
 document.getElementById("units").innerHTML="-";
+document.getElementById("bill").innerHTML="₹0";
+document.getElementById("subsidy").innerHTML="-";
 
 }
