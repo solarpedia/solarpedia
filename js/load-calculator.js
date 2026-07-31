@@ -1,155 +1,171 @@
+function changeQty(button, change){
+
+    const input = button.parentElement.querySelector(".qty");
+
+    let qty = parseInt(input.value) || 0;
+
+    qty += change;
+
+    if(qty < 0) qty = 0;
+
+    input.value = qty;
+
+    updateRow(button.parentElement.parentElement);
+
+    calculateLoad();
+
+}
+
+function updateRow(row){
+
+    const qty = row.querySelector(".qty");
+
+    const watt = parseFloat(qty.dataset.watt);
+
+    const total = watt * (parseInt(qty.value) || 0);
+
+    row.querySelector(".rowTotal").innerHTML = total + " W";
+
+}
+
 function calculateLoad(){
 
-let total=0;
+    let total = 0;
 
-const items=document.querySelectorAll(".qty");
+    document.querySelectorAll(".qty").forEach(function(item){
 
-items.forEach(function(item){
+        const watt = parseFloat(item.dataset.watt);
 
-const watt=parseFloat(item.dataset.watt);
+        const qty = parseInt(item.value) || 0;
 
-const qty=parseFloat(item.value)||0;
+        total += watt * qty;
 
-total+=watt*qty;
+    });
 
-});
+    const kw = total / 1000;
 
-const kw=(total/1000).toFixed(2);
+    const daily = kw * 5;
 
-document.getElementById("totalLoad").innerHTML=total.toFixed(0)+" W";
+    const monthly = daily * 30;
 
-document.getElementById("totalKW").innerHTML=kw+" kW";
+    let sanctioned = "";
+    let phase = "";
+    let solar = "";
 
-let sanctioned="";
-let phase="";
-let solar="";
-let units="";
+    if(kw <= 1){
 
-if(total<=1000){
+        sanctioned = "1 kW";
+        phase = "Single Phase";
+        solar = "1 kWp";
 
-sanctioned="1 kW";
+    }
 
-phase="Single Phase";
+    else if(kw <= 2){
 
-solar="1 kWp";
+        sanctioned = "2 kW";
+        phase = "Single Phase";
+        solar = "2 kWp";
 
-}
+    }
 
-else if(total<=2000){
+    else if(kw <= 3){
 
-sanctioned="2 kW";
+        sanctioned = "3 kW";
+        phase = "Single Phase";
+        solar = "3 kWp";
 
-phase="Single Phase";
+    }
 
-solar="2 kWp";
+    else if(kw <= 5){
 
-}
+        sanctioned = "5 kW";
+        phase = "Single Phase";
+        solar = "5 kWp";
 
-else if(total<=3000){
+    }
 
-sanctioned="3 kW";
+    else if(kw <= 7.5){
 
-phase="Single Phase";
+        sanctioned = "7.5 kW";
+        phase = "Three Phase";
+        solar = "6 kWp";
 
-solar="3 kWp";
+    }
 
-}
+    else if(kw <= 10){
 
-else if(total<=5000){
+        sanctioned = "10 kW";
+        phase = "Three Phase";
+        solar = "8 kWp";
 
-sanctioned="5 kW";
+    }
 
-phase="Single Phase";
+    else{
 
-solar="5 kWp";
+        sanctioned = "Above 10 kW";
+        phase = "Three Phase";
+        solar = "Custom Design";
 
-}
+    }
 
-else if(total<=7500){
+    const bill = monthly * 6;
 
-sanctioned="7.5 kW";
+    document.getElementById("totalLoad").innerHTML = total.toFixed(0) + " W";
 
-phase="Three Phase";
+    document.getElementById("totalKW").innerHTML = kw.toFixed(2) + " kW";
 
-solar="6 kWp";
+    document.getElementById("recommendedLoad").innerHTML = sanctioned;
 
-}
+    document.getElementById("phase").innerHTML = phase;
 
-else if(total<=10000){
+    document.getElementById("solar").innerHTML = solar;
 
-sanctioned="10 kW";
+    document.getElementById("dailyUnits").innerHTML = daily.toFixed(1) + " Units";
 
-phase="Three Phase";
+    document.getElementById("units").innerHTML = monthly.toFixed(0) + " Units";
 
-solar="8 kWp";
+    document.getElementById("bill").innerHTML = "₹" + bill.toFixed(0);
 
-}
+    if(monthly <= 300){
 
-else if(total<=15000){
+        document.getElementById("subsidy").innerHTML = "Recommended";
 
-sanctioned="15 kW";
+    }else{
 
-phase="Three Phase";
+        document.getElementById("subsidy").innerHTML = "Large Rooftop Recommended";
 
-solar="10 kWp";
-
-}
-
-else{
-
-sanctioned="Contact WBSEDCL";
-
-phase="Three Phase";
-
-solar="Custom Solar Design";
-
-}
-const daily=(kw*5).toFixed(1);
-
-const monthly=(daily*30).toFixed(0);
-
-units=monthly+" Units";
-
-document.getElementById("dailyUnits").innerHTML=daily+" Units";
-
-let bill=(monthly*6).toFixed(0);
-
-document.getElementById("bill").innerHTML="₹"+bill;
-
-if(monthly<=300){
-
-document.getElementById("subsidy").innerHTML="✅ Recommended for PM Surya Ghar";
-
-}else{
-
-document.getElementById("subsidy").innerHTML="⚡ Suitable for Large Rooftop Solar";
-
+    }
 
 }
-document.getElementById("recommendedLoad").innerHTML=sanctioned;
 
-document.getElementById("phase").innerHTML=phase;
-
-document.getElementById("solar").innerHTML=solar;
-
-document.getElementById("units").innerHTML=units;
-
-}
 function resetCalculator(){
 
-document.querySelectorAll(".qty").forEach(function(item){
+    document.querySelectorAll(".qty").forEach(function(item){
 
-item.value=0;
+        item.value = 0;
+
+    });
+
+    document.querySelectorAll(".rowTotal").forEach(function(item){
+
+        item.innerHTML = "0 W";
+
+    });
+
+    calculateLoad();
+
+}
+
+document.getElementById("searchAppliance").addEventListener("keyup", function(){
+
+    const value = this.value.toLowerCase();
+
+    document.querySelectorAll("#applianceTable tr").forEach(function(row){
+
+        row.style.display = row.innerText.toLowerCase().includes(value) ? "" : "none";
+
+    });
 
 });
 
-document.getElementById("totalLoad").innerHTML="0 W";
-document.getElementById("totalKW").innerHTML="0 kW";
-document.getElementById("recommendedLoad").innerHTML="-";
-document.getElementById("phase").innerHTML="-";
-document.getElementById("solar").innerHTML="-";
-document.getElementById("units").innerHTML="-";
-document.getElementById("bill").innerHTML="₹0";
-document.getElementById("subsidy").innerHTML="-";
-
-}
+calculateLoad();
