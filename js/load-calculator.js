@@ -172,3 +172,28 @@ document.getElementById("searchAppliance").addEventListener("keyup", function(){
 });
 
 calculateLoad();
+function downloadPDF(){
+
+const element=document.querySelector(".total-box");
+
+html2pdf()
+
+.set({
+
+margin:10,
+
+filename:"SolarPedia-Load-Report.pdf",
+
+image:{type:"jpeg",quality:1},
+
+html2canvas:{scale:2},
+
+jsPDF:{unit:"mm",format:"a4",orientation:"portrait"}
+
+})
+
+.from(element)
+
+.save();
+
+}
