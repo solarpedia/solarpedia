@@ -1,0 +1,156 @@
+/* ===========================
+   SolarPedia Load Calculator
+=========================== */
+
+.calculator-page{
+    padding:60px 20px;
+    background:#f5f7fa;
+}
+
+.calculator-container{
+    max-width:1200px;
+    margin:auto;
+}
+
+.calculator-title{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.calculator-title h1{
+    color:#0b7d3b;
+    font-size:36px;
+}
+
+.calculator-title p{
+    color:#666;
+    font-size:17px;
+}
+
+.load-card{
+
+    background:#fff;
+
+    border-radius:12px;
+
+    padding:25px;
+
+    margin-bottom:25px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+}
+
+.load-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+.load-table th{
+
+    background:#0b7d3b;
+
+    color:#fff;
+
+    padding:12px;
+
+}
+
+.load-table td{
+
+    padding:10px;
+
+    border-bottom:1px solid #eee;
+
+}
+
+.load-table input{
+
+    width:70px;
+
+    padding:8px;
+
+    text-align:center;
+
+}
+
+.total-box{
+
+    background:#0b7d3b;
+
+    color:#fff;
+
+    border-radius:10px;
+
+    padding:25px;
+
+    margin-top:30px;
+
+}
+
+.total-box h2{
+
+    margin-bottom:20px;
+
+}
+
+.result-item{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin:10px 0;
+
+    font-size:18px;
+
+}
+
+.calculate-btn{
+
+    margin-top:25px;
+
+    width:100%;
+
+    background:#16a34a;
+
+    color:#fff;
+
+    border:none;
+
+    padding:15px;
+
+    font-size:18px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+}
+
+.calculate-btn:hover{
+
+    background:#0b7d3b;
+
+}
+
+@media(max-width:768px){
+
+.load-table{
+
+display:block;
+
+overflow-x:auto;
+
+}
+
+.calculator-title h1{
+
+font-size:28px;
+
+}
+
+}
