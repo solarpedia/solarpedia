@@ -152,3 +152,99 @@ font-size:16px;
     transform: translateY(-2px);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
+/* =========================
+WBSEDCL Bill Calculator
+========================= */
+
+.calculator-hero{
+padding:60px 20px;
+background:linear-gradient(135deg,#0f766e,#16a34a);
+color:#fff;
+text-align:center;
+}
+
+.calculator-section{
+padding:50px 20px;
+background:#f5f7fb;
+}
+
+.calculator-section .container{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+max-width:1200px;
+margin:auto;
+}
+
+.calculator-card,
+.result-card{
+background:#fff;
+padding:30px;
+border-radius:12px;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.calculator-card h2,
+.result-card h2{
+margin-bottom:20px;
+}
+
+label{
+display:block;
+margin-top:15px;
+margin-bottom:6px;
+font-weight:600;
+}
+
+input,
+select{
+width:100%;
+padding:12px;
+border:1px solid #ccc;
+border-radius:8px;
+font-size:16px;
+}
+
+button{
+margin-top:25px;
+width:100%;
+padding:14px;
+background:#16a34a;
+color:#fff;
+border:none;
+border-radius:8px;
+font-size:17px;
+font-weight:bold;
+cursor:pointer;
+transition:.3s;
+}
+
+button:hover{
+background:#15803d;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:15px;
+}
+
+table td,
+table th{
+padding:14px;
+border-bottom:1px solid #eee;
+}
+
+table th{
+font-size:18px;
+color:#16a34a;
+}
+
+@media(max-width:768px){
+
+.calculator-section .container{
+grid-template-columns:1fr;
+}
+
+}
+
