@@ -125,6 +125,9 @@ function calculateLoad(){
     document.getElementById("units").innerHTML = monthly.toFixed(0) + " Units";
 
     document.getElementById("bill").innerHTML = "₹" + bill.toFixed(0);
+    let percent=Math.min((kw/10)*100,100);
+
+document.getElementById("progressFill").style.width=percent+"%";
 
     if(monthly <= 300){
 
