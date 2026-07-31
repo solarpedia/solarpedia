@@ -397,3 +397,18 @@ top:20px;
 }
 
 }
+.result-card small{
+
+display:block;
+
+margin-top:10px;
+
+font-size:18px;
+
+font-weight:bold;
+
+color:#fff;
+
+opacity:.9;
+
+}
