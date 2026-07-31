@@ -118,3 +118,19 @@ document.getElementById("solar").innerHTML=solar;
 document.getElementById("units").innerHTML=units;
 
 }
+function resetCalculator(){
+
+document.querySelectorAll(".qty").forEach(function(item){
+
+item.value=0;
+
+});
+
+document.getElementById("totalLoad").innerHTML="0 W";
+document.getElementById("totalKW").innerHTML="0 kW";
+document.getElementById("recommendedLoad").innerHTML="-";
+document.getElementById("phase").innerHTML="-";
+document.getElementById("solar").innerHTML="-";
+document.getElementById("units").innerHTML="-";
+
+}
