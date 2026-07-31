@@ -109,6 +109,19 @@ const monthly=(kw*5*30).toFixed(0);
 
 units=monthly+" Units";
 
+let bill=(monthly*6).toFixed(0);
+
+document.getElementById("bill").innerHTML="₹"+bill;
+
+if(total<=10000){
+
+document.getElementById("subsidy").innerHTML="Eligible for Residential Rooftop Solar";
+
+}else{
+
+document.getElementById("subsidy").innerHTML="Custom Assessment Required";
+
+}
 document.getElementById("recommendedLoad").innerHTML=sanctioned;
 
 document.getElementById("phase").innerHTML=phase;
