@@ -179,28 +179,29 @@ document.getElementById("searchAppliance").addEventListener("keyup", function(){
 });
 
 calculateLoad();
-function downloadPDF(){
+function downloadPDF() {
 
-const element=document.querySelector(".total-box");
+    const element = document.querySelector(".total-box");
 
-html2pdf()
+    const options = {
+        margin: 10,
+        filename: "SolarPedia-Load-Report.pdf",
+        image: {
+            type: "jpeg",
+            quality: 1
+        },
+        html2canvas: {
+            scale: 2,
+            useCORS: true,
+            scrollY: 0
+        },
+        jsPDF: {
+            unit: "mm",
+            format: "a4",
+            orientation: "portrait"
+        }
+    };
 
-.set({
-
-margin:10,
-
-filename:"SolarPedia-Load-Report.pdf",
-
-image:{type:"jpeg",quality:1},
-
-html2canvas:{scale:2},
-
-jsPDF:{unit:"mm",format:"a4",orientation:"portrait"}
-
-})
-
-.from(element)
-
-.save();
+    html2pdf().set(options).from(element).save();
 
 }
