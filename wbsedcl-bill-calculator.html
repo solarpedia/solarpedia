@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>WBSEDCL Bill Calculator | SolarPedia</title>
+
+<meta name="description" content="Free WBSEDCL Electricity Bill Calculator for Domestic, Commercial, Agriculture and Industrial Consumers.">
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/calculator.css">
+
+</head>
+
+<body>
+
+<header>
+<!-- We'll use your existing header later -->
+</header>
+
+<section class="calculator-hero">
+
+<div class="container">
+
+<h1>WBSEDCL Electricity Bill Calculator</h1>
+
+<p>
+Calculate your estimated WBSEDCL electricity bill instantly.
+</p>
+
+</div>
+
+</section>
+
+<section class="calculator-section">
+
+<div class="container">
+
+<div class="calculator-card">
+
+<h2>Bill Calculator</h2>
+
+<label>Connection Type</label>
+
+<select id="consumerType">
+
+<option value="domestic">Domestic</option>
+
+<option value="commercial">Commercial</option>
+
+<option value="agriculture">Agriculture</option>
+
+<option value="industrial-lt">Industrial LT</option>
+
+<option value="industrial-ht">Industrial HT</option>
+
+</select>
+
+<label>Units Consumed (kWh)</label>
+
+<input
+type="number"
+id="units"
+placeholder="Enter Units">
+
+<label>Connected Load (KVA)</label>
+
+<input
+type="number"
+id="load"
+placeholder="Example : 2">
+
+<button id="calculateBtn">
+
+Calculate Bill
+
+</button>
+
+</div>
+
+<div class="result-card">
+
+<h2>Bill Details</h2>
+
+<table>
+
+<tr>
+
+<td>Energy Charge</td>
+
+<td id="energyCharge">₹0</td>
+
+</tr>
+
+<tr>
+
+<td>Fixed Charge</td>
+
+<td id="fixedCharge">₹0</td>
+
+</tr>
+
+<tr>
+
+<td>Meter Rent</td>
+
+<td id="meterRent">₹0</td>
+
+</tr>
+
+<tr>
+
+<td>Electricity Duty</td>
+
+<td id="duty">₹0</td>
+
+</tr>
+
+<tr>
+
+<td>FPPCA</td>
+
+<td id="fppca">₹0</td>
+
+</tr>
+
+<tr>
+
+<th>Total Bill</th>
+
+<th id="totalBill">₹0</th>
+
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+<!-- Existing footer later -->
+</footer>
+
+<script src="js/wbsedcl-bill-calculator.js"></script>
+
+</body>
+</html>
