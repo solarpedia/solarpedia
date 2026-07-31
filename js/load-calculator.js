@@ -124,19 +124,6 @@ document.getElementById("subsidy").innerHTML="✅ Recommended for PM Surya Ghar"
 
 document.getElementById("subsidy").innerHTML="⚡ Suitable for Large Rooftop Solar";
 
-}
-
-let bill=(monthly*6).toFixed(0);
-
-document.getElementById("bill").innerHTML="₹"+bill;
-
-if(total<=10000){
-
-document.getElementById("subsidy").innerHTML="Eligible for Residential Rooftop Solar";
-
-}else{
-
-document.getElementById("subsidy").innerHTML="Custom Assessment Required";
 
 }
 document.getElementById("recommendedLoad").innerHTML=sanctioned;
