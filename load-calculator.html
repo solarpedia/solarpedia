@@ -4,13 +4,17 @@
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Electrical Load Calculator | SolarPedia</title>
 
-<meta name="description" content="Free Electrical Load Calculator for Home, Shop & Office.">
+<meta name="description" content="Calculate electrical connected load, recommended sanctioned load, phase selection and solar system size.">
+
+<link rel="icon" href="images/favicon.png">
 
 <link rel="stylesheet" href="css/style.css">
+
 <link rel="stylesheet" href="css/load-calculator.css">
 
 </head>
@@ -58,12 +62,17 @@
 <div class="calculator-title">
 
 <h1>Electrical Load Calculator</h1>
-  <p class="subtitle">
-Calculate your connected electrical load, recommended WBSEDCL sanctioned load,
-phase requirement, estimated monthly units and suggested rooftop solar size.
-</p>
 
-<p>Calculate your home's electrical load and recommended solar system.</p>
+<p>Calculate your home's connected electrical load and recommended solar size.</p>
+
+</div>
+
+<div class="search-box">
+
+<input
+type="text"
+id="searchAppliance"
+placeholder="Search appliance...">
 
 </div>
 
@@ -77,231 +86,496 @@ phase requirement, estimated monthly units and suggested rooftop solar size.
 
 <th>Appliance</th>
 
-<th>Power (W)</th>
+<th>Power</th>
 
-<th>Quantity</th>
+<th>Qty</th>
+
+<th>Total</th>
 
 </tr>
 
 </thead>
 
-<tbody>
+<tbody id="applianceTable">
+  <tr>
 
-<tr>
-<td>LED Bulb</td>
-<td>9</td>
-<td><input type="number" value="0" class="qty" data-watt="9"></td>
+<td>💡 LED Bulb</td>
+
+<td>9 W</td>
+
+<td>
+
+<button type="button" onclick="changeQty(this,-1)">−</button>
+
+<input type="number" value="0" class="qty" data-watt="9" readonly>
+
+<button type="button" onclick="changeQty(this,1)">+</button>
+
+</td>
+
+<td class="rowTotal">0 W</td>
+
 </tr>
 
 <tr>
-<td>Tube Light</td>
-<td>20</td>
-<td><input type="number" value="0" class="qty" data-watt="20"></td>
+
+<td>💡 Tube Light</td>
+
+<td>20 W</td>
+
+<td>
+
+<button type="button" onclick="changeQty(this,-1)">−</button>
+
+<input type="number" value="0" class="qty" data-watt="20" readonly>
+
+<button type="button" onclick="changeQty(this,1)">+</button>
+
+</td>
+
+<td class="rowTotal">0 W</td>
+
 </tr>
 
 <tr>
-<td>Ceiling Fan</td>
-<td>75</td>
-<td><input type="number" value="0" class="qty" data-watt="75"></td>
+
+<td>🌀 Ceiling Fan</td>
+
+<td>75 W</td>
+
+<td>
+
+<button type="button" onclick="changeQty(this,-1)">−</button>
+
+<input type="number" value="0" class="qty" data-watt="75" readonly>
+
+<button type="button" onclick="changeQty(this,1)">+</button>
+
+</td>
+
+<td class="rowTotal">0 W</td>
+
 </tr>
 
 <tr>
-<td>Exhaust Fan</td>
-<td>40</td>
-<td><input type="number" value="0" class="qty" data-watt="40"></td>
+
+<td>🌬 Exhaust Fan</td>
+
+<td>40 W</td>
+
+<td>
+
+<button type="button" onclick="changeQty(this,-1)">−</button>
+
+<input type="number" value="0" class="qty" data-watt="40" readonly>
+
+<button type="button" onclick="changeQty(this,1)">+</button>
+
+</td>
+
+<td class="rowTotal">0 W</td>
+
 </tr>
 
 <tr>
-<td>LED TV</td>
-<td>100</td>
-<td><input type="number" value="0" class="qty" data-watt="100"></td>
+
+<td>📺 LED TV</td>
+
+<td>100 W</td>
+
+<td>
+
+<button type="button" onclick="changeQty(this,-1)">−</button>
+
+<input type="number" value="0" class="qty" data-watt="100" readonly>
+
+<button type="button" onclick="changeQty(this,1)">+</button>
+
+</td>
+
+<td class="rowTotal">0 W</td>
+
 </tr>
 
 <tr>
-<td>Refrigerator</td>
-<td>250</td>
-<td><input type="number" value="0" class="qty" data-watt="250"></td>
+
+<td>❄ Refrigerator</td>
+
+<td>250 W</td>
+
+<td>
+
+<button type="button" onclick="changeQty(this,-1)">−</button>
+
+<input type="number" value="0" class="qty" data-watt="250" readonly>
+
+<button type="button" onclick="changeQty(this,1)">+</button>
+
+</td>
+
+<td class="rowTotal">0 W</td>
+
 </tr>
 
 <tr>
-<td>Air Cooler</td>
-<td>200</td>
-<td><input type="number" value="0" class="qty" data-watt="200"></td>
+
+<td>💻 Laptop</td>
+
+<td>65 W</td>
+
+<td>
+
+<button type="button" onclick="changeQty(this,-1)">−</button>
+
+<input type="number" value="0" class="qty" data-watt="65" readonly>
+
+<button type="button" onclick="changeQty(this,1)">+</button>
+
+</td>
+
+<td class="rowTotal">0 W</td>
+
 </tr>
 
 <tr>
-<td>Laptop</td>
-<td>65</td>
-<td><input type="number" value="0" class="qty" data-watt="65"></td>
+
+<td>🖥 Desktop Computer</td>
+
+<td>250 W</td>
+
+<td>
+
+<button type="button" onclick="changeQty(this,-1)">−</button>
+
+<input type="number" value="0" class="qty" data-watt="250" readonly>
+
+<button type="button" onclick="changeQty(this,1)">+</button>
+
+</td>
+
+<td class="rowTotal">0 W</td>
+
 </tr>
 
 <tr>
-<td>Desktop Computer</td>
-<td>250</td>
-<td><input type="number" value="0" class="qty" data-watt="250"></td>
+
+<td>📶 Wi-Fi Router</td>
+
+<td>15 W</td>
+
+<td>
+
+<button type="button" onclick="changeQty(this,-1)">−</button>
+
+<input type="number" value="0" class="qty" data-watt="15" readonly>
+
+<button type="button" onclick="changeQty(this,1)">+</button>
+
+</td>
+
+<td class="rowTotal">0 W</td>
+
 </tr>
 
 <tr>
-<td>WiFi Router</td>
-<td>15</td>
-<td><input type="number" value="0" class="qty" data-watt="15"></td>
+
+<td>🧺 Washing Machine</td>
+
+<td>600 W</td>
+
+<td>
+
+<button type="button" onclick="changeQty(this,-1)">−</button>
+
+<input type="number" value="0" class="qty" data-watt="600" readonly>
+
+<button type="button" onclick="changeQty(this,1)">+</button>
+
+</td>
+
+<td class="rowTotal">0 W</td>
+
+</tr>
+<tr>
+
+<td>🚿 Geyser</td>
+
+<td>2000 W</td>
+
+<td>
+
+<button type="button" onclick="changeQty(this,-1)">−</button>
+
+<input type="number" value="0" class="qty" data-watt="2000" readonly>
+
+<button type="button" onclick="changeQty(this,1)">+</button>
+
+</td>
+
+<td class="rowTotal">0 W</td>
+
 </tr>
 
 <tr>
-<td>Printer</td>
-<td>100</td>
-<td><input type="number" value="0" class="qty" data-watt="100"></td>
+
+<td>🍳 Induction Cooktop</td>
+
+<td>2000 W</td>
+
+<td>
+
+<button type="button" onclick="changeQty(this,-1)">−</button>
+
+<input type="number" value="0" class="qty" data-watt="2000" readonly>
+
+<button type="button" onclick="changeQty(this,1)">+</button>
+
+</td>
+
+<td class="rowTotal">0 W</td>
+
 </tr>
 
 <tr>
-<td>Mobile Charger</td>
-<td>10</td>
-<td><input type="number" value="0" class="qty" data-watt="10"></td>
+
+<td>🍚 Rice Cooker</td>
+
+<td>700 W</td>
+
+<td>
+
+<button type="button" onclick="changeQty(this,-1)">−</button>
+
+<input type="number" value="0" class="qty" data-watt="700" readonly>
+
+<button type="button" onclick="changeQty(this,1)">+</button>
+
+</td>
+
+<td class="rowTotal">0 W</td>
+
 </tr>
 
 <tr>
-<td>Mixer Grinder</td>
-<td>500</td>
-<td><input type="number" value="0" class="qty" data-watt="500"></td>
+
+<td>☕ Electric Kettle</td>
+
+<td>1500 W</td>
+
+<td>
+
+<button type="button" onclick="changeQty(this,-1)">−</button>
+
+<input type="number" value="0" class="qty" data-watt="1500" readonly>
+
+<button type="button" onclick="changeQty(this,1)">+</button>
+
+</td>
+
+<td class="rowTotal">0 W</td>
+
 </tr>
 
 <tr>
-<td>Microwave Oven</td>
-<td>1200</td>
-<td><input type="number" value="0" class="qty" data-watt="1200"></td>
+
+<td>👕 Electric Iron</td>
+
+<td>1000 W</td>
+
+<td>
+
+<button type="button" onclick="changeQty(this,-1)">−</button>
+
+<input type="number" value="0" class="qty" data-watt="1000" readonly>
+
+<button type="button" onclick="changeQty(this,1)">+</button>
+
+</td>
+
+<td class="rowTotal">0 W</td>
+
 </tr>
 
 <tr>
-<td>Induction Cooktop</td>
-<td>2000</td>
-<td><input type="number" value="0" class="qty" data-watt="2000"></td>
+
+<td>🚰 Water Pump (1 HP)</td>
+
+<td>750 W</td>
+
+<td>
+
+<button type="button" onclick="changeQty(this,-1)">−</button>
+
+<input type="number" value="0" class="qty" data-watt="750" readonly>
+
+<button type="button" onclick="changeQty(this,1)">+</button>
+
+</td>
+
+<td class="rowTotal">0 W</td>
+
 </tr>
 
 <tr>
-<td>Rice Cooker</td>
-<td>700</td>
-<td><input type="number" value="0" class="qty" data-watt="700"></td>
+
+<td>❄️ AC 1 Ton</td>
+
+<td>1200 W</td>
+
+<td>
+
+<button type="button" onclick="changeQty(this,-1)">−</button>
+
+<input type="number" value="0" class="qty" data-watt="1200" readonly>
+
+<button type="button" onclick="changeQty(this,1)">+</button>
+
+</td>
+
+<td class="rowTotal">0 W</td>
+
 </tr>
 
 <tr>
-<td>Electric Kettle</td>
-<td>1500</td>
-<td><input type="number" value="0" class="qty" data-watt="1500"></td>
+
+<td>❄️ AC 1.5 Ton</td>
+
+<td>1700 W</td>
+
+<td>
+
+<button type="button" onclick="changeQty(this,-1)">−</button>
+
+<input type="number" value="0" class="qty" data-watt="1700" readonly>
+
+<button type="button" onclick="changeQty(this,1)">+</button>
+
+</td>
+
+<td class="rowTotal">0 W</td>
+
 </tr>
 
 <tr>
-<td>Electric Iron</td>
-<td>1000</td>
-<td><input type="number" value="0" class="qty" data-watt="1000"></td>
-</tr>
 
-<tr>
-<td>Washing Machine</td>
-<td>600</td>
-<td><input type="number" value="0" class="qty" data-watt="600"></td>
-</tr>
+<td>❄️ AC 2 Ton</td>
 
-<tr>
-<td>Water Purifier</td>
-<td>40</td>
-<td><input type="number" value="0" class="qty" data-watt="40"></td>
-</tr>
+<td>2400 W</td>
 
-<tr>
-<td>Geyser</td>
-<td>2000</td>
-<td><input type="number" value="0" class="qty" data-watt="2000"></td>
-</tr>
+<td>
 
-<tr>
-<td>Water Pump 1 HP</td>
-<td>750</td>
-<td><input type="number" value="0" class="qty" data-watt="750"></td>
-</tr>
+<button type="button" onclick="changeQty(this,-1)">−</button>
 
-<tr>
-<td>Water Pump 2 HP</td>
-<td>1500</td>
-<td><input type="number" value="0" class="qty" data-watt="1500"></td>
-</tr>
+<input type="number" value="0" class="qty" data-watt="2400" readonly>
 
-<tr>
-<td>AC 1 Ton</td>
-<td>1200</td>
-<td><input type="number" value="0" class="qty" data-watt="1200"></td>
-</tr>
+<button type="button" onclick="changeQty(this,1)">+</button>
 
-<tr>
-<td>AC 1.5 Ton</td>
-<td>1700</td>
-<td><input type="number" value="0" class="qty" data-watt="1700"></td>
-</tr>
+</td>
 
-<tr>
-<td>AC 2 Ton</td>
-<td>2400</td>
-<td><input type="number" value="0" class="qty" data-watt="2400"></td>
-</tr>
+<td class="rowTotal">0 W</td>
 
+</tr>
 </tbody>
 
 </table>
 
-<button class="calculate-btn" onclick="calculateLoad()">
+<div class="calculator-actions">
+
+<button type="button" class="calculate-btn" onclick="calculateLoad()">
+
 ⚡ Calculate Load
+
 </button>
 
-<button class="calculate-btn" onclick="resetCalculator()" style="margin-top:10px;background:#dc2626;">
+<button type="button" class="reset-btn" onclick="resetCalculator()">
+
 🔄 Reset
+
 </button>
+
+<button type="button" class="print-btn" onclick="window.print()">
+
+🖨 Print
+
+</button>
+
+</div>
+
+</div>
+
 <div class="total-box">
 
-<h2>Results</h2>
+<h2>Calculation Result</h2>
 
 <div class="result-item">
-<span>Total Connected Load</span>
+
+<span>⚡ Connected Load</span>
+
 <strong id="totalLoad">0 W</strong>
+
 </div>
 
 <div class="result-item">
-<span>Total Load (kW)</span>
+
+<span>⚡ Total Load</span>
+
 <strong id="totalKW">0 kW</strong>
+
 </div>
 
 <div class="result-item">
-<span>Recommended WBSEDCL Load</span>
+
+<span>🏠 Recommended Sanctioned Load</span>
+
 <strong id="recommendedLoad">-</strong>
+
 </div>
 
 <div class="result-item">
-<span>Recommended Phase</span>
+
+<span>🔌 Recommended Phase</span>
+
 <strong id="phase">-</strong>
+
 </div>
 
-<<div class="result-item">
-<span>Suggested Solar Size</span>
+<div class="result-item">
+
+<span>☀️ Suggested Solar Size</span>
+
 <strong id="solar">-</strong>
+
 </div>
 
 <div class="result-item">
-<span>Estimated Daily Units</span>
+
+<span>📅 Estimated Daily Units</span>
+
 <strong id="dailyUnits">0 Units</strong>
+
 </div>
 
 <div class="result-item">
-<span>Estimated Monthly Units</span>
+
+<span>📆 Estimated Monthly Units</span>
+
 <strong id="units">0 Units</strong>
+
 </div>
 
 <div class="result-item">
-<span>Estimated Monthly Bill</span>
+
+<span>💰 Estimated Monthly Bill</span>
+
 <strong id="bill">₹0</strong>
+
 </div>
 
 <div class="result-item">
-<span>PM Surya Ghar Eligible</span>
+
+<span>🎯 PM Surya Ghar</span>
+
 <strong id="subsidy">-</strong>
-</div>
 
 </div>
 
@@ -311,7 +585,16 @@ phase requirement, estimated monthly units and suggested rooftop solar size.
 
 </section>
 
-<script src="js/main.js"></script>
+<footer>
+
+<div class="copyright">
+
+© 2026 SolarPedia.in | All Rights Reserved
+
+</div>
+
+</footer>
+
 <script src="js/load-calculator.js"></script>
 
 </body>
