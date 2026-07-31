@@ -30,7 +30,9 @@ function updateRow(row){
 
 function calculateLoad(){
 
-    let total = 0;
+   let total=0;
+
+let applianceCount=0;
 
     document.querySelectorAll(".qty").forEach(function(item){
 
@@ -38,8 +40,13 @@ function calculateLoad(){
 
         const qty = parseInt(item.value) || 0;
 
-        total += watt * qty;
+       total += watt * qty;
 
+if(qty>0){
+
+applianceCount += qty;
+
+}
     });
 
     const kw = total / 1000;
@@ -109,7 +116,7 @@ function calculateLoad(){
     }
 
     const bill = monthly * 6;
-
+document.getElementById("applianceCount").innerHTML=applianceCount;
     document.getElementById("totalLoad").innerHTML = total.toFixed(0) + " W";
 
     document.getElementById("totalKW").innerHTML = kw.toFixed(2) + " kW";
