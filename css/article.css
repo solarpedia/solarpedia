@@ -1159,3 +1159,23 @@ transform:translateY(-4px);
 }
 
 }
+
+#readingProgress{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+height:4px;
+
+width:0;
+
+background:#16a34a;
+
+z-index:99999;
+
+transition:.15s;
+
+}
