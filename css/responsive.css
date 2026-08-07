@@ -937,3 +937,426 @@ nav ul li a {
         right: 8px;
     }
 }
+/* =========================================================
+   SOLARPEDIA HERO - FINAL POSITION FIX
+   ========================================================= */
+
+.hero-slider {
+    position: relative !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+}
+
+.hero-slider .slide {
+    position: relative !important;
+    width: 100% !important;
+    min-width: 100% !important;
+    height: 620px !important;
+    overflow: hidden !important;
+}
+
+/* Hero image */
+.hero-slider .slide > img {
+    position: absolute !important;
+    inset: 0 !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    object-fit: cover !important;
+
+    z-index: 1 !important;
+}
+
+/* Dark overlay */
+.hero-slider .slide::after {
+    content: "" !important;
+
+    position: absolute !important;
+    inset: 0 !important;
+
+    background: rgba(0, 0, 0, 0.42) !important;
+
+    z-index: 2 !important;
+
+    pointer-events: none !important;
+}
+
+/* MAIN HERO CONTENT */
+.hero-slider .slide .content {
+    position: absolute !important;
+
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+
+    width: 100% !important;
+    max-width: 1100px !important;
+
+    margin: 0 auto !important;
+
+    padding: 40px 30px !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    text-align: center !important;
+
+    z-index: 10 !important;
+
+    transform: none !important;
+}
+
+/* Badge */
+.hero-slider .hero-badge {
+    display: inline-flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    width: auto !important;
+
+    margin: 0 auto 18px !important;
+    padding: 9px 18px !important;
+
+    border-radius: 50px !important;
+
+    background: #16a34a !important;
+
+    color: #ffffff !important;
+
+    font-size: 14px !important;
+    font-weight: 700 !important;
+}
+
+/* Heading */
+.hero-slider .slide .content h1 {
+    display: block !important;
+
+    width: 100% !important;
+    max-width: 850px !important;
+
+    margin: 0 auto 20px !important;
+    padding: 0 !important;
+
+    color: #ffffff !important;
+
+    font-size: clamp(38px, 5vw, 64px) !important;
+    line-height: 1.12 !important;
+    font-weight: 800 !important;
+
+    text-align: center !important;
+
+    transform: none !important;
+}
+
+/* Paragraph */
+.hero-slider .slide .content > p {
+    display: block !important;
+
+    width: 100% !important;
+    max-width: 760px !important;
+
+    margin: 0 auto 25px !important;
+    padding: 0 !important;
+
+    color: #ffffff !important;
+
+    font-size: 18px !important;
+    line-height: 1.6 !important;
+
+    text-align: center !important;
+
+    transform: none !important;
+}
+
+/* Stats */
+.hero-slider .hero-stats {
+    display: flex !important;
+
+    flex-direction: row !important;
+
+    flex-wrap: wrap !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    width: 100% !important;
+
+    gap: 10px !important;
+
+    margin: 0 auto 24px !important;
+
+    padding: 0 !important;
+
+    transform: none !important;
+}
+
+/* Individual stats */
+.hero-slider .hero-stat {
+    display: inline-flex !important;
+
+    flex-direction: row !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    width: auto !important;
+
+    gap: 6px !important;
+
+    margin: 0 !important;
+
+    padding: 10px 16px !important;
+
+    border-radius: 50px !important;
+
+    background: rgba(255,255,255,0.16) !important;
+
+    border: 1px solid rgba(255,255,255,0.35) !important;
+
+    color: #ffffff !important;
+
+    transform: none !important;
+}
+
+/* Number */
+.hero-slider .hero-stat strong {
+    display: inline !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    color: #ffffff !important;
+
+    font-size: 18px !important;
+}
+
+/* Stat text */
+.hero-slider .hero-stat span {
+    display: inline !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    background: transparent !important;
+
+    border: 0 !important;
+
+    color: #ffffff !important;
+
+    font-size: 14px !important;
+    font-weight: 600 !important;
+}
+
+/* Hero buttons */
+.hero-slider .hero-buttons {
+    display: flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    gap: 14px !important;
+
+    width: 100% !important;
+
+    margin: 0 auto 20px !important;
+
+    transform: none !important;
+}
+
+.hero-slider .hero-buttons a {
+    display: inline-flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    width: auto !important;
+
+    margin: 0 !important;
+}
+
+/* Hero note */
+.hero-slider .hero-note {
+    display: block !important;
+
+    width: 100% !important;
+    max-width: 650px !important;
+
+    margin: 0 auto !important;
+    padding: 0 !important;
+
+    color: rgba(255,255,255,0.92) !important;
+
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+
+    text-align: center !important;
+}
+
+/* Arrows */
+.hero-slider .prev,
+.hero-slider .next {
+    position: absolute !important;
+
+    top: 50% !important;
+
+    z-index: 20 !important;
+
+    transform: translateY(-50%) !important;
+
+    width: 55px !important;
+    height: 55px !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    border: 0 !important;
+
+    border-radius: 15px !important;
+
+    background: rgba(255,255,255,0.20) !important;
+
+    color: #ffffff !important;
+
+    font-size: 30px !important;
+}
+
+.hero-slider .prev {
+    left: 25px !important;
+}
+
+.hero-slider .next {
+    right: 25px !important;
+}
+
+
+/* =========================================================
+   MOBILE HERO
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .hero-slider .slide {
+        height: 600px !important;
+    }
+
+    .hero-slider .slide .content {
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        padding: 30px 20px !important;
+    }
+
+    .hero-slider .slide .content h1 {
+        max-width: 600px !important;
+
+        font-size: 34px !important;
+
+        line-height: 1.15 !important;
+    }
+
+    .hero-slider .slide .content > p {
+        max-width: 500px !important;
+
+        font-size: 16px !important;
+
+        line-height: 1.55 !important;
+    }
+
+    .hero-slider .hero-stats {
+        display: grid !important;
+
+        grid-template-columns: 1fr 1fr !important;
+
+        max-width: 430px !important;
+
+        gap: 8px !important;
+    }
+
+    .hero-slider .hero-stat {
+        width: 100% !important;
+
+        padding: 9px 8px !important;
+    }
+
+    .hero-slider .hero-stat strong {
+        font-size: 16px !important;
+    }
+
+    .hero-slider .hero-stat span {
+        font-size: 12px !important;
+    }
+
+    .hero-slider .hero-buttons {
+        flex-direction: column !important;
+
+        width: 100% !important;
+
+        gap: 10px !important;
+    }
+
+    .hero-slider .hero-buttons a {
+        width: 100% !important;
+
+        max-width: 300px !important;
+    }
+
+    .hero-slider .prev,
+    .hero-slider .next {
+        width: 42px !important;
+        height: 42px !important;
+
+        font-size: 24px !important;
+    }
+
+    .hero-slider .prev {
+        left: 10px !important;
+    }
+
+    .hero-slider .next {
+        right: 10px !important;
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .hero-slider .slide {
+        height: 580px !important;
+    }
+
+    .hero-slider .slide .content {
+        padding: 25px 15px !important;
+    }
+
+    .hero-slider .slide .content h1 {
+        font-size: 29px !important;
+    }
+
+    .hero-slider .slide .content > p {
+        font-size: 15px !important;
+    }
+
+    .hero-slider .hero-stats {
+        grid-template-columns: 1fr !important;
+
+        max-width: 280px !important;
+    }
+
+    .hero-slider .hero-buttons a {
+        max-width: 280px !important;
+    }
+}
