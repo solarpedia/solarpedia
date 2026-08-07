@@ -1,240 +1,561 @@
-.hero-slider{
+/* =====================================================
+   SOLARPEDIA HERO SLIDER
+   PREMIUM SMOOTH FADE + ZOOM
+===================================================== */
 
-position:relative;
-
-height:600px;
-
-overflow:hidden;
-
-}
-.hero-trust{
-    display:flex;
-    gap:20px;
-    flex-wrap:wrap;
-    margin-top:20px;
-    font-size:.95rem;
-    font-weight:500;
+.hero-slider {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
 }
 
-.hero-trust span{
-    display:inline-flex;
-    align-items:center;
-    background:rgba(255,255,255,.18);
-    border:1px solid rgba(255,255,255,.25);
-    padding:8px 14px;
-    border-radius:30px;
-    backdrop-filter:blur(6px);
-    color:#fff;
-}
-.slide{
 
-position:absolute;
+/* =====================================================
+   SLIDES
+===================================================== */
 
-width:100%;
+.hero-slider .slide {
+    position: absolute;
 
-height:100%;
+    inset: 0;
 
-opacity:0;
+    width: 100%;
+    height: 100%;
 
-transition:opacity .8s ease;
+    opacity: 0;
+    visibility: hidden;
 
-}
+    z-index: 1;
 
-.slide.active{
+    overflow: hidden;
 
-opacity:1;
-
-z-index:1;
-
+    transition:
+        opacity 1.2s ease-in-out,
+        visibility 1.2s ease-in-out;
 }
 
-.slide img{
 
-width:100%;
+/* ACTIVE SLIDE */
 
-height:100%;
+.hero-slider .slide.active {
+    opacity: 1;
+    visibility: visible;
 
-object-fit:cover;
+    z-index: 2;
+}
+
+
+/* =====================================================
+   HERO IMAGE
+===================================================== */
+
+.hero-slider .slide img {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transform: scale(1.08);
+
+    transition:
+        transform 7s ease-out;
+}
+
+
+/* Active image slowly zooms OUT */
+
+.hero-slider .slide.active img {
+    transform: scale(1);
+}
+
+
+/* =====================================================
+   DARK OVERLAY
+===================================================== */
+
+.hero-slider .overlay {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.55),
+            rgba(0, 0, 0, 0.25)
+        );
+
+    z-index: 2;
+}
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.hero-slider .content {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 90%;
+    max-width: 900px;
+
+    z-index: 3;
+
+    color: #fff;
+
+    text-align: center;
+}
+
+
+/* =====================================================
+   CONTENT ANIMATION
+===================================================== */
+
+/* Initially hidden */
+
+.hero-slider .slide .content > * {
+
+    opacity: 0;
+
+    transform: translateY(25px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+
+/* Active content appears */
+
+.hero-slider .slide.active .content > * {
+
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* Stagger animation */
+
+.hero-slider .slide.active .content > span {
+    transition-delay: 0.15s;
+}
+
+.hero-slider .slide.active .content h1 {
+    transition-delay: 0.25s;
+}
+
+.hero-slider .slide.active .content p {
+    transition-delay: 0.35s;
+}
+
+.hero-slider .slide.active .content .hero-trust {
+    transition-delay: 0.45s;
+}
+
+.hero-slider .slide.active .content .hero-buttons {
+    transition-delay: 0.5s;
+}
+
+.hero-slider .slide.active .content .hero-extra-link {
+    transition-delay: 0.6s;
+}
+
+
+/* =====================================================
+   BADGE
+===================================================== */
+
+.hero-slider .content > span {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #198754;
+
+    padding: 8px 18px;
+
+    border-radius: 30px;
+
+    margin-bottom: 20px;
+
+    color: #fff;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   HEADING
+===================================================== */
+
+.hero-slider .content h1 {
+
+    font-size: clamp(38px, 5vw, 60px);
+
+    line-height: 1.12;
+
+    margin: 0 0 20px;
+
+    color: #fff;
+
+    font-weight: 800;
+}
+
+
+/* =====================================================
+   PARAGRAPH
+===================================================== */
+
+.hero-slider .content p {
+
+    font-size: 19px;
+
+    line-height: 1.6;
+
+    margin: 0 auto 25px;
+
+    max-width: 760px;
+
+    color: #fff;
+}
+
+
+/* =====================================================
+   TRUST ITEMS
+===================================================== */
+
+.hero-trust {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+
+    margin-top: 20px;
+
+    font-size: 0.95rem;
+
+    font-weight: 500;
+}
+
+
+.hero-trust span {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    background: rgba(255,255,255,0.18);
+
+    border: 1px solid rgba(255,255,255,0.25);
+
+    padding: 8px 14px;
+
+    border-radius: 30px;
+
+    backdrop-filter: blur(6px);
+
+    color: #fff;
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.hero-slider .hero-buttons {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 14px;
+
+    flex-wrap: wrap;
+
+    margin-top: 15px;
+}
+
+
+.hero-slider .hero-buttons a {
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.hero-slider .hero-buttons a:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.25);
+}
+
+
+/* =====================================================
+   EXTRA LINK
+===================================================== */
+
+.hero-extra-link {
+
+    margin-top: 18px;
+
+    color: #fff;
+
+    font-size: 0.95rem;
+}
+
+
+.hero-extra-link a {
+
+    color: #FFD54F;
+
+    text-decoration: none;
+
+    font-weight: 600;
+}
+
+
+.hero-extra-link a:hover {
+
+    text-decoration: underline;
+}
+
+
+/* =====================================================
+   PREVIOUS / NEXT
+===================================================== */
+
+.hero-slider .prev,
+.hero-slider .next {
+
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 55px;
+
+    height: 55px;
+
+    border: none;
+
+    border-radius: 15px;
+
+    background: rgba(255,255,255,0.20);
+
+    backdrop-filter: blur(8px);
+
+    color: #fff;
+
+    font-size: 28px;
+
+    cursor: pointer;
+
+    z-index: 10;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.hero-slider .prev {
+
+    left: 25px;
+}
+
+
+.hero-slider .next {
+
+    right: 25px;
+}
+
+
+.hero-slider .prev:hover,
+.hero-slider .next:hover {
+
+    background: #198754;
+
+    transform:
+        translateY(-50%)
+        scale(1.05);
+}
+
+
+/* =====================================================
+   DOTS
+===================================================== */
+
+.hero-slider .dots {
+
+    position: absolute;
+
+    bottom: 30px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    z-index: 10;
+}
+
+
+.hero-slider .dot {
+
+    width: 11px;
+
+    height: 11px;
+
+    padding: 0;
+
+    border-radius: 50%;
+
+    background: #fff;
+
+    opacity: 0.5;
+
+    cursor: pointer;
+
+    transition:
+        width 0.3s ease,
+        opacity 0.3s ease,
+        background 0.3s ease;
+}
+
+
+.hero-slider .dot.active {
+
+    width: 30px;
+
+    border-radius: 20px;
+
+    opacity: 1;
+
+    background: #FD7E14;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .hero-slider {
+
+        height: 500px;
+    }
+
+
+    .hero-slider .content {
+
+        width: 90%;
+
+        text-align: center;
+    }
+
+
+    .hero-slider .content h1 {
+
+        font-size: 34px;
+
+        line-height: 1.2;
+    }
+
+
+    .hero-slider .content p {
+
+        font-size: 16px;
+
+        line-height: 1.5;
+    }
+
+
+    .hero-trust {
+
+        justify-content: center;
+
+        gap: 8px;
+
+        font-size: 0.82rem;
+    }
+
+
+    .hero-trust span {
+
+        padding: 7px 10px;
+    }
+
+
+    .hero-slider .prev,
+    .hero-slider .next {
+
+        display: none;
+    }
+
+
+    .hero-slider .dots {
+
+        bottom: 20px;
+    }
 
 }
 
-.overlay{
 
-position:absolute;
+/* =====================================================
+   SMALL PHONES
+===================================================== */
 
-inset:0;
+@media (max-width: 480px) {
 
-background:rgba(0,0,0,.45);
+    .hero-slider {
 
-}
+        height: 520px;
+    }
 
-.content{
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-color:#fff;
-width:90%;
-max-width:650px;
-z-index:2;
-}
 
-.content span{
+    .hero-slider .content h1 {
 
-background:#198754;
+        font-size: 29px;
+    }
 
-padding:8px 18px;
 
-border-radius:30px;
+    .hero-slider .content p {
 
-display:inline-block;
+        font-size: 15px;
+    }
 
-margin-bottom:20px;
-
-}
-
-.content h1{
-
-font-size:58px;
-
-margin-bottom:20px;
-
-}
-
-.content p{
-
-font-size:20px;
-
-margin-bottom:30px;
-
-}
-
-.prev,
-.next{
-
-position:absolute;
-
-top:50%;
-
-transform:translateY(-50%);
-
-width:55px;
-
-height:55px;
-
-border:none;
-
-background:rgba(255,255,255,.2);
-
-color:#fff;
-
-font-size:28px;
-
-cursor:pointer;
-
-z-index:5;
-
-}
-
-.prev{
-
-left:25px;
-
-}
-
-.next{
-
-right:25px;
-
-}
-
-.dots{
-
-position:absolute;
-
-bottom:30px;
-
-left:50%;
-
-transform:translateX(-50%);
-
-display:flex;
-
-gap:10px;
-
-z-index:10;
-
-}
-
-.dot{
-
-width:14px;
-
-height:14px;
-
-background:#fff;
-
-border-radius:50%;
-
-opacity:.5;
-
-cursor:pointer;
-
-}
-
-.dot.active{
-
-opacity:1;
-
-background:#FD7E14;
-
-}
-@media (max-width:768px){
-    .hero-trust{
-    justify-content:center;
-    gap:10px;
-    font-size:.85rem;
-}
-
-.hero-slider{
-height:500px;
-}
-
-.content{
-width:90%;
-left:50%;
-top:50%;
-transform:translate(-50%,-50%);
-text-align:center;
-}
-
-.content h1{
-font-size:34px;
-line-height:1.25;
-}
-
-.content p{
-font-size:16px;
-}
-
-.prev,
-.next{
-display:none;
-}
-
-}
-.hero-extra-link{
-    margin-top:18px;
-    color:#fff;
-    font-size:0.95rem;
-}
-
-.hero-extra-link a{
-    color:#FFD54F;
-    text-decoration:none;
-    font-weight:600;
-}
-
-.hero-extra-link a:hover{
-    text-decoration:underline;
 }
