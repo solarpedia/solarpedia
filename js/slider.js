@@ -1,101 +1,224 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    const slides = document.querySelectorAll(".hero-slider .slide");
-    const prevButton = document.querySelector(".hero-slider .prev");
-    const nextButton = document.querySelector(".hero-slider .next");
-    const dots = document.querySelectorAll(".hero-slider .dot");
+    const slider = document.querySelector(".hero-slider");
 
-    if (!slides.length) {
-        console.log("No hero slides found");
-        return;
-    }
+    if (!slider) return;
+
+    const slides = slider.querySelectorAll(".slide");
+    const dots = slider.querySelectorAll(".dot");
+    const prevBtn = slider.querySelector(".prev");
+    const nextBtn = slider.querySelector(".next");
+
+    if (slides.length === 0) return;
 
     let currentSlide = 0;
     let autoSlide;
 
+    const slideTime = 6000; // 6 seconds
+
+
+    /* =========================
+       SHOW SLIDE
+    ========================= */
+
     function showSlide(index) {
 
-        // Keep index inside 0–2
         if (index >= slides.length) {
-            currentSlide = 0;
-        } else if (index < 0) {
-            currentSlide = slides.length - 1;
-        } else {
-            currentSlide = index;
+            index = 0;
         }
 
-        // Hide ALL slides
+        if (index < 0) {
+            index = slides.length - 1;
+        }
+
+        currentSlide = index;
+
+
+        /* Remove active from all slides */
+
         slides.forEach(function (slide) {
             slide.classList.remove("active");
         });
 
-        // Remove active from ALL dots
+
+        /* Remove active from all dots */
+
         dots.forEach(function (dot) {
             dot.classList.remove("active");
         });
 
-        // Show current slide
+
+        /* Add active to current slide */
+
         slides[currentSlide].classList.add("active");
 
-        // Activate current dot
+
+        /* Add active to current dot */
+
         if (dots[currentSlide]) {
             dots[currentSlide].classList.add("active");
         }
 
-        console.log("Showing slide:", currentSlide + 1);
     }
 
 
-    // NEXT BUTTON
-    if (nextButton) {
-        nextButton.addEventListener("click", function () {
-            showSlide(currentSlide + 1);
-            restartAutoSlide();
+    /* =========================
+       NEXT SLIDE
+    ========================= */
+
+    function nextSlide() {
+        showSlide(currentSlide + 1);
+        restartAutoSlide();
+    }
+
+
+    /* =========================
+       PREVIOUS SLIDE
+    ========================= */
+
+    function previousSlide() {
+        showSlide(currentSlide - 1);
+        restartAutoSlide();
+    }
+
+
+    /* =========================
+       NEXT BUTTON
+    ========================= */
+
+    if (nextBtn) {
+
+        nextBtn.addEventListener("click", function () {
+            nextSlide();
         });
+
     }
 
 
-    // PREVIOUS BUTTON
-    if (prevButton) {
-        prevButton.addEventListener("click", function () {
-            showSlide(currentSlide - 1);
-            restartAutoSlide();
+    /* =========================
+       PREVIOUS BUTTON
+    ========================= */
+
+    if (prevBtn) {
+
+        prevBtn.addEventListener("click", function () {
+            previousSlide();
         });
+
     }
 
 
-    // DOT BUTTONS
+    /* =========================
+       DOT CLICK
+    ========================= */
+
     dots.forEach(function (dot, index) {
 
         dot.addEventListener("click", function () {
+
             showSlide(index);
             restartAutoSlide();
+
         });
 
     });
 
 
-    // AUTOMATIC SLIDER
+    /* =========================
+       AUTO SLIDE
+    ========================= */
+
     function startAutoSlide() {
 
         autoSlide = setInterval(function () {
+
             showSlide(currentSlide + 1);
-        }, 5000);
+
+        }, slideTime);
 
     }
 
 
-    // Restart automatic slider
+    /* =========================
+       RESTART AUTO SLIDE
+    ========================= */
+
     function restartAutoSlide() {
 
         clearInterval(autoSlide);
+
         startAutoSlide();
 
     }
 
 
-    // Start slider
+    /* =========================
+       PAUSE WHEN MOUSE IS OVER
+    ========================= */
+
+    slider.addEventListener("mouseenter", function () {
+
+        clearInterval(autoSlide);
+
+    });
+
+
+    /* =========================
+       START AGAIN
+    ========================= */
+
+    slider.addEventListener("mouseleave", function () {
+
+        startAutoSlide();
+
+    });
+
+
+    /* =========================
+       TOUCH / SWIPE SUPPORT
+    ========================= */
+
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+
+    slider.addEventListener("touchstart", function (e) {
+
+        touchStartX = e.changedTouches[0].screenX;
+
+    }, { passive: true });
+
+
+    slider.addEventListener("touchend", function (e) {
+
+        touchEndX = e.changedTouches[0].screenX;
+
+        const swipeDistance = touchEndX - touchStartX;
+
+
+        if (Math.abs(swipeDistance) > 50) {
+
+            if (swipeDistance < 0) {
+
+                nextSlide();
+
+            } else {
+
+                previousSlide();
+
+            }
+
+        }
+
+    }, { passive: true });
+
+
+    /* =========================
+       INITIAL SLIDE
+    ========================= */
+
     showSlide(0);
+
     startAutoSlide();
 
 });
