@@ -1,543 +1,289 @@
-/* Tablet */
+/* =========================================================
+   SOLARPEDIA - RESPONSIVE.CSS
+   Clean responsive design
+   ========================================================= */
 
-@media(max-width:992px){
 
-.hero-content{
-grid-template-columns:1fr;
-text-align:center;
-}
-
-.hero-buttons{
-justify-content:center;
-}
-
-.header{
-flex-direction:column;
-gap:20px;
-}
-
-nav ul{
-flex-wrap:wrap;
-justify-content:center;
-}
-
-}
-
-/* Mobile */
-
-@media(max-width:768px){
-
-.logo img{
-height:60px;
-}
-
-.hero{
-padding:60px 0;
-}
-
-.hero h1{
-font-size:36px;
-}
-
-.hero p{
-font-size:16px;
-}
-
-.hero-buttons{
-flex-direction:column;
-}
-
-.btn-primary,
-.btn-secondary{
-text-align:center;
-}
-
-.topbar .container{
-flex-direction:column;
-gap:8px;
-}
-
-nav ul{
-gap:18px;
-}
-
-}
-@media(max-width:768px){
-
-.dropdown-menu{
-
-position:static;
-
-display:block;
-
-box-shadow:none;
-
-background:none;
-
-padding-left:15px;
-
-}
-
-.dropdown-menu li a{
-
-padding:10px 0;
-
-}
-
-}
-/* ================= MOBILE FIX ================= */
-
-@media (max-width:768px){
+/* =========================================================
+   GLOBAL MOBILE FIX
+   ========================================================= */
 
 html,
-body{
-    width:100%;
-    overflow-x:hidden;
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
-*{
-    box-sizing:border-box;
+* {
+    box-sizing: border-box;
 }
 
-.container{
-    width:100%;
-    max-width:100%;
-    padding:0 15px;
-    margin:auto;
+img {
+    max-width: 100%;
+    height: auto;
 }
 
-/* Header */
 
-.header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    flex-wrap:wrap;
-    gap:15px;
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.container {
+    width: 92%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.logo{
-    flex:1;
-}
 
-.logo img{
-    height:45px;
-}
+/* =========================================================
+   HEADER
+   ========================================================= */
 
-.header-actions{
-    display:flex;
-    align-items:center;
-    gap:12px;
-}
-
-/* Navigation */
-
-nav{
-    width:100%;
-}
-
-nav ul{
-    flex-direction:column;
-    width:100%;
-    gap:0;
-}
-
-nav ul li{
-    width:100%;
-}
-
-nav ul li a{
-    display:block;
-    padding:14px 15px;
-}
-
-/* Hero */
-
-.hero{
-    padding:40px 0;
-}
-
-.hero-content{
-    grid-template-columns:1fr;
-}
-
-.hero h1{
-    font-size:32px;
-    line-height:1.2;
-}
-
-.hero p{
-    font-size:16px;
-}
-
-.hero-buttons{
-    flex-direction:column;
-    width:100%;
-}
-
-.hero-buttons a{
-    width:100%;
-}
-
-/* Images */
-
-img{
-    max-width:100%;
-    height:auto;
-}
-
-/* Cards */
-
-.article-grid,
-.guides-grid,
-.news-grid,
-.tools-grid,
-.category-grid,
-.footer-grid,
-.stats-grid{
-
-    display:grid;
-    grid-template-columns:1fr;
-    gap:20px;
-
-}
-
-/* Tables */
-
-table{
-    display:block;
-    overflow-x:auto;
-}
-
-/* Footer */
-
-footer{
-    text-align:center;
-}
-
-}
-/* =====================================================
-   SOLARPEDIA HERO - FINAL OVERRIDE
-   Put this at the VERY BOTTOM of responsive.css
-   ===================================================== */
-
-/* Hero content positioning */
-.hero-slider .slide .content {
+header {
+    width: 100%;
     position: relative;
-    z-index: 5;
-    width: min(1100px, 92%);
-    margin: 0 auto;
-    padding: 90px 20px 70px;
-    text-align: center;
-    color: #ffffff;
+    z-index: 1000;
 }
 
-/* Hero heading */
-.hero-slider .slide .content h1 {
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.logo img {
     display: block;
-    width: 100%;
-    max-width: 850px;
-    margin: 18px auto 22px;
-
-    font-size: clamp(38px, 5vw, 64px);
-    line-height: 1.12;
-    font-weight: 700;
-
-    color: #ffffff;
-    text-align: center;
+    width: auto;
+    height: 45px;
 }
 
-/* Hero paragraph */
-.hero-slider .slide .content > p {
+
+/* =========================================================
+   DESKTOP NAVIGATION
+   ========================================================= */
+
+nav {
     display: block;
-    width: 100%;
-    max-width: 760px;
-    margin: 0 auto 28px;
-
-    font-size: 18px;
-    line-height: 1.65;
-    color: #ffffff;
-    text-align: center;
 }
 
-/* Badge */
-.hero-slider .hero-badge {
-    display: inline-flex;
+nav ul {
+    display: flex;
     align-items: center;
     justify-content: center;
-
-    padding: 8px 17px;
-    margin: 0 auto;
-
-    border-radius: 50px;
-
-    background: rgba(22, 163, 74, 0.95);
-    color: #ffffff;
-
-    font-size: 14px;
-    font-weight: 600;
-}
-
-/* Hero statistics */
-.hero-slider .hero-stats {
-    display: flex !important;
-    flex-direction: row !important;
-
-    justify-content: center;
-    align-items: center;
-
-    gap: 12px;
-
-    width: 100%;
-    max-width: 750px;
-
-    margin: 28px auto 0;
-}
-
-/* Individual statistic */
-.hero-slider .hero-stat {
-    display: flex !important;
-    flex-direction: row !important;
-
-    align-items: center;
-    justify-content: center;
-
-    gap: 7px;
-
-    padding: 11px 17px;
-
-    border-radius: 50px;
-
-    background: rgba(255, 255, 255, 0.14);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-
-    backdrop-filter: blur(8px);
-}
-
-/* Number */
-.hero-slider .hero-stat strong {
-    display: inline !important;
+    gap: 25px;
 
     margin: 0;
     padding: 0;
 
-    color: #ffffff;
-    font-size: 19px;
-    line-height: 1;
+    list-style: none;
 }
 
-/* Text */
-.hero-slider .hero-stat span {
-    display: inline !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-
-    background: transparent !important;
-    border: 0 !important;
-    border-radius: 0 !important;
-
-    color: #ffffff !important;
-
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 1.2;
+nav ul li {
+    position: relative;
+    list-style: none;
 }
 
-/* Hero note */
-.hero-slider .hero-note {
-    display: block;
-
-    max-width: 650px;
-
-    margin: 20px auto 0;
-
-    color: rgba(255, 255, 255, 0.9);
-
-    font-size: 14px;
-    line-height: 1.6;
-
-    text-align: center;
-}
-
-/* =====================================================
-   HEADER NAVIGATION
-   ===================================================== */
-
-header nav ul {
-    display: flex;
-    align-items: center;
-    gap: 26px;
-}
-
-header nav li {
-    white-space: nowrap;
-}
-
-header nav a {
+nav ul li a {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
     gap: 6px;
+
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   DROPDOWN
+   ========================================================= */
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+
+    display: none;
+
+    min-width: 240px;
+
+    padding: 10px 0;
+    margin: 10px 0 0;
+
+    transform: translateX(-50%);
+
+    background: #ffffff;
+    border-radius: 12px;
+
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+
+    z-index: 1000;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+    width: 100%;
+}
+
+.dropdown-menu li a {
+    display: flex;
+
+    width: 100%;
+
+    padding: 12px 18px;
 
     white-space: nowrap;
 }
 
-/* =====================================================
-   DESKTOP
-   ===================================================== */
 
-@media (min-width: 769px) {
+/* =========================================================
+   HEADER RIGHT
+   ========================================================= */
 
-    .hero-slider .slide .content {
-        min-height: 620px;
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
 
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
+    flex-shrink: 0;
 }
 
-/* =====================================================
-   MOBILE
-   ===================================================== */
+.search-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-@media (max-width: 768px) {
+    width: 42px;
+    height: 42px;
 
-    .hero-slider .slide .content {
-        width: 92%;
-        padding: 70px 10px 55px;
-    }
-
-    .hero-slider .slide .content h1 {
-        font-size: 34px;
-        line-height: 1.15;
-        max-width: 600px;
-    }
-
-    .hero-slider .slide .content > p {
-        font-size: 16px;
-        line-height: 1.6;
-    }
-
-    .hero-slider .hero-stats {
-        display: grid !important;
-        grid-template-columns: 1fr 1fr;
-
-        gap: 8px;
-
-        max-width: 420px;
-    }
-
-    .hero-slider .hero-stat {
-        padding: 9px 10px;
-    }
-
-    .hero-slider .hero-stat strong {
-        font-size: 17px;
-    }
-
-    .hero-slider .hero-stat span {
-        font-size: 12px;
-    }
-
+    cursor: pointer;
 }
 
-/* Small phones */
-@media (max-width: 480px) {
-
-    .hero-slider .slide .content h1 {
-        font-size: 29px;
-    }
-
-    .hero-slider .slide .content > p {
-        font-size: 15px;
-    }
-
-    .hero-slider .hero-stats {
-        grid-template-columns: 1fr 1fr;
-    }
-
+.quote-btn {
+    white-space: nowrap;
 }
-/* =====================================================
-   FINAL HERO POSITION FIX
-   ===================================================== */
+
+
+/* =========================================================
+   MOBILE MENU BUTTON
+   ========================================================= */
+
+.menu-toggle {
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 44px;
+    height: 44px;
+
+    font-size: 28px;
+    line-height: 1;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   HERO SLIDER
+   ========================================================= */
 
 .hero-slider {
     position: relative;
+
+    width: 100%;
+
     overflow: hidden;
 }
 
 .hero-slider .slide {
     position: relative;
+
+    width: 100%;
+    height: 620px;
+
     overflow: hidden;
 }
 
-/* Keep hero image as background layer */
 .hero-slider .slide > img {
     display: block;
+
     width: 100%;
     height: 620px;
+
     object-fit: cover;
 }
 
-/* IMPORTANT: Content must sit ON TOP of image */
+
+/* =========================================================
+   HERO DARK OVERLAY
+   ========================================================= */
+
+.hero-slider .slide::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    z-index: 2;
+
+    background: rgba(5, 15, 25, 0.45);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   HERO CONTENT
+   ========================================================= */
+
 .hero-slider .slide .content {
-    position: absolute !important;
-    inset: 0 !important;
+    position: absolute;
+
+    inset: 0;
 
     z-index: 5;
 
-    width: 100% !important;
-    max-width: none !important;
-
-    margin: 0 !important;
-    padding: 0 30px !important;
-
-    display: flex !important;
-    flex-direction: column !important;
-
-    align-items: center !important;
-    justify-content: center !important;
-
-    text-align: center !important;
-}
-
-/* Hero heading */
-.hero-slider .slide .content h1 {
     width: 100%;
-    max-width: 850px;
+    max-width: 1000px;
 
-    margin: 15px auto 20px !important;
+    margin: 0 auto;
 
-    color: #ffffff !important;
+    padding: 40px 30px;
 
-    font-size: clamp(38px, 5vw, 64px) !important;
-    line-height: 1.12 !important;
-    font-weight: 800 !important;
+    display: flex;
 
-    text-align: center !important;
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    color: #ffffff;
 }
 
-/* Paragraph */
-.hero-slider .slide .content > p {
-    width: 100%;
-    max-width: 760px;
 
-    margin: 0 auto 25px !important;
+/* =========================================================
+   HERO BADGE
+   ========================================================= */
 
-    color: #ffffff !important;
-
-    font-size: 18px !important;
-    line-height: 1.6 !important;
-
-    text-align: center !important;
-}
-
-/* Green badge */
-.hero-slider .slide .content > span {
+.hero-slider .hero-badge {
     display: inline-flex;
 
     align-items: center;
@@ -545,20 +291,178 @@ header nav a {
 
     padding: 9px 18px;
 
+    margin-bottom: 18px;
+
     border-radius: 50px;
 
     background: #16a34a;
+
     color: #ffffff;
 
     font-size: 14px;
     font-weight: 700;
 }
 
-/* Button */
-.hero-slider .slide .content .btn-primary {
+
+/* =========================================================
+   HERO TITLE
+   ========================================================= */
+
+.hero-slider .slide .content h1 {
+    width: 100%;
+    max-width: 850px;
+
+    margin: 0 auto 20px;
+
+    color: #ffffff;
+
+    font-size: clamp(38px, 5vw, 64px);
+
+    line-height: 1.12;
+
+    font-weight: 800;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   HERO PARAGRAPH
+   ========================================================= */
+
+.hero-slider .slide .content > p {
+    width: 100%;
+    max-width: 760px;
+
+    margin: 0 auto 28px;
+
+    color: #ffffff;
+
+    font-size: 18px;
+
+    line-height: 1.65;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   HERO STATISTICS
+   ========================================================= */
+
+.hero-slider .hero-stats {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    width: 100%;
+
+    margin: 0 auto 25px;
+}
+
+
+/* =========================================================
+   INDIVIDUAL STAT
+   ========================================================= */
+
+.hero-slider .hero-stat {
     display: inline-flex;
 
     align-items: center;
+
+    justify-content: center;
+
+    gap: 6px;
+
+    padding: 10px 16px;
+
+    border: 1px solid rgba(255, 255, 255, 0.35);
+
+    border-radius: 50px;
+
+    background: rgba(255, 255, 255, 0.14);
+
+    color: #ffffff;
+
+    backdrop-filter: blur(8px);
+}
+
+
+/* =========================================================
+   STAT NUMBER
+   ========================================================= */
+
+.hero-slider .hero-stat strong {
+    display: inline;
+
+    margin: 0;
+    padding: 0;
+
+    color: #ffffff;
+
+    font-size: 18px;
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   STAT TEXT
+   ========================================================= */
+
+.hero-slider .hero-stat span {
+    display: inline;
+
+    margin: 0;
+    padding: 0;
+
+    background: transparent;
+
+    border: 0;
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   HERO NOTE
+   ========================================================= */
+
+.hero-slider .hero-note {
+    width: 100%;
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    color: rgba(255, 255, 255, 0.9);
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   HERO BUTTON
+   ========================================================= */
+
+.hero-slider .btn-primary {
+    display: inline-flex;
+
+    align-items: center;
+
     justify-content: center;
 
     margin-top: 5px;
@@ -568,28 +472,468 @@ header nav a {
     border-radius: 50px;
 
     background: #16a34a;
+
     color: #ffffff;
 
     font-weight: 700;
+
     text-decoration: none;
 }
 
-/* Mobile */
-@media (max-width: 768px) {
 
+/* =========================================================
+   HERO ARROWS
+   ========================================================= */
+
+.hero-slider .prev,
+.hero-slider .next {
+    position: absolute;
+
+    top: 50%;
+
+    z-index: 10;
+
+    width: 56px;
+
+    height: 56px;
+
+    transform: translateY(-50%);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 0;
+
+    border-radius: 16px;
+
+    background: rgba(255, 255, 255, 0.18);
+
+    color: #ffffff;
+
+    font-size: 32px;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(8px);
+}
+
+.hero-slider .prev {
+    left: 24px;
+}
+
+.hero-slider .next {
+    right: 24px;
+}
+
+
+/* =========================================================
+   HERO DOTS
+   ========================================================= */
+
+.hero-slider .dots {
+    position: absolute;
+
+    bottom: 25px;
+
+    left: 50%;
+
+    z-index: 10;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    gap: 10px;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 992px) {
+
+    .container {
+        width: 94%;
+    }
+
+    .header {
+        gap: 15px;
+    }
+
+    nav ul {
+        gap: 16px;
+    }
+
+    .hero-slider .slide,
     .hero-slider .slide > img {
-        height: 560px;
+        height: 600px;
     }
 
     .hero-slider .slide .content {
-        padding: 0 20px !important;
+        padding: 40px 25px;
     }
 
     .hero-slider .slide .content h1 {
-        font-size: 34px !important;
+        font-size: 48px;
     }
 
     .hero-slider .slide .content > p {
-        font-size: 16px !important;
+        font-size: 17px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE - 768px
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .container {
+        width: 100%;
+
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+
+    /* HEADER */
+
+    .header {
+        min-height: 70px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        gap: 10px;
+    }
+
+
+    .logo {
+        flex: 1;
+    }
+
+    .logo img {
+        height: 42px;
+    }
+
+
+    /* HAMBURGER */
+
+    .menu-toggle {
+        display: flex;
+
+        order: 2;
+
+        flex-shrink: 0;
+    }
+
+
+    /* HEADER RIGHT */
+
+    .header-right {
+        order: 3;
+
+        gap: 5px;
+    }
+
+
+    .search-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+
+    /* NAVIGATION */
+
+    nav {
+        position: absolute;
+
+        top: 100%;
+
+        left: 0;
+
+        width: 100%;
+
+        display: none;
+
+        background: #ffffff;
+
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.10);
+
+        z-index: 9999;
+    }
+
+
+    nav.active {
+        display: block;
+    }
+
+
+    nav ul {
+        width: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 0;
+
+        padding: 10px 0;
+    }
+
+
+    nav ul li {
+        width: 100%;
+    }
+
+
+    nav ul li a {
+        display: flex;
+
+        width: 100%;
+
+        padding: 14px 20px;
+
+        justify-content: flex-start;
+
+        white-space: normal;
+    }
+
+
+    /* MOBILE DROPDOWN */
+
+    .dropdown-menu {
+        position: static;
+
+        display: none;
+
+        width: 100%;
+
+        min-width: 0;
+
+        margin: 0;
+
+        padding: 0 0 5px;
+
+        transform: none;
+
+        box-shadow: none;
+
+        border-radius: 0;
+
+        background: #f7faf8;
+    }
+
+
+    .dropdown:hover .dropdown-menu {
+        display: none;
+    }
+
+
+    .dropdown.active .dropdown-menu {
+        display: block;
+    }
+
+
+    .dropdown-menu li a {
+        padding: 12px 35px;
+
+        font-size: 14px;
+    }
+
+
+    /* QUOTE BUTTON */
+
+    .quote-btn {
+        display: none;
+    }
+
+
+    /* HERO */
+
+    .hero-slider .slide,
+    .hero-slider .slide > img {
+        height: 600px;
+    }
+
+
+    .hero-slider .slide .content {
+        padding: 40px 18px 55px;
+    }
+
+
+    .hero-slider .slide .content h1 {
+        max-width: 600px;
+
+        margin-bottom: 16px;
+
+        font-size: 34px;
+
+        line-height: 1.15;
+    }
+
+
+    .hero-slider .slide .content > p {
+        max-width: 500px;
+
+        margin-bottom: 20px;
+
+        font-size: 16px;
+
+        line-height: 1.55;
+    }
+
+
+    /* BADGE */
+
+    .hero-slider .hero-badge {
+        padding: 8px 14px;
+
+        font-size: 12px;
+    }
+
+
+    /* HERO STATS */
+
+    .hero-slider .hero-stats {
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        max-width: 430px;
+
+        gap: 8px;
+
+        margin-bottom: 18px;
+    }
+
+
+    .hero-slider .hero-stat {
+        width: 100%;
+
+        padding: 9px 8px;
+    }
+
+
+    .hero-slider .hero-stat strong {
+        font-size: 16px;
+    }
+
+
+    .hero-slider .hero-stat span {
+        font-size: 12px;
+    }
+
+
+    .hero-slider .hero-note {
+        font-size: 13px;
+    }
+
+
+    /* HERO ARROWS */
+
+    .hero-slider .prev,
+    .hero-slider .next {
+        width: 45px;
+
+        height: 45px;
+
+        border-radius: 12px;
+
+        font-size: 25px;
+    }
+
+
+    .hero-slider .prev {
+        left: 12px;
+    }
+
+
+    .hero-slider .next {
+        right: 12px;
+    }
+
+
+    /* HERO BUTTON */
+
+    .hero-slider .btn-primary {
+        padding: 12px 22px;
+
+        font-size: 15px;
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONE - 480px
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .logo img {
+        height: 38px;
+    }
+
+
+    .hero-slider .slide,
+    .hero-slider .slide > img {
+        height: 580px;
+    }
+
+
+    .hero-slider .slide .content {
+        padding: 35px 15px 50px;
+    }
+
+
+    .hero-slider .slide .content h1 {
+        font-size: 29px;
+    }
+
+
+    .hero-slider .slide .content > p {
+        font-size: 15px;
+    }
+
+
+    .hero-slider .hero-stats {
+        grid-template-columns: 1fr;
+
+        max-width: 280px;
+    }
+
+
+    .hero-slider .hero-stat {
+        padding: 8px 12px;
+    }
+
+
+    .hero-slider .prev,
+    .hero-slider .next {
+        width: 40px;
+
+        height: 40px;
+
+        font-size: 22px;
+    }
+
+
+    .hero-slider .prev {
+        left: 8px;
+    }
+
+
+    .hero-slider .next {
+        right: 8px;
     }
 }
