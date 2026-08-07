@@ -1,58 +1,101 @@
-const slides=document.querySelectorAll(".slide");
-const dots=document.querySelectorAll(".dot");
-const next=document.querySelector(".next");
-const prev=document.querySelector(".prev");
+document.addEventListener("DOMContentLoaded", function () {
 
-let current=0;
+    const slides = document.querySelectorAll(".hero-slider .slide");
+    const prevButton = document.querySelector(".hero-slider .prev");
+    const nextButton = document.querySelector(".hero-slider .next");
+    const dots = document.querySelectorAll(".hero-slider .dot");
 
-function showSlide(index){
+    if (!slides.length) {
+        console.log("No hero slides found");
+        return;
+    }
 
-slides.forEach(slide=>slide.classList.remove("active"));
-dots.forEach(dot=>dot.classList.remove("active"));
+    let currentSlide = 0;
+    let autoSlide;
 
-slides[index].classList.add("active");
-dots[index].classList.add("active");
+    function showSlide(index) {
 
-}
+        // Keep index inside 0–2
+        if (index >= slides.length) {
+            currentSlide = 0;
+        } else if (index < 0) {
+            currentSlide = slides.length - 1;
+        } else {
+            currentSlide = index;
+        }
 
-next.onclick=()=>{
+        // Hide ALL slides
+        slides.forEach(function (slide) {
+            slide.classList.remove("active");
+        });
 
-current++;
+        // Remove active from ALL dots
+        dots.forEach(function (dot) {
+            dot.classList.remove("active");
+        });
 
-if(current>=slides.length) current=0;
+        // Show current slide
+        slides[currentSlide].classList.add("active");
 
-showSlide(current);
+        // Activate current dot
+        if (dots[currentSlide]) {
+            dots[currentSlide].classList.add("active");
+        }
 
-}
+        console.log("Showing slide:", currentSlide + 1);
+    }
 
-prev.onclick=()=>{
 
-current--;
+    // NEXT BUTTON
+    if (nextButton) {
+        nextButton.addEventListener("click", function () {
+            showSlide(currentSlide + 1);
+            restartAutoSlide();
+        });
+    }
 
-if(current<0) current=slides.length-1;
 
-showSlide(current);
+    // PREVIOUS BUTTON
+    if (prevButton) {
+        prevButton.addEventListener("click", function () {
+            showSlide(currentSlide - 1);
+            restartAutoSlide();
+        });
+    }
 
-}
 
-dots.forEach((dot,index)=>{
+    // DOT BUTTONS
+    dots.forEach(function (dot, index) {
 
-dot.onclick=()=>{
+        dot.addEventListener("click", function () {
+            showSlide(index);
+            restartAutoSlide();
+        });
 
-current=index;
+    });
 
-showSlide(current);
 
-}
+    // AUTOMATIC SLIDER
+    function startAutoSlide() {
+
+        autoSlide = setInterval(function () {
+            showSlide(currentSlide + 1);
+        }, 5000);
+
+    }
+
+
+    // Restart automatic slider
+    function restartAutoSlide() {
+
+        clearInterval(autoSlide);
+        startAutoSlide();
+
+    }
+
+
+    // Start slider
+    showSlide(0);
+    startAutoSlide();
 
 });
-
-setInterval(()=>{
-
-current++;
-
-if(current>=slides.length) current=0;
-
-showSlide(current);
-
-},5000);
