@@ -1559,3 +1559,541 @@ nav ul li a {
     }
 
 }
+/* =====================================================
+   SOLARPEDIA HERO SLIDER
+   SMOOTH FADE + ZOOM TRANSITION
+===================================================== */
+
+.hero-slider {
+    position: relative;
+    width: 100%;
+    height: 620px;
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   SLIDE
+===================================================== */
+
+.hero-slider .slide {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: scale(1.04);
+
+    transition:
+        opacity 0.9s ease-in-out,
+        transform 1.2s ease-in-out,
+        visibility 0.9s ease-in-out;
+
+    z-index: 1;
+}
+
+
+/* =====================================================
+   ACTIVE SLIDE
+===================================================== */
+
+.hero-slider .slide.active {
+    opacity: 1;
+    visibility: visible;
+
+    transform: scale(1);
+
+    z-index: 2;
+}
+
+
+/* =====================================================
+   SLIDE IMAGE
+===================================================== */
+
+.hero-slider .slide > img {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* =====================================================
+   DARK OVERLAY
+===================================================== */
+
+.hero-slider .slide .overlay {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.55),
+            rgba(0, 0, 0, 0.25)
+        );
+
+    z-index: 1;
+}
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.hero-slider .slide .content {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 5;
+
+    width: 100%;
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 40px 30px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    color: #ffffff;
+}
+
+
+/* =====================================================
+   HEADING
+===================================================== */
+
+.hero-slider .slide .content h1 {
+    max-width: 900px;
+
+    margin: 15px auto 20px;
+
+    color: #ffffff;
+
+    font-size: clamp(38px, 5vw, 68px);
+
+    line-height: 1.1;
+
+    font-weight: 800;
+
+    text-align: center;
+}
+
+
+/* =====================================================
+   PARAGRAPH
+===================================================== */
+
+.hero-slider .slide .content p {
+    max-width: 800px;
+
+    margin: 0 auto 25px;
+
+    color: #ffffff;
+
+    font-size: 18px;
+
+    line-height: 1.6;
+
+    text-align: center;
+}
+
+
+/* =====================================================
+   BADGE
+===================================================== */
+
+.hero-slider .hero-badge,
+.hero-slider .slide .content > span {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 9px 18px;
+
+    margin-bottom: 15px;
+
+    border-radius: 50px;
+
+    background: #16a34a;
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   STATS
+===================================================== */
+
+.hero-slider .hero-stats {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin: 10px auto 25px;
+
+    flex-wrap: wrap;
+}
+
+
+.hero-slider .hero-stat {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 11px 18px;
+
+    border-radius: 50px;
+
+    background: rgba(255,255,255,0.18);
+
+    border: 1px solid rgba(255,255,255,0.35);
+
+    backdrop-filter: blur(8px);
+
+    color: #ffffff;
+}
+
+
+.hero-slider .hero-stat strong {
+    color: #ffffff;
+
+    font-size: 18px;
+}
+
+
+.hero-slider .hero-stat span {
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.hero-slider .hero-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+
+.hero-slider .btn-primary,
+.hero-slider .btn-secondary {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 14px 28px;
+
+    border-radius: 50px;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.hero-slider .btn-primary {
+    background: #16a34a;
+
+    color: #ffffff;
+}
+
+
+.hero-slider .btn-secondary {
+    background: #ffffff;
+
+    color: #14532d;
+
+    border: 2px solid #16a34a;
+}
+
+
+.hero-slider .btn-primary:hover,
+.hero-slider .btn-secondary:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+
+/* =====================================================
+   LEFT / RIGHT BUTTONS
+===================================================== */
+
+.hero-slider .prev,
+.hero-slider .next {
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    z-index: 20;
+
+    width: 64px;
+
+    height: 64px;
+
+    border: none;
+
+    border-radius: 18px;
+
+    background: rgba(255,255,255,0.20);
+
+    backdrop-filter: blur(8px);
+
+    color: #ffffff;
+
+    font-size: 36px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.hero-slider .prev {
+    left: 25px;
+}
+
+
+.hero-slider .next {
+    right: 25px;
+}
+
+
+.hero-slider .prev:hover,
+.hero-slider .next:hover {
+    background: rgba(22,163,74,0.85);
+
+    transform: translateY(-50%) scale(1.05);
+}
+
+
+/* =====================================================
+   DOTS
+===================================================== */
+
+.hero-slider .dots {
+    position: absolute;
+
+    bottom: 25px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 20;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+.hero-slider .dot {
+    width: 11px;
+
+    height: 11px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.55);
+
+    cursor: pointer;
+
+    transition:
+        width 0.3s ease,
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.hero-slider .dot.active {
+    width: 30px;
+
+    border-radius: 20px;
+
+    background: #ff8a00;
+
+    transform: scale(1.05);
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .hero-slider {
+        height: 560px;
+    }
+
+
+    .hero-slider .slide .content {
+        padding: 30px 20px;
+    }
+
+
+    .hero-slider .slide .content h1 {
+        font-size: 34px;
+
+        line-height: 1.15;
+    }
+
+
+    .hero-slider .slide .content p {
+        font-size: 16px;
+
+        line-height: 1.5;
+    }
+
+
+    .hero-slider .hero-stats {
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        width: 100%;
+
+        gap: 8px;
+    }
+
+
+    .hero-slider .hero-stat {
+        padding: 9px 10px;
+
+        justify-content: center;
+    }
+
+
+    .hero-slider .hero-stat strong {
+        font-size: 16px;
+    }
+
+
+    .hero-slider .hero-stat span {
+        font-size: 12px;
+    }
+
+
+    .hero-slider .hero-buttons {
+        flex-direction: column;
+
+        width: 100%;
+    }
+
+
+    .hero-slider .btn-primary,
+    .hero-slider .btn-secondary {
+        width: 100%;
+    }
+
+
+    .hero-slider .prev,
+    .hero-slider .next {
+        width: 48px;
+
+        height: 48px;
+
+        font-size: 27px;
+
+        border-radius: 14px;
+    }
+
+
+    .hero-slider .prev {
+        left: 12px;
+    }
+
+
+    .hero-slider .next {
+        right: 12px;
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+
+    .hero-slider {
+        height: 540px;
+    }
+
+
+    .hero-slider .slide .content h1 {
+        font-size: 29px;
+    }
+
+
+    .hero-slider .slide .content p {
+        font-size: 15px;
+    }
+
+}
