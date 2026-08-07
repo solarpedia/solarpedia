@@ -2,321 +2,292 @@ console.log("SolarPedia Script Loaded");
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    /* =====================================================
+    /* =========================================
+       SEARCH POPUP
+    ========================================= */
+
+    const openSearch = document.getElementById("openSearch");
+    const closeSearch = document.getElementById("closeSearch");
+    const searchPopup = document.getElementById("searchPopup");
+
+    if (openSearch && closeSearch && searchPopup) {
+
+        openSearch.addEventListener("click", () => {
+            searchPopup.classList.add("active");
+        });
+
+        closeSearch.addEventListener("click", () => {
+            searchPopup.classList.remove("active");
+        });
+
+        searchPopup.addEventListener("click", (e) => {
+            if (e.target === searchPopup) {
+                searchPopup.classList.remove("active");
+            }
+        });
+    }
+
+
+    /* =========================================
+       MOBILE MENU
+    ========================================= */
+
+    const menuToggle = document.getElementById("menuToggle");
+    const navbar = document.getElementById("navbar");
+
+    if (menuToggle && navbar) {
+
+        menuToggle.addEventListener("click", () => {
+            navbar.classList.toggle("active");
+        });
+
+    }
+
+
+    /* =========================================
+       BACK TO TOP
+    ========================================= */
+
+    const backToTop = document.getElementById("backToTop");
+
+    if (backToTop) {
+
+        backToTop.style.display = "none";
+
+        window.addEventListener("scroll", () => {
+
+            if (window.scrollY > 100) {
+                backToTop.style.display = "block";
+            } else {
+                backToTop.style.display = "none";
+            }
+
+        });
+
+        backToTop.addEventListener("click", () => {
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+        });
+
+    }
+
+
+    /* =========================================
+       COUNTER ANIMATION
+    ========================================= */
+
+    const counters = document.querySelectorAll(".counter");
+
+    if (counters.length > 0) {
+
+        const observer = new IntersectionObserver((entries) => {
+
+            entries.forEach(entry => {
+
+                if (!entry.isIntersecting) return;
+
+                const counter = entry.target;
+                const target = Number(counter.dataset.target);
+
+                let current = 0;
+                const increment = Math.ceil(target / 100);
+
+                const update = () => {
+
+                    current += increment;
+
+                    if (current >= target) {
+
+                        counter.innerText =
+                            target.toLocaleString() + "+";
+
+                    } else {
+
+                        counter.innerText =
+                            current.toLocaleString();
+
+                        requestAnimationFrame(update);
+                    }
+
+                };
+
+                update();
+
+                observer.unobserve(counter);
+
+            });
+
+        }, {
+            threshold: 0.5
+        });
+
+        counters.forEach(counter => {
+            observer.observe(counter);
+        });
+
+    }
+
+
+    /* =========================================
        HERO SLIDER
-    ===================================================== */
+    ========================================= */
 
     const slides = document.querySelectorAll(".hero-slider .slide");
-    const dots = document.querySelectorAll(".hero-slider .dot");
     const prevButton = document.querySelector(".hero-slider .prev");
     const nextButton = document.querySelector(".hero-slider .next");
+    const dots = document.querySelectorAll(".hero-slider .dot");
 
     let currentSlide = 0;
-    let slideTimer;
+    let autoSlide;
 
+
+    /* Show selected slide */
 
     function showSlide(index) {
 
         if (slides.length === 0) return;
 
-        // Keep index inside range
+        /* Loop slides */
+
         if (index >= slides.length) {
-            index = 0;
+            currentSlide = 0;
         }
 
-        if (index < 0) {
-            index = slides.length - 1;
+        else if (index < 0) {
+            currentSlide = slides.length - 1;
         }
 
-        currentSlide = index;
+        else {
+            currentSlide = index;
+        }
 
 
-        /* Remove active from all slides */
+        /* Hide all slides */
+
         slides.forEach((slide) => {
             slide.classList.remove("active");
         });
 
 
-        /* Add active to current slide */
+        /* Show current slide */
+
         slides[currentSlide].classList.add("active");
 
 
         /* Update dots */
-        dots.forEach((dot, i) => {
-            dot.classList.toggle(
-                "active",
-                i === currentSlide
-            );
+
+        dots.forEach((dot) => {
+            dot.classList.remove("active");
         });
+
+        if (dots[currentSlide]) {
+            dots[currentSlide].classList.add("active");
+        }
+
     }
 
 
-    function nextSlide() {
-        showSlide(currentSlide + 1);
-    }
+    /* =========================================
+       NEXT BUTTON
+    ========================================= */
 
-
-    function previousSlide() {
-        showSlide(currentSlide - 1);
-    }
-
-
-    /* NEXT BUTTON */
     if (nextButton) {
+
         nextButton.addEventListener("click", () => {
 
-            nextSlide();
+            showSlide(currentSlide + 1);
 
-            restartSlider();
+            restartAutoSlide();
 
         });
+
     }
 
 
-    /* PREVIOUS BUTTON */
+    /* =========================================
+       PREVIOUS BUTTON
+    ========================================= */
+
     if (prevButton) {
+
         prevButton.addEventListener("click", () => {
 
-            previousSlide();
+            showSlide(currentSlide - 1);
 
-            restartSlider();
+            restartAutoSlide();
 
         });
+
     }
 
 
-    /* DOT BUTTONS */
+    /* =========================================
+       DOT BUTTONS
+    ========================================= */
+
     dots.forEach((dot, index) => {
 
         dot.addEventListener("click", () => {
 
             showSlide(index);
 
-            restartSlider();
+            restartAutoSlide();
 
         });
 
     });
 
 
-    /* AUTO SLIDE */
+    /* =========================================
+       AUTOMATIC SLIDER
+    ========================================= */
 
-    function startSlider() {
+    function startAutoSlide() {
 
-        if (slides.length <= 1) return;
+        autoSlide = setInterval(() => {
 
-        slideTimer = setInterval(() => {
-
-            nextSlide();
+            showSlide(currentSlide + 1);
 
         }, 5000);
 
     }
 
 
-    function restartSlider() {
+    /* =========================================
+       RESTART AUTO SLIDER
+    ========================================= */
 
-        clearInterval(slideTimer);
+    function restartAutoSlide() {
 
-        startSlider();
+        clearInterval(autoSlide);
+
+        startAutoSlide();
 
     }
 
 
-    /* START */
+    /* =========================================
+       START HERO SLIDER
+    ========================================= */
+
     if (slides.length > 0) {
 
         showSlide(0);
 
-        startSlider();
+        startAutoSlide();
 
     }
 
 
-    /* =====================================================
-       SEARCH POPUP
-    ===================================================== */
-
-    const openSearch =
-        document.getElementById("openSearch");
-
-    const closeSearch =
-        document.getElementById("closeSearch");
-
-    const searchPopup =
-        document.getElementById("searchPopup");
-
-
-    if (openSearch && closeSearch && searchPopup) {
-
-        openSearch.addEventListener("click", () => {
-
-            searchPopup.classList.add("active");
-
-        });
-
-
-        closeSearch.addEventListener("click", () => {
-
-            searchPopup.classList.remove("active");
-
-        });
-
-
-        searchPopup.addEventListener("click", (e) => {
-
-            if (e.target === searchPopup) {
-
-                searchPopup.classList.remove("active");
-
-            }
-
-        });
-
-    }
-
-
-    /* =====================================================
-       MOBILE MENU
-    ===================================================== */
-
-    const menuToggle =
-        document.getElementById("menuToggle");
-
-    const navbar =
-        document.getElementById("navbar");
-
-
-    if (menuToggle && navbar) {
-
-        menuToggle.addEventListener("click", () => {
-
-            navbar.classList.toggle("active");
-
-        });
-
-    }
-
-
-    /* =====================================================
-       BACK TO TOP
-    ===================================================== */
-
-    const backToTop =
-        document.getElementById("backToTop");
-
-
-    if (backToTop) {
-
-        window.addEventListener("scroll", () => {
-
-            if (window.scrollY > 100) {
-
-                backToTop.style.display = "block";
-
-            } else {
-
-                backToTop.style.display = "none";
-
-            }
-
-        });
-
-
-        backToTop.addEventListener("click", () => {
-
-            window.scrollTo({
-
-                top: 0,
-
-                behavior: "smooth"
-
-            });
-
-        });
-
-    }
-
-
-    /* =====================================================
-       COUNTER ANIMATION
-    ===================================================== */
-
-    const counters =
-        document.querySelectorAll(".counter");
-
-
-    if (counters.length > 0) {
-
-        const observer =
-            new IntersectionObserver((entries) => {
-
-                entries.forEach(entry => {
-
-                    if (!entry.isIntersecting) return;
-
-
-                    const counter = entry.target;
-
-                    const target =
-                        Number(counter.dataset.target);
-
-
-                    let current = 0;
-
-                    const increment =
-                        Math.ceil(target / 100);
-
-
-                    const update = () => {
-
-                        current += increment;
-
-
-                        if (current >= target) {
-
-                            counter.innerText =
-                                target.toLocaleString() + "+";
-
-                        } else {
-
-                            counter.innerText =
-                                current.toLocaleString();
-
-                            requestAnimationFrame(update);
-
-                        }
-
-                    };
-
-
-                    update();
-
-                    observer.unobserve(counter);
-
-                });
-
-            }, {
-                threshold: 0.5
-            });
-
-
-        counters.forEach(counter => {
-
-            observer.observe(counter);
-
-        });
-
-    }
-
-
-    /* =====================================================
+    /* =========================================
        STICKY HEADER
-    ===================================================== */
+    ========================================= */
 
-    const header =
-        document.querySelector("header");
-
+    const header = document.querySelector("header");
 
     if (header) {
 
