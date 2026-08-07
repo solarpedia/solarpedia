@@ -1,1 +1,101 @@
+/* =====================================================
+   SOLARPEDIA NAVIGATION SVG ICONS
+===================================================== */
 
+/* Main navigation links */
+#navbar > ul > li > a {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+}
+
+/* All navigation SVG icons */
+#navbar a img {
+    width: 19px;
+    height: 19px;
+    object-fit: contain;
+    display: block;
+    flex-shrink: 0;
+}
+
+/* Main navigation icons */
+#navbar > ul > li > a > img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Tools dropdown arrow */
+#navbar .dropdown-arrow {
+    width: 13px;
+    height: 13px;
+    margin-left: 2px;
+}
+
+/* =====================================================
+   TOOLS DROPDOWN
+===================================================== */
+
+#navbar .dropdown-menu li a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Dropdown icons */
+#navbar .dropdown-menu li a img {
+    width: 19px;
+    height: 19px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+/* Keep dropdown text aligned */
+#navbar .dropdown-menu li a span {
+    line-height: 1.3;
+}
+
+
+/* =====================================================
+   ICON HOVER EFFECT
+===================================================== */
+
+#navbar a img {
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+#navbar a:hover img {
+    transform: translateY(-1px);
+    opacity: 0.85;
+}
+
+
+/* =====================================================
+   MOBILE NAVIGATION
+===================================================== */
+
+@media (max-width: 768px) {
+
+    #navbar > ul > li > a {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    #navbar a img {
+        width: 20px;
+        height: 20px;
+    }
+
+    #navbar .dropdown-menu li a {
+        padding-left: 15px;
+        gap: 10px;
+    }
+
+    #navbar .dropdown-menu li a img {
+        width: 19px;
+        height: 19px;
+    }
+
+}
