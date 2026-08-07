@@ -216,3 +216,248 @@ footer{
 }
 
 }
+/* =====================================================
+   SOLARPEDIA HERO - FINAL OVERRIDE
+   Put this at the VERY BOTTOM of responsive.css
+   ===================================================== */
+
+/* Hero content positioning */
+.hero-slider .slide .content {
+    position: relative;
+    z-index: 5;
+    width: min(1100px, 92%);
+    margin: 0 auto;
+    padding: 90px 20px 70px;
+    text-align: center;
+    color: #ffffff;
+}
+
+/* Hero heading */
+.hero-slider .slide .content h1 {
+    display: block;
+    width: 100%;
+    max-width: 850px;
+    margin: 18px auto 22px;
+
+    font-size: clamp(38px, 5vw, 64px);
+    line-height: 1.12;
+    font-weight: 700;
+
+    color: #ffffff;
+    text-align: center;
+}
+
+/* Hero paragraph */
+.hero-slider .slide .content > p {
+    display: block;
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto 28px;
+
+    font-size: 18px;
+    line-height: 1.65;
+    color: #ffffff;
+    text-align: center;
+}
+
+/* Badge */
+.hero-slider .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 8px 17px;
+    margin: 0 auto;
+
+    border-radius: 50px;
+
+    background: rgba(22, 163, 74, 0.95);
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Hero statistics */
+.hero-slider .hero-stats {
+    display: flex !important;
+    flex-direction: row !important;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 12px;
+
+    width: 100%;
+    max-width: 750px;
+
+    margin: 28px auto 0;
+}
+
+/* Individual statistic */
+.hero-slider .hero-stat {
+    display: flex !important;
+    flex-direction: row !important;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    padding: 11px 17px;
+
+    border-radius: 50px;
+
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    backdrop-filter: blur(8px);
+}
+
+/* Number */
+.hero-slider .hero-stat strong {
+    display: inline !important;
+
+    margin: 0;
+    padding: 0;
+
+    color: #ffffff;
+    font-size: 19px;
+    line-height: 1;
+}
+
+/* Text */
+.hero-slider .hero-stat span {
+    display: inline !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+
+    color: #ffffff !important;
+
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+/* Hero note */
+.hero-slider .hero-note {
+    display: block;
+
+    max-width: 650px;
+
+    margin: 20px auto 0;
+
+    color: rgba(255, 255, 255, 0.9);
+
+    font-size: 14px;
+    line-height: 1.6;
+
+    text-align: center;
+}
+
+/* =====================================================
+   HEADER NAVIGATION
+   ===================================================== */
+
+header nav ul {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+}
+
+header nav li {
+    white-space: nowrap;
+}
+
+header nav a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+
+    white-space: nowrap;
+}
+
+/* =====================================================
+   DESKTOP
+   ===================================================== */
+
+@media (min-width: 769px) {
+
+    .hero-slider .slide .content {
+        min-height: 620px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+}
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 768px) {
+
+    .hero-slider .slide .content {
+        width: 92%;
+        padding: 70px 10px 55px;
+    }
+
+    .hero-slider .slide .content h1 {
+        font-size: 34px;
+        line-height: 1.15;
+        max-width: 600px;
+    }
+
+    .hero-slider .slide .content > p {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    .hero-slider .hero-stats {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr;
+
+        gap: 8px;
+
+        max-width: 420px;
+    }
+
+    .hero-slider .hero-stat {
+        padding: 9px 10px;
+    }
+
+    .hero-slider .hero-stat strong {
+        font-size: 17px;
+    }
+
+    .hero-slider .hero-stat span {
+        font-size: 12px;
+    }
+
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+
+    .hero-slider .slide .content h1 {
+        font-size: 29px;
+    }
+
+    .hero-slider .slide .content > p {
+        font-size: 15px;
+    }
+
+    .hero-slider .hero-stats {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
