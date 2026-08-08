@@ -166,3 +166,116 @@ const scrolled=(winScroll/height)*100;
 document.getElementById("readingProgress").style.width=scrolled+"%";
 
 });
+/* =====================================================
+   SOLARPEDIA NAVIGATION
+===================================================== */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const menuToggle = document.getElementById("menuToggle");
+    const navbar = document.getElementById("navbar");
+
+    /* =========================================
+       MOBILE MENU
+    ========================================= */
+
+    if (menuToggle && navbar) {
+
+        menuToggle.addEventListener("click", function () {
+
+            navbar.classList.toggle("active");
+
+            const isOpen = navbar.classList.contains("active");
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                isOpen ? "true" : "false"
+            );
+
+        });
+
+    }
+
+
+    /* =========================================
+       TOOLS DROPDOWN
+    ========================================= */
+
+    const dropdown = document.querySelector("#navbar .dropdown");
+
+    if (dropdown) {
+
+        const dropdownLink = dropdown.querySelector(":scope > a");
+
+        if (dropdownLink) {
+
+            dropdownLink.addEventListener("click", function (event) {
+
+                /* Mobile only */
+
+                if (window.innerWidth <= 768) {
+
+                    event.preventDefault();
+
+                    dropdown.classList.toggle("active");
+
+                }
+
+            });
+
+        }
+
+    }
+
+
+    /* =========================================
+       CLOSE MOBILE MENU AFTER LINK CLICK
+    ========================================= */
+
+    if (navbar) {
+
+        const links = navbar.querySelectorAll(
+            "a:not(.dropdown > a)"
+        );
+
+        links.forEach(function (link) {
+
+            link.addEventListener("click", function () {
+
+                if (window.innerWidth <= 768) {
+
+                    navbar.classList.remove("active");
+
+                    if (menuToggle) {
+                        menuToggle.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
+                    }
+
+                }
+
+            });
+
+        });
+
+    }
+
+
+    /* =========================================
+       CLOSE DROPDOWN WHEN CLICKING OUTSIDE
+    ========================================= */
+
+    document.addEventListener("click", function (event) {
+
+        if (!dropdown) return;
+
+        if (!dropdown.contains(event.target)) {
+
+            dropdown.classList.remove("active");
+
+        }
+
+    });
+
+});
