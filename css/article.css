@@ -1381,3 +1381,225 @@ transition:.15s;
     }
 
 }
+/* =========================================================
+   SOLARPEDIA ARTICLE CONTENT FIX
+   Put this at the VERY BOTTOM of the article CSS
+   ========================================================= */
+
+/* Article main area */
+.article-content,
+.article-body,
+.post-content,
+.blog-content {
+    color: #172033 !important;
+    background: #ffffff;
+}
+
+/* All normal paragraphs */
+.article-content p,
+.article-body p,
+.post-content p,
+.blog-content p {
+    color: #172033 !important;
+    font-size: 18px;
+    line-height: 1.9;
+    margin: 0 0 22px;
+}
+
+/* Headings */
+.article-content h1,
+.article-content h2,
+.article-content h3,
+.article-content h4,
+.article-body h1,
+.article-body h2,
+.article-body h3,
+.article-body h4,
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.post-content h4,
+.blog-content h1,
+.blog-content h2,
+.blog-content h3,
+.blog-content h4 {
+    color: #172033 !important;
+}
+
+/* Lists */
+.article-content ul,
+.article-content ol,
+.article-body ul,
+.article-body ol,
+.post-content ul,
+.post-content ol,
+.blog-content ul,
+.blog-content ol {
+    color: #172033 !important;
+    margin: 15px 0 25px;
+    padding-left: 35px;
+}
+
+/* List items */
+.article-content li,
+.article-body li,
+.post-content li,
+.blog-content li {
+    color: #172033 !important;
+    font-size: 18px;
+    line-height: 1.9;
+    margin-bottom: 10px;
+}
+
+/* Make sure nested list text is also visible */
+.article-content li *,
+.article-body li *,
+.post-content li *,
+.blog-content li * {
+    color: inherit !important;
+}
+
+/* =========================================================
+   TABLE FIX
+   ========================================================= */
+
+.article-content table,
+.article-body table,
+.post-content table,
+.blog-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+    background: #ffffff;
+}
+
+/* Table header */
+.article-content table th,
+.article-body table th,
+.post-content table th,
+.blog-content table th {
+    background: #198754 !important;
+    color: #ffffff !important;
+    font-weight: 700;
+    padding: 16px 14px;
+    border: 1px solid #198754;
+    text-align: center;
+}
+
+/* Table cells */
+.article-content table td,
+.article-body table td,
+.post-content table td,
+.blog-content table td {
+    color: #172033 !important;
+    background: #ffffff !important;
+    padding: 15px 14px;
+    border: 1px solid #d9dee5;
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* Table alternating rows */
+.article-content table tr:nth-child(even) td,
+.article-body table tr:nth-child(even) td,
+.post-content table tr:nth-child(even) td,
+.blog-content table tr:nth-child(even) td {
+    background: #f7f9fb !important;
+}
+
+/* Table strong/bold text */
+.article-content table strong,
+.article-body table strong,
+.post-content table strong,
+.blog-content table strong {
+    color: #172033 !important;
+}
+
+/* =========================================================
+   ARTICLE LINKS
+   ========================================================= */
+
+.article-content a,
+.article-body a,
+.post-content a,
+.blog-content a {
+    color: #198754 !important;
+    text-decoration: underline;
+}
+
+/* =========================================================
+   ARTICLE BLOCKQUOTES / INFO BOXES
+   ========================================================= */
+
+.article-content blockquote,
+.article-body blockquote,
+.post-content blockquote,
+.blog-content blockquote {
+    color: #172033 !important;
+    background: #f4f8f6;
+    border-left: 5px solid #198754;
+    padding: 18px 22px;
+    margin: 25px 0;
+}
+
+/* =========================================================
+   ARTICLE STRONG / BOLD
+   ========================================================= */
+
+.article-content strong,
+.article-body strong,
+.post-content strong,
+.blog-content strong {
+    color: #172033 !important;
+}
+
+/* =========================================================
+   ARTICLE IMAGES
+   ========================================================= */
+
+.article-content img,
+.article-body img,
+.post-content img,
+.blog-content img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* =========================================================
+   ARTICLE MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .article-content p,
+    .article-body p,
+    .post-content p,
+    .blog-content p {
+        font-size: 16px;
+        line-height: 1.8;
+    }
+
+    .article-content li,
+    .article-body li,
+    .post-content li,
+    .blog-content li {
+        font-size: 16px;
+        line-height: 1.8;
+    }
+
+    .article-content table,
+    .article-body table,
+    .post-content table,
+    .blog-content table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .article-content table th,
+    .article-content table td,
+    .article-body table th,
+    .article-body table td {
+        padding: 12px 10px;
+    }
+}
