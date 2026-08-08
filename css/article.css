@@ -1603,3 +1603,114 @@ transition:.15s;
         padding: 12px 10px;
     }
 }
+/* =====================================================
+   FINAL ARTICLE TEXT VISIBILITY FIX
+   SolarPedia.in
+===================================================== */
+
+/* Main article text */
+.content-card {
+    color: #222222;
+}
+
+/* Paragraphs */
+.content-card p {
+    color: #444444;
+}
+
+/* Lists - FIX INVISIBLE TEXT */
+.content-card ul li,
+.content-card ol li {
+    color: #222222 !important;
+}
+
+/* List text inside all article sections */
+.page-content ul li,
+.page-content ol li {
+    color: #222222 !important;
+}
+
+/* Headings */
+.content-card h2,
+.content-card h3,
+.content-card h4 {
+    color: #222222;
+}
+
+/* Comparison table */
+.comparison-table {
+    color: #222222;
+}
+
+.comparison-table th {
+    background: #198754;
+    color: #ffffff !important;
+}
+
+.comparison-table td {
+    color: #222222 !important;
+    background: #ffffff;
+    padding: 14px;
+    border: 1px solid #dddddd;
+}
+
+/* Alternating table rows */
+.comparison-table tr:nth-child(even) td {
+    background: #f8f9fa;
+}
+
+/* Table hover */
+.comparison-table tr:hover td {
+    background: #e8f5e9;
+}
+
+/* Recommendation table */
+.content-card table td,
+.content-card table th {
+    color: #222222;
+}
+
+.content-card table th {
+    color: #ffffff !important;
+}
+
+/* Tip boxes */
+.tip-box {
+    color: #222222;
+}
+
+.tip-box p,
+.tip-box li {
+    color: #333333 !important;
+}
+
+/* Strong text */
+.content-card strong {
+    color: #111111;
+}
+
+/* Links */
+.content-card a {
+    color: #198754;
+}
+
+.content-card a:hover {
+    color: #146c43;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .content-card {
+        color: #222222;
+    }
+
+    .content-card p,
+    .content-card li {
+        color: #333333 !important;
+    }
+
+    .comparison-table td {
+        color: #222222 !important;
+    }
+}
