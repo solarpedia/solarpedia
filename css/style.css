@@ -1617,17 +1617,18 @@ header .container {
     display: flex;
     align-items: center;
     flex-shrink: 0;
-    margin-right: 45px;
+    margin-right: 35px;
+    width: 220px;
+    height: 55px;
 }
 
 .logo img {
-    width: 190px;
-    height: auto;
-    max-height: 65px;
-    object-fit: contain;
+    width: 220px;
+    height: 55px;
+    object-fit: cover;
+    object-position: center;
     display: block;
 }
-
 /* =========================================
    NAVIGATION
 ========================================= */
