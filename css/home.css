@@ -496,3 +496,162 @@ header nav a[href*="calculator"] {
         font-size: 17px;
     }
 }
+/* =========================================================
+   SOLARPEDIA FEATURED SOLAR PRICE CARD
+========================================================= */
+
+.article-grid .featured-price-card {
+    grid-column: 1 / -1 !important;
+
+    width: 100% !important;
+    max-width: none !important;
+
+    display: block !important;
+
+    background: #ffffff !important;
+
+    border-radius: 22px !important;
+
+    overflow: hidden !important;
+
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08) !important;
+
+    margin: 0 !important;
+
+    padding: 0 !important;
+}
+
+
+/* IMAGE */
+
+.article-grid .featured-price-card > img {
+    width: 100% !important;
+
+    height: 360px !important;
+
+    display: block !important;
+
+    object-fit: cover !important;
+
+    object-position: center !important;
+
+    margin: 0 !important;
+
+    padding: 0 !important;
+
+    border-radius: 0 !important;
+}
+
+
+/* BODY */
+
+.article-grid .featured-price-card .card-body {
+    padding: 30px 32px 32px !important;
+
+    display: block !important;
+}
+
+
+/* TAG */
+
+.article-grid .featured-price-card .tag {
+    display: inline-block !important;
+
+    background: #198754 !important;
+
+    color: #ffffff !important;
+
+    padding: 10px 22px !important;
+
+    border-radius: 30px !important;
+
+    font-size: 16px !important;
+
+    font-weight: 600 !important;
+
+    margin-bottom: 20px !important;
+}
+
+
+/* TITLE */
+
+.article-grid .featured-price-card h3 {
+    margin: 0 0 18px !important;
+
+    color: #102a43 !important;
+
+    font-size: 30px !important;
+
+    line-height: 1.45 !important;
+
+    font-weight: 700 !important;
+}
+
+
+/* DESCRIPTION */
+
+.article-grid .featured-price-card p {
+    margin: 0 0 25px !important;
+
+    color: #555555 !important;
+
+    font-size: 18px !important;
+
+    line-height: 1.8 !important;
+}
+
+
+/* READ MORE */
+
+.article-grid .featured-price-card a {
+    color: #087f3f !important;
+
+    font-size: 18px !important;
+
+    font-weight: 700 !important;
+
+    text-decoration: none !important;
+}
+
+
+/* HOVER */
+
+.article-grid .featured-price-card {
+    transition: transform .3s ease,
+                box-shadow .3s ease;
+}
+
+.article-grid .featured-price-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 15px 40px rgba(0,0,0,.12) !important;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .article-grid .featured-price-card {
+        grid-column: 1 / -1 !important;
+    }
+
+    .article-grid .featured-price-card > img {
+        height: 220px !important;
+    }
+
+    .article-grid .featured-price-card .card-body {
+        padding: 22px 20px 25px !important;
+    }
+
+    .article-grid .featured-price-card h3 {
+        font-size: 23px !important;
+    }
+
+    .article-grid .featured-price-card p {
+        font-size: 16px !important;
+    }
+
+}
