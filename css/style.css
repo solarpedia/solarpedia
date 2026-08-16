@@ -1576,3 +1576,283 @@ a:hover{
 color:var(--primary-dark);
 
 }
+
+/* =========================================
+   MODERN HEADER
+========================================= */
+
+header {
+    width: 100%;
+    background: #ffffff;
+    border-bottom: 1px solid #eeeeee;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    transition: all 0.3s ease;
+}
+
+header.scrolled {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Header container */
+
+header .container {
+    max-width: 1400px;
+    height: 78px;
+    margin: 0 auto;
+    padding: 0 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* =========================================
+   SOLARPEDIA LOGO
+========================================= */
+
+.logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    margin-right: 35px;
+}
+
+.logo img {
+    width: 145px;
+    height: auto;
+    max-height: 58px;
+    object-fit: contain;
+    display: block;
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+nav {
+    flex: 1;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    position: relative;
+}
+
+
+/* Main navigation links */
+
+nav ul li > a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 12px 14px;
+
+    color: #111827;
+    text-decoration: none;
+
+    font-size: 17px;
+    font-weight: 600;
+
+    border-radius: 10px;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+/* Hover */
+
+nav ul li > a:hover {
+    background: #f0faf5;
+    color: #12894f;
+}
+
+
+/* Icons */
+
+nav ul li > a img {
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+}
+
+
+/* =========================================
+   TOOLS
+========================================= */
+
+nav ul li.tools {
+    position: relative;
+}
+
+.dropdown-arrow {
+    font-size: 16px;
+    margin-left: 2px;
+    transition: transform 0.25s ease;
+}
+
+
+/* Rotate arrow */
+
+nav ul li.tools:hover .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+
+/* =========================================
+   DROPDOWN MENU
+========================================= */
+
+.dropdown-menu {
+    position: absolute;
+
+    top: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%) translateY(8px);
+
+    min-width: 255px;
+
+    background: #ffffff;
+
+    border-radius: 14px;
+
+    padding: 10px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.12);
+
+    border: 1px solid #eeeeee;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease,
+        visibility 0.25s ease;
+}
+
+
+/* Dropdown visible */
+
+nav ul li.tools:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateX(-50%) translateY(0);
+}
+
+
+/* Dropdown links */
+
+.dropdown-menu li {
+    width: 100%;
+}
+
+.dropdown-menu li a {
+    display: block;
+
+    width: 100%;
+
+    padding: 12px 15px;
+
+    color: #172033;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    text-decoration: none;
+
+    border-radius: 9px;
+
+    transition: all 0.2s ease;
+}
+
+.dropdown-menu li a:hover {
+    background: #edf9f2;
+    color: #12894f;
+    padding-left: 19px;
+}
+
+
+/* =========================================
+   SEARCH BUTTON
+========================================= */
+
+#openSearch {
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: #111827;
+
+    transition: all 0.25s ease;
+}
+
+#openSearch:hover {
+    background: #f0faf5;
+    color: #12894f;
+}
+
+#openSearch i {
+    font-size: 22px;
+}
+
+
+/* =========================================
+   CONSULTATION BUTTON
+========================================= */
+
+.consultation-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-left: 18px;
+
+    padding: 15px 27px;
+
+    background: #12894f;
+    color: #ffffff;
+
+    border-radius: 13px;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    box-shadow: 0 7px 18px rgba(18, 137, 79, 0.20);
+
+    transition: all 0.25s ease;
+}
+
+.consultation-btn:hover {
+    background: #0d713f;
+    transform: translateY(-2px);
+
+    box-shadow: 0 10px 25px rgba(18, 137, 79, 0.28);
+}
