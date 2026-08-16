@@ -655,3 +655,24 @@ header nav a[href*="calculator"] {
     }
 
 }
+/* =========================================
+   SOLARPEDIA HEADER LOGO FIX
+========================================= */
+
+header .logo {
+    display: flex !important;
+    align-items: center !important;
+    flex-shrink: 0 !important;
+    width: auto !important;
+    height: auto !important;
+    margin-right: 35px !important;
+}
+
+header .logo img {
+    width: 180px !important;
+    height: auto !important;
+    max-width: none !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    display: block !important;
+}
