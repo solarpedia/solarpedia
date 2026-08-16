@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Homepage -->
+
+  <!-- =========================
+       HOMEPAGE
+  ========================== -->
+
   <url>
     <loc>https://solarpedia.in/</loc>
     <priority>1.0</priority>
   </url>
 
-  <!-- Main Pages -->
+
+  <!-- =========================
+       MAIN PAGES
+  ========================== -->
+
   <url>
     <loc>https://solarpedia.in/about.html</loc>
     <priority>0.8</priority>
@@ -22,59 +31,46 @@
     <priority>0.9</priority>
   </url>
 
-  <!-- Published Articles -->
   <url>
-    <loc>https://solarpedia.in/articles/what-is-solar-energy.html</loc>
+    <loc>https://solarpedia.in/solar-guides.html</loc>
     <priority>0.9</priority>
   </url>
 
- <!-- Solar Tools & Calculators -->
 
-<url>
-  <loc>https://solarpedia.in/tools.html</loc>
-  <priority>0.9</priority>
-</url>
+  <!-- =========================
+       SOLAR GUIDES
+  ========================== -->
 
-<url>
-  <loc>https://solarpedia.in/calculator.html</loc>
-  <priority>0.9</priority>
-</url>
+  <url>
+    <loc>https://solarpedia.in/how-solar-works.html</loc>
+    <priority>0.9</priority>
+  </url>
 
-<url>
-  <loc>https://solarpedia.in/subsidy-finder.html</loc>
-  <priority>0.9</priority>
-</url>
+  <url>
+    <loc>https://solarpedia.in/solar-panels.html</loc>
+    <priority>0.9</priority>
+  </url>
 
-<url>
-  <loc>https://solarpedia.in/emi-calculator.html</loc>
-  <priority>0.8</priority>
-</url>
+  <url>
+    <loc>https://solarpedia.in/solar-inverter.html</loc>
+    <priority>0.9</priority>
+  </url>
 
-<url>
-  <loc>https://solarpedia.in/savings-calculator.html</loc>
-  <priority>0.8</priority>
-</url>
+  <url>
+    <loc>https://solarpedia.in/solar-battery.html</loc>
+    <priority>0.9</priority>
+  </url>
 
-<url>
-  <loc>https://solarpedia.in/battery-calculator.html</loc>
-  <priority>0.8</priority>
-</url>
+  <url>
+    <loc>https://solarpedia.in/net-metering.html</loc>
+    <priority>0.9</priority>
+  </url>
 
-<url>
-  <loc>https://solarpedia.in/roof-calculator.html</loc>
-  <priority>0.8</priority>
-</url>
 
-<url>
-  <loc>https://solarpedia.in/roi-calculator.html</loc>
-  <priority>0.8</priority>
-</url>
+  <!-- =========================
+       GOVERNMENT SCHEMES
+  ========================== -->
 
-<url>
-  <loc>https://solarpedia.in/net-metering-calculator.html</loc>
-  <priority>0.8</priority>
-</url>
-  <!-- Government & Solar Guides -->
   <url>
     <loc>https://solarpedia.in/government-schemes.html</loc>
     <priority>0.9</priority>
@@ -91,27 +87,80 @@
   </url>
 
   <url>
-    <loc>https://solarpedia.in/how-solar-works.html</loc>
+    <loc>https://solarpedia.in/state-subsidy.html</loc>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://solarpedia.in/net-metering.html</loc>
+    <loc>https://solarpedia.in/subsidy-finder.html</loc>
     <priority>0.9</priority>
   </url>
 
-   <!-- Legal Pages -->
+
+  <!-- =========================
+       SOLAR TOOLS
+  ========================== -->
+
   <url>
-    <loc>https://solarpedia.in/privacy-policy.html</loc>
-    <priority>0.3</priority>
+    <loc>https://solarpedia.in/tools.html</loc>
+    <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://solarpedia.in/disclaimer.html</loc>
-    <priority>0.3</priority>
+    <loc>https://solarpedia.in/calculator.html</loc>
+    <priority>0.9</priority>
   </url>
 
-  <!-- Articles -->
+  <url>
+    <loc>https://solarpedia.in/savings-calculator.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://solarpedia.in/emi-calculator.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://solarpedia.in/battery-calculator.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://solarpedia.in/load-calculator.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://solarpedia.in/roof-calculator.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://solarpedia.in/roi-calculator.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://solarpedia.in/net-metering-calculator.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://solarpedia.in/wbsedcl-bill-calculator.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+
+  <!-- =========================
+       PUBLISHED ARTICLES
+  ========================== -->
+
+  <url>
+    <loc>https://solarpedia.in/articles/what-is-solar-energy.html</loc>
+    <priority>0.9</priority>
+  </url>
+
   <url>
     <loc>https://solarpedia.in/articles/pm-surya-ghar-bengali.html</loc>
     <priority>0.9</priority>
@@ -121,34 +170,41 @@
     <loc>https://solarpedia.in/articles/wbsedcl-unit-tariff-2025-26.html</loc>
     <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
 
   <url>
-        <loc>https://solarpedia.in/articles/mono-vs-topcon-vs-bifacial.html</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <!-- Solar Price Article -->
+    <loc>https://solarpedia.in/articles/mono-vs-topcon-vs-bifacial.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
   <url>
     <loc>https://solarpedia.in/articles/solar-panel-price-india-2026.html</loc>
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>1.0</priority>
   </url>
-  
-  <url>
-    <loc>https://solarpedia.in/wbsedcl-bill-calculator.html</loc>
-    <lastmod>2026-07-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-</url>
 
-<url>
-    <loc>https://solarpedia.in/load-calculator.html</loc>
-    <lastmod>2026-07-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-</url>
+
+  <!-- =========================
+       LEGAL PAGES
+  ========================== -->
+
+  <url>
+    <loc>https://solarpedia.in/privacy-policy.html</loc>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://solarpedia.in/terms.html</loc>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://solarpedia.in/disclaimer.html</loc>
+    <priority>0.3</priority>
+  </url>
+
 
 </urlset>
