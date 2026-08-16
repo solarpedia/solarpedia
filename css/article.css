@@ -2208,3 +2208,86 @@ transition:.15s;
         color: #222222 !important;
     }
 }
+/* ==========================================
+   SolarPedia Price Table
+========================================== */
+
+.comparison-table {
+    width: 100%;
+    min-width: 650px;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+    border-radius: 14px;
+    background: #ffffff;
+    box-shadow: 0 6px 22px rgba(0,0,0,.08);
+}
+
+.comparison-table th {
+    background: #198754;
+    color: #ffffff;
+    padding: 16px 14px;
+    text-align: center;
+    font-weight: 700;
+    border: none;
+}
+
+.comparison-table td {
+    padding: 16px 14px;
+    text-align: center;
+    border-bottom: 1px solid #e5e7eb;
+    border-right: 1px solid #e5e7eb;
+    background: #ffffff;
+}
+
+.comparison-table td:last-child {
+    border-right: none;
+}
+
+.comparison-table tbody tr:nth-child(even) td {
+    background: #f6faf8;
+}
+
+.comparison-table tbody tr:hover td {
+    background: #e8f5e9;
+}
+
+.comparison-table tbody tr td:first-child {
+    font-weight: 700;
+    color: #087f3f;
+    font-size: 18px;
+}
+
+.comparison-table tbody tr {
+    transition: .2s ease;
+}
+
+.comparison-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Mobile table */
+
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 768px) {
+
+    .comparison-table {
+        min-width: 620px;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+        padding: 12px 10px;
+        font-size: 14px;
+    }
+
+    .comparison-table tbody tr td:first-child {
+        font-size: 16px;
+    }
+
+}
