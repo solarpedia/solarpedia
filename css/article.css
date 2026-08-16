@@ -2291,3 +2291,56 @@ transition:.15s;
     }
 
 }
+/* ==========================================
+   PM Surya Ghar Subsidy Section
+========================================== */
+
+#subsidy .content-card {
+    border-top: 5px solid #198754;
+    background: linear-gradient(
+        135deg,
+        #ffffff 0%,
+        #f3faf6 100%
+    );
+}
+
+#subsidy .content-card h2 {
+    color: #087f3f;
+}
+
+#subsidy .comparison-table {
+    box-shadow: 0 8px 25px rgba(25,135,84,.12);
+}
+
+#subsidy .comparison-table tbody tr td:last-child {
+    font-weight: 600;
+    color: #087f3f;
+}
+
+#subsidy .comparison-table tbody tr:nth-child(3) td {
+    background: #e8f5e9 !important;
+}
+
+#subsidy .comparison-table tbody tr:hover td {
+    background: #dff3e7 !important;
+}
+
+#subsidy .content-card > p:last-child {
+    margin-top: 25px;
+    padding: 18px 20px;
+    background: #fff8e8;
+    border-left: 5px solid #f59e0b;
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+
+    #subsidy .content-card {
+        padding: 22px 18px;
+    }
+
+    #subsidy .comparison-table {
+        min-width: 550px;
+    }
+
+}
