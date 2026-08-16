@@ -1856,3 +1856,55 @@ nav ul li.tools:hover .dropdown-menu {
 
     box-shadow: 0 10px 25px rgba(18, 137, 79, 0.28);
 }
+
+/* =========================================
+   FOOTER COLOR FIX
+========================================= */
+
+footer {
+    background: #1f2428;
+    color: #ffffff;
+}
+
+/* Footer headings */
+footer h2,
+footer h3,
+footer .footer-title {
+    color: #ffffff !important;
+}
+
+/* Footer normal text */
+footer p {
+    color: #f1f1f1 !important;
+}
+
+/* Footer links */
+footer a {
+    color: #f1f1f1 !important;
+    text-decoration: none;
+}
+
+/* Footer links hover */
+footer a:hover {
+    color: #18a957 !important;
+}
+
+/* Footer bottom line */
+footer .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.15);
+    color: #ffffff;
+}
+
+/* Copyright */
+footer .footer-bottom p {
+    color: #ffffff !important;
+}
+
+/* Social links */
+footer .social-links a {
+    color: #ffffff !important;
+}
+
+footer .social-links a:hover {
+    color: #18a957 !important;
+}
